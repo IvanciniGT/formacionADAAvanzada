@@ -6,29 +6,50 @@ A -march=x86-64
 P ZX
 
 RN
+RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U gameengine%b		gameengine.adb		7cc1b794 NE OO PK IU
+U gameengine%b		gameengine.adb		7459f199 NE OO PK IU
+W partida%s		partida.adb		partida.ali
 W uigameengine%s	uigameengine.adb	uigameengine.ali
 
-U gameengine%s		gameengine.ads		ac9f50d3 EE NE OO PK IU
+U gameengine%s		gameengine.ads		c47f696a EE NE OO PK IU
 W uigameengine%s	uigameengine.adb	uigameengine.ali
 
 D gameengine.ads	20240430085746 6fecc884 gameengine%s
-D gameengine.adb	20240430090237 d05ee747 gameengine%b
-D partida.ads		20240430072729 769e0b36 partida%s
+D gameengine.adb	20240430105915 8f98745b gameengine%b
+D partida.ads		20240430100643 3fbeeca8 partida%s
 D system.ads		20230707070819 4635ec04 system%s
-D uigameengine.ads	20240430072848 c3739857 uigameengine%s
+D uigameengine.ads	20240430094108 ab93a1ee uigameengine%s
 G a e
 G c Z s b [play gameengine 5 15 none]
 G r c none [play gameengine 5 15 none] [mostrar_bienvenida uigameengine 5 15 none]
+G r c none [play gameengine 5 15 none] [elegir_juego uigameengine 17 14 none]
+G r c none [play gameengine 5 15 none] [jugar_partida partida 16 14 none]
+G r c none [play gameengine 5 15 none] [jugar_de_nuevo_al_mismo_juego uigameengine 15 14 none]
+G r c none [play gameengine 5 15 none] [jugar_a_otro_juego uigameengine 13 14 none]
 G r c none [play gameengine 5 15 none] [mostrar_despedida uigameengine 11 15 none]
 X 1 gameengine.ads
-3K9*GameEngine 7l5 7e15 2|4b14 23l5 23t15
-5U15*PLAY 2|6b15 21l9 21t13
+3K9*GameEngine 7l5 7e15 2|5b14 31l5 31t15
+5U15*PLAY 2|7b15 29l9 29t13
+X 2 gameengine.adb
+8i9 NUMERO_DE_MANOS_MAXIMO{integer} 20r55
+9i9 NUMERO_DE_MANOS_PARA_GANAR{integer} 20r79
+10p9 juegoElegido{3|8P10} 17m13 20r41
+11e9 ganador{3|7E10} 20m17
+15l9 Continuar_Jugando 24r18 25l18 25e35
+19l13 Continuar_Jugando_Al_Mismo_juego 21r22 22l22 22e54
+X 3 partida.ads
+5K9*Partida 2|3w6 3r19 3|18e12
+7E10*RESULTADO 2|11r18 3|7e53
+8P10*JUGABLE(7E10) 2|10r23
+16V14*JUGAR_PARTIDA{7E10} 2|20s27
 X 5 uigameengine.ads
-3K9*UIGameEngine 1|1w6 1r24 2|2w6 2r24 5|13e17
-5U15*MOSTRAR_BIENVENIDA 2|8s9
-11U15*MOSTRAR_DESPEDIDA 2|19s9
+3K9*UIGameEngine 1|1w6 1r24 2|2w6 2r24 5|19e17
+5U15*MOSTRAR_BIENVENIDA 2|13s9
+11U15*MOSTRAR_DESPEDIDA 2|27s9
+13V14*JUGAR_A_OTRO_JUEGO{boolean} 2|24s45
+15V14*JUGAR_DE_NUEVO_AL_MISMO_JUEGO{boolean} 2|21s64
+17V14*ELEGIR_JUEGO{3|8P10} 2|17s28
 

@@ -6,17 +6,50 @@ A -march=x86-64
 P ZX
 
 RN
+RV NO_ACCESS_SUBPROGRAMS
 RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
 
-U partida%s		partida.ads		769e0b36 NE OO PK
+U partida%b		partida.adb		fe3e9438 NE OO PK
+Z interfaces%s		interfac.ads		interfac.ali
+W uigameengine%s	uigameengine.adb	uigameengine.ali
 
-D partida.ads		20240430072729 769e0b36 partida%s
+U partida%s		partida.ads		3fbeeca8 EE NE OO PK
+
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D partida.ads		20240430100643 3fbeeca8 partida%s
+D partida.adb		20240430110336 6a13d97e partida%b
 D system.ads		20230707070819 4635ec04 system%s
+D uigameengine.ads	20240430094108 ab93a1ee uigameengine%s
 G a e
-X 1 partida.ads
-5K9*Partida 9l5 9e12
-7E10*RESULTADO 7e53
-7n24*COMPUTADORA{7E10}
-7n37*JUGADOR{7E10}
-7n46*EMPATE{7E10}
+G c Z s b [jugar_partida partida 16 14 none]
+G r c none [jugar_partida partida 16 14 none] [mostrar_resultado_mano uigameengine 7 15 none]
+G r c none [jugar_partida partida 16 14 none] [mostrar_resultado_partida uigameengine 9 15 none]
+X 2 partida.ads
+5K9*Partida 18l5 18e12 3|2b14 56l5 56t12
+7E10*RESULTADO 7e53 8r44 16r117 3|4r41 21r126 33r117 40r18
+7n24*COMPUTADORA{7E10} 3|10r63 12r40 24r48 25r21
+7n37*JUGADOR{7E10} 3|10r106 14r43 26r51 27r21
+7n46*EMPATE{7E10} 3|10r145 29r21
+8P10*JUGABLE(7E10) 16r35 3|33r35
+16V14*JUGAR_PARTIDA{7E10} 16>28 16>45 16>76 3|33b14 52l9 52t22
+16p28 juego{8P10} 3|33b28 43r23
+16i45 numero_manos_maximas{integer} 3|33b45 42r67
+16i76 numero_manos_para_ganar{integer} 3|33b76 42r89 48r67
+X 3 partida.adb
+4A10 RESULTADOS_ACUMULADOS(integer)<2|7E10> 6r66 21r62 35r38
+6V14 HAY_QUE_SEGUIR_JUGANDO{boolean} 6b14 6>37 7>37 8>37 18l9 18t31 42s15
+6a37 resultados_acumulados_manos{4A10} 10r35 10r78 10r117 12r12 14r15
+7i37 numero_manos_maximas{integer} 17r33
+8i37 numero_manos_para_ganar{integer} 12r55 14r54
+10i9 manos_jugadas{integer} 17r17
+21V14 DETERMINAR_GANADOR{2|7E10} 21b14 21>33 21>85 31l9 31t27 48s19
+21a33 resultados_acumulados_manos{4A10} 24r20 26r23
+21i85 numero_manos_para_ganar{integer} 24r63 26r62
+35a9 resultados_acumulados_manos{4A10} 42r38 45m13 45r53 48r38
+40e9 ganador{2|7E10} 43m13 44r36 45r41 45r81 48m9 50r35 51r16
+X 5 uigameengine.ads
+3K9*UIGameEngine 3|1w6 1r24 5|19e17
+7U15*MOSTRAR_RESULTADO_MANO 3|44s13
+9U15*MOSTRAR_RESULTADO_PARTIDA 3|50s9
 

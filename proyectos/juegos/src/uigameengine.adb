@@ -38,16 +38,6 @@ package body UIGameEngine is
     end MOSTRAR_DESPEDIDA;
 
 
-    function JUGAR_A_OTRO_JUEGO return boolean is
-    begin
-        return PREGUNTAR_SI_O_NO("¿Quieres jugar a otro juego?", "Vale, no te gusta jugar a juegos...");
-    end JUGAR_A_OTRO_JUEGO;
-
-    function JUGAR_DE_NUEVO_AL_MISMO_JUEGO return boolean is
-    begin
-        return PREGUNTAR_SI_O_NO("¿Quieres jugar de nuevo al mismo juego?", "Vale, no te gusta este juego...");
-    end JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
-
     function PREGUNTAR_SI_O_NO(pregunta: String; respuesta_si_no_atina: String ) return boolean is
         respuesta: boolean:= false ;
         caracter_pulsado: Character;
@@ -74,6 +64,18 @@ package body UIGameEngine is
 
         return respuesta;
     end PREGUNTAR_SI_O_NO;
+
+    
+    function JUGAR_A_OTRO_JUEGO return boolean is
+    begin
+        return PREGUNTAR_SI_O_NO("¿Quieres jugar a otro juego?", "Vale, no te gusta jugar a juegos...");
+    end JUGAR_A_OTRO_JUEGO;
+
+    function JUGAR_DE_NUEVO_AL_MISMO_JUEGO return boolean is
+    begin
+        return PREGUNTAR_SI_O_NO("¿Quieres jugar de nuevo al mismo juego?", "Vale, no te gusta este juego...");
+    end JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
+
 
     function ELEGIR_JUEGO return JUGABLE is
         juegoElegido: JUGABLE;

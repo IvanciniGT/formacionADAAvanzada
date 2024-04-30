@@ -7,29 +7,30 @@ with Ada.Exceptions;
 
 package body ada_main is
 
-   E079 : Short_Integer; pragma Import (Ada, E079, "system__os_lib_E");
-   E012 : Short_Integer; pragma Import (Ada, E012, "ada__exceptions_E");
-   E017 : Short_Integer; pragma Import (Ada, E017, "system__soft_links_E");
-   E029 : Short_Integer; pragma Import (Ada, E029, "system__exception_table_E");
-   E044 : Short_Integer; pragma Import (Ada, E044, "ada__containers_E");
-   E074 : Short_Integer; pragma Import (Ada, E074, "ada__io_exceptions_E");
-   E059 : Short_Integer; pragma Import (Ada, E059, "ada__strings_E");
-   E061 : Short_Integer; pragma Import (Ada, E061, "ada__strings__maps_E");
-   E065 : Short_Integer; pragma Import (Ada, E065, "ada__strings__maps__constants_E");
-   E049 : Short_Integer; pragma Import (Ada, E049, "interfaces__c_E");
-   E031 : Short_Integer; pragma Import (Ada, E031, "system__exceptions_E");
-   E085 : Short_Integer; pragma Import (Ada, E085, "system__object_reader_E");
-   E054 : Short_Integer; pragma Import (Ada, E054, "system__dwarf_lines_E");
-   E025 : Short_Integer; pragma Import (Ada, E025, "system__soft_links__initialize_E");
-   E043 : Short_Integer; pragma Import (Ada, E043, "system__traceback__symbolic_E");
-   E105 : Short_Integer; pragma Import (Ada, E105, "ada__tags_E");
-   E103 : Short_Integer; pragma Import (Ada, E103, "ada__streams_E");
-   E117 : Short_Integer; pragma Import (Ada, E117, "system__file_control_block_E");
-   E116 : Short_Integer; pragma Import (Ada, E116, "system__finalization_root_E");
-   E114 : Short_Integer; pragma Import (Ada, E114, "ada__finalization_E");
-   E113 : Short_Integer; pragma Import (Ada, E113, "system__file_io_E");
-   E010 : Short_Integer; pragma Import (Ada, E010, "ada__text_io_E");
-   E007 : Short_Integer; pragma Import (Ada, E007, "uigameengine_E");
+   E081 : Short_Integer; pragma Import (Ada, E081, "system__os_lib_E");
+   E015 : Short_Integer; pragma Import (Ada, E015, "ada__exceptions_E");
+   E020 : Short_Integer; pragma Import (Ada, E020, "system__soft_links_E");
+   E032 : Short_Integer; pragma Import (Ada, E032, "system__exception_table_E");
+   E047 : Short_Integer; pragma Import (Ada, E047, "ada__containers_E");
+   E076 : Short_Integer; pragma Import (Ada, E076, "ada__io_exceptions_E");
+   E061 : Short_Integer; pragma Import (Ada, E061, "ada__strings_E");
+   E063 : Short_Integer; pragma Import (Ada, E063, "ada__strings__maps_E");
+   E067 : Short_Integer; pragma Import (Ada, E067, "ada__strings__maps__constants_E");
+   E051 : Short_Integer; pragma Import (Ada, E051, "interfaces__c_E");
+   E034 : Short_Integer; pragma Import (Ada, E034, "system__exceptions_E");
+   E087 : Short_Integer; pragma Import (Ada, E087, "system__object_reader_E");
+   E056 : Short_Integer; pragma Import (Ada, E056, "system__dwarf_lines_E");
+   E028 : Short_Integer; pragma Import (Ada, E028, "system__soft_links__initialize_E");
+   E046 : Short_Integer; pragma Import (Ada, E046, "system__traceback__symbolic_E");
+   E107 : Short_Integer; pragma Import (Ada, E107, "ada__tags_E");
+   E105 : Short_Integer; pragma Import (Ada, E105, "ada__streams_E");
+   E119 : Short_Integer; pragma Import (Ada, E119, "system__file_control_block_E");
+   E118 : Short_Integer; pragma Import (Ada, E118, "system__finalization_root_E");
+   E116 : Short_Integer; pragma Import (Ada, E116, "ada__finalization_E");
+   E115 : Short_Integer; pragma Import (Ada, E115, "system__file_io_E");
+   E013 : Short_Integer; pragma Import (Ada, E013, "ada__text_io_E");
+   E007 : Short_Integer; pragma Import (Ada, E007, "partida_E");
+   E010 : Short_Integer; pragma Import (Ada, E010, "uigameengine_E");
    E005 : Short_Integer; pragma Import (Ada, E005, "gameengine_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
@@ -41,7 +42,7 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E010 := E010 - 1;
+      E013 := E013 - 1;
       declare
          procedure F1;
          pragma Import (Ada, F1, "ada__text_io__finalize_spec");
@@ -52,7 +53,7 @@ package body ada_main is
          procedure F2;
          pragma Import (Ada, F2, "system__file_io__finalize_body");
       begin
-         E113 := E113 - 1;
+         E115 := E115 - 1;
          F2;
       end;
       declare
@@ -162,48 +163,49 @@ package body ada_main is
       Ada.Exceptions'Elab_Spec;
       System.Soft_Links'Elab_Spec;
       System.Exception_Table'Elab_Body;
-      E029 := E029 + 1;
+      E032 := E032 + 1;
       Ada.Containers'Elab_Spec;
-      E044 := E044 + 1;
+      E047 := E047 + 1;
       Ada.Io_Exceptions'Elab_Spec;
-      E074 := E074 + 1;
+      E076 := E076 + 1;
       Ada.Strings'Elab_Spec;
-      E059 := E059 + 1;
-      Ada.Strings.Maps'Elab_Spec;
       E061 := E061 + 1;
+      Ada.Strings.Maps'Elab_Spec;
+      E063 := E063 + 1;
       Ada.Strings.Maps.Constants'Elab_Spec;
-      E065 := E065 + 1;
+      E067 := E067 + 1;
       Interfaces.C'Elab_Spec;
-      E049 := E049 + 1;
+      E051 := E051 + 1;
       System.Exceptions'Elab_Spec;
-      E031 := E031 + 1;
+      E034 := E034 + 1;
       System.Object_Reader'Elab_Spec;
-      E085 := E085 + 1;
+      E087 := E087 + 1;
       System.Dwarf_Lines'Elab_Spec;
-      E054 := E054 + 1;
+      E056 := E056 + 1;
       System.Os_Lib'Elab_Body;
-      E079 := E079 + 1;
+      E081 := E081 + 1;
       System.Soft_Links.Initialize'Elab_Body;
-      E025 := E025 + 1;
-      E017 := E017 + 1;
+      E028 := E028 + 1;
+      E020 := E020 + 1;
       System.Traceback.Symbolic'Elab_Body;
-      E043 := E043 + 1;
-      E012 := E012 + 1;
+      E046 := E046 + 1;
+      E015 := E015 + 1;
       Ada.Tags'Elab_Spec;
       Ada.Tags'Elab_Body;
-      E105 := E105 + 1;
+      E107 := E107 + 1;
       Ada.Streams'Elab_Spec;
-      E103 := E103 + 1;
+      E105 := E105 + 1;
       System.File_Control_Block'Elab_Spec;
-      E117 := E117 + 1;
+      E119 := E119 + 1;
       System.Finalization_Root'Elab_Spec;
-      E116 := E116 + 1;
+      E118 := E118 + 1;
       Ada.Finalization'Elab_Spec;
-      E114 := E114 + 1;
+      E116 := E116 + 1;
       System.File_Io'Elab_Body;
-      E113 := E113 + 1;
+      E115 := E115 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
+      E013 := E013 + 1;
       E010 := E010 + 1;
       E007 := E007 + 1;
       E005 := E005 + 1;
@@ -244,8 +246,8 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/partida.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/uigameengine.o
+   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/partida.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/gameengine.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/main.o
    --   -L/home/parallels/Desktop/ada/proyectos/juegos/.objs/
