@@ -8,7 +8,7 @@ package body GameEngine is
         NUMERO_DE_MANOS_MAXIMO: constant integer := 3;
         NUMERO_DE_MANOS_PARA_GANAR: constant integer := 2;
         juegoElegido: JUGABLE;
-        ganador: RESULTADO;
+        --ganador: RESULTADO;
     begin
         MOSTRAR_BIENVENIDA;
 
@@ -17,8 +17,8 @@ package body GameEngine is
             juegoElegido:= ELEGIR_JUEGO;
         
             Continuar_Jugando_Al_Mismo_juego: loop
-                ganador:= JUGAR_PARTIDA(juegoElegido, NUMERO_DE_MANOS_MAXIMO, NUMERO_DE_MANOS_PARA_GANAR);
-                MOSTRAR_RESULTADO_PARTIDA(ganador);
+                --ganador:= 
+                JUGAR_PARTIDA(juegoElegido, NUMERO_DE_MANOS_MAXIMO, NUMERO_DE_MANOS_PARA_GANAR);
                 exit Continuar_Jugando_Al_Mismo_juego when not JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
             end loop;
 
