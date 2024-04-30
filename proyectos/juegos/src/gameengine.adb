@@ -1,5 +1,6 @@
 -- Definir los juegos que hay disponibles
 with UIGameEngine; use UIGameEngine;
+with Partida; use Partida;
 
 package body GameEngine is
 
@@ -7,17 +8,19 @@ package body GameEngine is
         NUMERO_DE_MANOS_MAXIMO: constant integer := 3;
         NUMERO_DE_MANOS_PARA_GANAR: constant integer := 2;
         juegoElegido: JUGABLE;
+        ganador: RESULTADO;
     begin
         MOSTRAR_BIENVENIDA;
 
-    -- Vamos a dar al jugador la posibilidad de elegir un juego
-    -- Una vez elegido un juego... Echamos una partida a ese juego (con una configuración de manos)
-    -- Capturaré el resultado de la partida
-    -- Informar del resultado (---> Lo guardamos en un fichero)
-    -- Preguntaré si quiere jugar de nuevo a ese juego
-        -- Caso que no, peguntaré si desea jugar a otro juego
-    --    procedure MOSTRAR_RESULTADO_MANO(ganador: RESULTADO);
-    --    procedure MOSTRAR_RESULTADO_PARTIDA(ganador: RESULTADO);
+        Continuar_Jugando: loop
+            juegoElegido:= ELEGIR_JUEGO;
+            Continuar_Jugando_Al_Mismo_juego: loop
+                ganador:= JUGAR_PARTIDA(juegoElegido, NUMERO_DE_MANOS_MAXIMO, NUMERO_DE_MANOS_PARA_GANAR);
+                MOSTRAR_RESULTADO_PARTIDA(ganador);
+                exit Continuar_Jugando_Al_Mismo_juego when not JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
+            end loop;
+            exit Continuar_Jugando when not JUGAR_A_OTRO_JUEGO;
+        end loop;
 
         MOSTRAR_DESPEDIDA;
 

@@ -37,4 +37,30 @@ package body UIGameEngine is
         Put_Line("Gracias por jugar a nuestra app de juegos cutre!");
     end MOSTRAR_DESPEDIDA;
 
+
+    function JUGAR_A_OTRO_JUEGO return boolean is
+        respuesta: boolean;
+    begin
+        -- Preguntar al usuario si quiere jugar a otro juego
+        -- Devolver la respuesta
+        return respuesta;
+    end JUGAR_A_OTRO_JUEGO;
+
+    function JUGAR_DE_NUEVO_AL_MISMO_JUEGO return boolean is
+        respuesta: boolean;
+    begin
+        -- Preguntar al usuario si quiere jugar de nuevo al mismo juego
+        -- Devolver la respuesta
+        return respuesta;
+    end JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
+
+
+    function ELEGIR_JUEGO return JUGABLE is
+        juegoElegido: JUGABLE;
+    begin
+        -- Preguntar al usuario qué juego quiere jugar
+        -- Devolver el juego elegido
+        return juegoElegido;
+    end ELEGIR_JUEGO;
+
 end UIGameEngine;
