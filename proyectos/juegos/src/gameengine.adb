@@ -1,14 +1,23 @@
 -- Definir los juegos que hay disponibles
+with UIGameEngine; use UIGameEngine;
 
+procedure GameEngine is
+begin
+    -- Bienvenida
+    MOSTRAR_BIENVENIDA;
 
-procedure A_JUGAR
 -- Vamos a dar al jugador la posibilidad de elegir un juego
 -- Una vez elegido un juego... Echamos una partida a ese juego (con una configuración de manos)
 -- Capturaré el resultado de la partida
 -- Informar del resultado (---> Lo guardamos en un fichero)
 -- Preguntaré si quiere jugar de nuevo a ese juego
     -- Caso que no, peguntaré si desea jugar a otro juego
-end A_JUGAR
+--    procedure MOSTRAR_RESULTADO_MANO(ganador: RESULTADO);
+--    procedure MOSTRAR_RESULTADO_PARTIDA(ganador: RESULTADO);
+
+    MOSTRAR_DESPEDIDA;
+
+end GameEngine
 
 -- Este procedimiento depende de otros componentes:
 -- - Juego
