@@ -13,12 +13,15 @@ package body GameEngine is
         MOSTRAR_BIENVENIDA;
 
         Continuar_Jugando: loop
+
             juegoElegido:= ELEGIR_JUEGO;
+        
             Continuar_Jugando_Al_Mismo_juego: loop
                 ganador:= JUGAR_PARTIDA(juegoElegido, NUMERO_DE_MANOS_MAXIMO, NUMERO_DE_MANOS_PARA_GANAR);
                 MOSTRAR_RESULTADO_PARTIDA(ganador);
                 exit Continuar_Jugando_Al_Mismo_juego when not JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
             end loop;
+
             exit Continuar_Jugando when not JUGAR_A_OTRO_JUEGO;
         end loop;
 

@@ -39,21 +39,41 @@ package body UIGameEngine is
 
 
     function JUGAR_A_OTRO_JUEGO return boolean is
-        respuesta: boolean;
     begin
-        -- Preguntar al usuario si quiere jugar a otro juego
-        -- Devolver la respuesta
-        return respuesta;
+        return PREGUNTAR_SI_O_NO("¿Quieres jugar a otro juego?", "Vale, no te gusta jugar a juegos...");
     end JUGAR_A_OTRO_JUEGO;
 
     function JUGAR_DE_NUEVO_AL_MISMO_JUEGO return boolean is
-        respuesta: boolean;
     begin
-        -- Preguntar al usuario si quiere jugar de nuevo al mismo juego
-        -- Devolver la respuesta
-        return respuesta;
+        return PREGUNTAR_SI_O_NO("¿Quieres jugar de nuevo al mismo juego?", "Vale, no te gusta este juego...");
     end JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
 
+    function PREGUNTAR_SI_O_NO(pregunta: String; respuesta_si_no_atina: String ) return boolean is
+        respuesta: boolean:= false ;
+        caracter_pulsado: Character;
+    begin
+        for Oportunidades in 1..3 loop
+            Put(pregunta & " (s/n): ");
+            Get(caracter_pulsado); -- Leo 1 caracter
+            Skip_Line; -- Paso del resto de la línea
+
+            case caracter_pulsado is
+                when 's' | 'S' =>
+                    respuesta := true;
+                    exit;
+                when 'n' | 'N' =>
+                    exit;
+                when others =>
+                    if Oportunidades < 3 then
+                        Put_Line("Por favor, introduce 's' o 'n'");
+                    else 
+                        Put_Line(respuesta_si_no_atina);
+                    end if;
+            end case;
+        end loop;
+
+        return respuesta;
+    end PREGUNTAR_SI_O_NO;
 
     function ELEGIR_JUEGO return JUGABLE is
         juegoElegido: JUGABLE;
