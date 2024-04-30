@@ -14,7 +14,7 @@ package body Partida is
         elsif resultados_acumulados_manos(JUGADOR) = numero_manos_para_ganar then
             return False;
         end if;
-        return (manos_jugadas < numero_manos_maximas);
+        return (manos_jugadas < numero_manos_maximas); -- si quedan manos disponibles.
     end HAY_QUE_SEGUIR_JUGANDO;
 
 

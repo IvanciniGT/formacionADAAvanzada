@@ -97,3 +97,14 @@ FIRST = Principios para desarrollar pruebas de software.
     R   Repeteable          - Repetibles
     S   Self-validating     - Deben de validar todo el trabajo que sea necesario 
     T   Timely              - Oportunas... en el momento adecuado
+---
+
+# Comentar / Documentar un código
+
+## Comentar
+
+Explico cómo funciona un código
+
+## Documentar
+
+Explico cómo se usa un código
