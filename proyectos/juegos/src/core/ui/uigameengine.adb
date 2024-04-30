@@ -64,7 +64,6 @@ package body UIGameEngine is
 
         return respuesta;
     end PREGUNTAR_SI_O_NO;
-
     
     function JUGAR_A_OTRO_JUEGO return boolean is
     begin
@@ -75,7 +74,6 @@ package body UIGameEngine is
     begin
         return PREGUNTAR_SI_O_NO("¿Quieres jugar de nuevo al mismo juego?", "Vale, no te gusta este juego...");
     end JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
-
 
     function ELEGIR_JUEGO return JUGABLE is
         juegoElegido: JUGABLE;

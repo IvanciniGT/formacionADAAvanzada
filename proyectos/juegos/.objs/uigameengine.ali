@@ -47,7 +47,7 @@ D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
 D uigameengine.ads	20240430094108 ab93a1ee uigameengine%s
-D uigameengine.adb	20240430110356 e567e469 uigameengine%b
+D uigameengine.adb	20240430111106 e567e469 uigameengine%b
 G a e
 G c Z s b [mostrar_bienvenida uigameengine 5 15 none]
 G c Z s b [mostrar_resultado_mano uigameengine 7 15 none]
