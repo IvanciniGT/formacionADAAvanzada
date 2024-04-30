@@ -1,0 +1,71 @@
+V "GNAT Lib v10"
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U uigameengine%b	uigameengine.adb	f94dd534 NE OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z interfaces%s		interfac.ads		interfac.ali
+W partida%s		partida.ads		partida.ali
+
+U uigameengine%s	uigameengine.ads	b5ed9361 EE NE OO PK IU
+W partida%s		partida.ads		partida.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-ioexce.ads		20230707070819 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
+D partida.ads		20240430072729 769e0b36 partida%s
+D system.ads		20230707070819 4635ec04 system%s
+D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-ficobl.ads		20230707070819 078245e4 system.file_control_block%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
+D uigameengine.ads	20240430072848 c3739857 uigameengine%s
+D uigameengine.adb	20240430090219 e2549338 uigameengine%b
+G a e
+G c Z s b [mostrar_bienvenida uigameengine 5 15 none]
+G c Z s b [mostrar_resultado_mano uigameengine 7 15 none]
+G c Z s b [mostrar_resultado_partida uigameengine 9 15 none]
+G c Z s b [mostrar_despedida uigameengine 11 15 none]
+X 1 ada.ads
+16K9*Ada 20e8 25|1r6 1r23
+X 6 a-textio.ads
+57K13*Text_IO 727e16 25|1w10 1r27
+508U14*Put_Line 25|9s9 15s13 17s13 19s13 27s17 29s17 31s17 37s9
+X 10 partida.ads
+5K9*Partida 9e12 24|1w6 1r19 25|3w6 3r19
+7E10*RESULTADO 7e53 24|7r47 9r50 25|12r47 23r50
+7n24*COMPUTADORA{7E10} 25|16r25 28r18
+7n37*JUGADOR{7E10} 25|14r22 26r18
+7n46*EMPATE{7E10} 25|30r18
+X 24 uigameengine.ads
+3K9*UIGameEngine 13l5 13e17 25|5b14 40l5 40t17
+5U15*MOSTRAR_BIENVENIDA 25|7b15 10l9 10t27
+7U15*MOSTRAR_RESULTADO_MANO 7>38 25|12b15 21l9 21t31
+7e38 ganador{10|7E10} 25|12b38 14r12 16r15
+9U15*MOSTRAR_RESULTADO_PARTIDA 9>41 25|23b15 33l9 33t34
+9e41 ganador{10|7E10} 25|23b41 25r14
+11U15*MOSTRAR_DESPEDIDA 25|35b15 38l9 38t26
+

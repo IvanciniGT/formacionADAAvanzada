@@ -1,0 +1,22 @@
+V "GNAT Lib v10"
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U partida%s		partida.ads		769e0b36 NE OO PK
+
+D partida.ads		20240430072729 769e0b36 partida%s
+D system.ads		20230707070819 4635ec04 system%s
+G a e
+X 1 partida.ads
+5K9*Partida 9l5 9e12
+7E10*RESULTADO 7e53
+7n24*COMPUTADORA{7E10}
+7n37*JUGADOR{7E10}
+7n46*EMPATE{7E10}
+

@@ -1,3 +1,6 @@
--- Este programa es el que arrancará el sistema
+with GameEngine; use GameEngine;
 
--- Iniciar el Motor de Juegos
+procedure Main is
+begin
+    PLAY;
+end Main;

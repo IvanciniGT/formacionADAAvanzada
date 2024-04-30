@@ -1,0 +1,34 @@
+V "GNAT Lib v10"
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U gameengine%b		gameengine.adb		7cc1b794 NE OO PK IU
+W uigameengine%s	uigameengine.adb	uigameengine.ali
+
+U gameengine%s		gameengine.ads		ac9f50d3 EE NE OO PK IU
+W uigameengine%s	uigameengine.adb	uigameengine.ali
+
+D gameengine.ads	20240430085746 6fecc884 gameengine%s
+D gameengine.adb	20240430090237 d05ee747 gameengine%b
+D partida.ads		20240430072729 769e0b36 partida%s
+D system.ads		20230707070819 4635ec04 system%s
+D uigameengine.ads	20240430072848 c3739857 uigameengine%s
+G a e
+G c Z s b [play gameengine 5 15 none]
+G r c none [play gameengine 5 15 none] [mostrar_bienvenida uigameengine 5 15 none]
+G r c none [play gameengine 5 15 none] [mostrar_despedida uigameengine 11 15 none]
+X 1 gameengine.ads
+3K9*GameEngine 7l5 7e15 2|4b14 23l5 23t15
+5U15*PLAY 2|6b15 21l9 21t13
+X 5 uigameengine.ads
+3K9*UIGameEngine 1|1w6 1r24 2|2w6 2r24 5|13e17
+5U15*MOSTRAR_BIENVENIDA 2|8s9
+11U15*MOSTRAR_DESPEDIDA 2|19s9
+
