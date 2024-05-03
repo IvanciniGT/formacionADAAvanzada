@@ -24,14 +24,17 @@ package body ada_main is
    E039 : Short_Integer; pragma Import (Ada, E039, "system__traceback__symbolic_E");
    E101 : Short_Integer; pragma Import (Ada, E101, "ada__tags_E");
    E099 : Short_Integer; pragma Import (Ada, E099, "ada__streams_E");
-   E121 : Short_Integer; pragma Import (Ada, E121, "system__file_control_block_E");
-   E120 : Short_Integer; pragma Import (Ada, E120, "system__finalization_root_E");
-   E118 : Short_Integer; pragma Import (Ada, E118, "ada__finalization_E");
-   E117 : Short_Integer; pragma Import (Ada, E117, "system__file_io_E");
-   E113 : Short_Integer; pragma Import (Ada, E113, "ada__text_io_E");
-   E109 : Short_Integer; pragma Import (Ada, E109, "partida_E");
-   E111 : Short_Integer; pragma Import (Ada, E111, "uigameengine_E");
-   E107 : Short_Integer; pragma Import (Ada, E107, "juego_E");
+   E125 : Short_Integer; pragma Import (Ada, E125, "system__file_control_block_E");
+   E124 : Short_Integer; pragma Import (Ada, E124, "system__finalization_root_E");
+   E122 : Short_Integer; pragma Import (Ada, E122, "ada__finalization_E");
+   E121 : Short_Integer; pragma Import (Ada, E121, "system__file_io_E");
+   E117 : Short_Integer; pragma Import (Ada, E117, "ada__text_io_E");
+   E109 : Short_Integer; pragma Import (Ada, E109, "adivinarnumerohelpers_E");
+   E113 : Short_Integer; pragma Import (Ada, E113, "partida_E");
+   E115 : Short_Integer; pragma Import (Ada, E115, "uigameengine_E");
+   E111 : Short_Integer; pragma Import (Ada, E111, "juego_E");
+   E129 : Short_Integer; pragma Import (Ada, E129, "uiadivinarnumerojuego_E");
+   E107 : Short_Integer; pragma Import (Ada, E107, "adivinarnumerojuego_E");
    E005 : Short_Integer; pragma Import (Ada, E005, "gameengine_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
@@ -46,23 +49,30 @@ package body ada_main is
       E107 := E107 - 1;
       declare
          procedure F1;
-         pragma Import (Ada, F1, "juego__finalize_spec");
+         pragma Import (Ada, F1, "adivinarnumerojuego__finalize_spec");
       begin
          F1;
       end;
-      E113 := E113 - 1;
+      E111 := E111 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "ada__text_io__finalize_spec");
+         pragma Import (Ada, F2, "juego__finalize_spec");
       begin
          F2;
       end;
+      E117 := E117 - 1;
       declare
          procedure F3;
-         pragma Import (Ada, F3, "system__file_io__finalize_body");
+         pragma Import (Ada, F3, "ada__text_io__finalize_spec");
       begin
-         E117 := E117 - 1;
          F3;
+      end;
+      declare
+         procedure F4;
+         pragma Import (Ada, F4, "system__file_io__finalize_body");
+      begin
+         E121 := E121 - 1;
+         F4;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -204,20 +214,25 @@ package body ada_main is
       Ada.Streams'Elab_Spec;
       E099 := E099 + 1;
       System.File_Control_Block'Elab_Spec;
-      E121 := E121 + 1;
+      E125 := E125 + 1;
       System.Finalization_Root'Elab_Spec;
-      E120 := E120 + 1;
+      E124 := E124 + 1;
       Ada.Finalization'Elab_Spec;
-      E118 := E118 + 1;
+      E122 := E122 + 1;
       System.File_Io'Elab_Body;
-      E117 := E117 + 1;
+      E121 := E121 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
-      E113 := E113 + 1;
-      E111 := E111 + 1;
+      E117 := E117 + 1;
       E109 := E109 + 1;
+      E115 := E115 + 1;
+      E113 := E113 + 1;
       Juego'Elab_Spec;
       Juego'Elab_Body;
+      E111 := E111 + 1;
+      E129 := E129 + 1;
+      ADIVINARNUMEROJUEGO'ELAB_SPEC;
+      ADIVINARNUMEROJUEGO'ELAB_BODY;
       E107 := E107 + 1;
       E005 := E005 + 1;
    end adainit;
@@ -257,9 +272,12 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
+   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/adivinarnumerohelpers.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/uigameengine.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/partida.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/juego.o
+   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/uiadivinarnumerojuego.o
+   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/adivinarnumerojuego.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/gameengine.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/main.o
    --   -L/home/parallels/Desktop/ada/proyectos/juegos/.objs/

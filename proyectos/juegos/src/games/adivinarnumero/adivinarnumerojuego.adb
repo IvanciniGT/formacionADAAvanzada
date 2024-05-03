@@ -1,7 +1,7 @@
-with Partida;
+with Partida; use Partida;
 with Juego; use Juego;
 with UIAdivinarNumeroJuego; use UIAdivinarNumeroJuego;
-with AdivinarJuegoHelpers; use AdivinarJuegoHelpers;
+with AdivinarNumeroHelpers; use AdivinarNumeroHelpers;
 
 package body AdivinarNumeroJuego is
 
@@ -20,7 +20,7 @@ package body AdivinarNumeroJuego is
                 ganador := JUGADOR;
                 exit;
             end if;
-            INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO;
+            INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO(numero_seleccionado,numero_a_adivinar);
             numero_de_intentos_restantes := numero_de_intentos_restantes - 1;
         end loop;
         return ganador;

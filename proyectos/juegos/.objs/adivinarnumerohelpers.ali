@@ -1,0 +1,25 @@
+V "GNAT Lib v10"
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U adivinarnumerohelpers%b  adivinarnumerohelpers.adb  46b14838 NE OO PK IU
+
+U adivinarnumerohelpers%s  adivinarnumerohelpers.ads  d8839861 EE NE OO PK IU
+
+D adivinarnumerohelpers.ads  20240503075605 d8839861 adivinarnumerohelpers%s
+D adivinarnumerohelpers.adb  20240503075601 9e32d059 adivinarnumerohelpers%b
+D system.ads		20230707070819 4635ec04 system%s
+G a e
+G c Z s b [pedir_numero_a_la_computadora adivinarnumerohelpers 4 14 none]
+X 1 adivinarnumerohelpers.ads
+2K9*AdivinarNumeroHelpers 6l5 6e26 2|2b14 9l5 9t26
+4V14*PEDIR_NUMERO_A_LA_COMPUTADORA{natural} 4>44 4>61 2|4b14 7l9 7t38
+4i44 minimo{natural} 2|4b44
+4i61 maximo{natural} 2|4b61
+

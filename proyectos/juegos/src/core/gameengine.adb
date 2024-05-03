@@ -2,16 +2,39 @@
 with UIGameEngine; use UIGameEngine;
 with Partida; use Partida;
 with Juego; use Juego;
-
+with AdivinarNumeroJuego; use AdivinarNumeroJuego;
 package body GameEngine is
 
-    -- type JUGABLE is access function return RESULTADO;
+    -- Esto lo vamos a llevar a un paquete nuevo: LibreríaDeJuegos
+
     function JUGAR_JUEGO_DUMMY return RESULTADO is
         type ConfiguracionDummy is new Configuracion with null record;
         miConfiguracion: ConfiguracionDummy := ConfiguracionDummy'(null record);
     begin
-        return JUGAR_MANO(miConfiguracion);
+        return JUGAR_MANO(miConfiguracion); -- Juego.JUGAR_MANO
+                                            -- Nosotros tenemos varias definiciones de la función JUGAR_MANO
+                                            -- Esas definiciones usan tipos distintos para los argumentos
+                                            -- En AdivinarNumeroJuego hemos SOBREESCRITO la función JUGAR_MANO
+                                            -- Sobreescritura (override) es un concepto de la programación orientada a objetos
+                                            -- por el cual damos una nueva definición de una función que ya existía previamente
+                                            -- Y al hacerlo, personalizamos el comportamiento de esa función para un TIPO CONCRETO
+                                            -- El compilador va a decidir a qué función llamar en función del TIPO de los argumentos
+                                            -- En automático
+                                            -- En este caso, no hay declaración de la función JUGAR_MANO que defina directamente
+                                            -- El tipo de argumento ConfiguraciónDummy.
+                                            -- Pero ConfiguracionDummy es una Configuracion...
+                                            -- Y si hay una definición de JUGAR_MANO que admite Configuracion
+                                            -- Y es la que se va a llamar
     end JUGAR_JUEGO_DUMMY;
+
+    function JUGAR_JUEGO_ADIVINAR_NUMERO return RESULTADO is
+        miConfiguracion: ConfiguracionAdivinarNumero := ConfiguracionAdivinarNumero'( minimo => 0, maximo => 20, intentos => 3);
+    begin
+        return JUGAR_MANO(miConfiguracion); -- AdivinarNumeroJuego.JUGAR_MANO
+                                            -- En este caso, hay 2 definiciones de la función JUGAR_MANO compatibles con el tipo de argumento
+                                            -- Pero el compilador va a elegir la que está en AdivinarNumeroJuego
+                                            -- Ya que es más específica
+    end JUGAR_JUEGO_ADIVINAR_NUMERO;
 
     procedure PLAY is
         NUMERO_DE_MANOS_MAXIMO: constant integer := 3;
@@ -23,7 +46,8 @@ package body GameEngine is
 
         Continuar_Jugando: loop
 
-            juegoElegido:= JUGAR_JUEGO_DUMMY'Access;
+            juegoElegido:= JUGAR_JUEGO_ADIVINAR_NUMERO'Access;
+            --JUGAR_JUEGO_DUMMY'Access;
             --ELEGIR_JUEGO;
         
             Continuar_Jugando_Al_Mismo_juego: loop

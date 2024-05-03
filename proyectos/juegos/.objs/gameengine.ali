@@ -18,10 +18,11 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV STATIC_DISPATCH_TABLES
 RV SPARK_05
 
-U gameengine%b		gameengine.adb		0294c29a NE OO PK IU
+U gameengine%b		gameengine.adb		1c6ca355 NE OO PK IU
 Z ada.exceptions%s	a-except.adb		a-except.ali
 Z ada.streams%s		a-stream.adb		a-stream.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
+W adivinarnumerojuego%s	adivinarnumerojuego.adb	adivinarnumerojuego.ali
 W juego%s		juego.adb		juego.ali
 W partida%s		partida.adb		partida.ali
 Z system%s		system.ads		system.ali
@@ -38,8 +39,9 @@ D a-except.ads		20230707070819 a7106115 ada.exceptions%s
 D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
 D a-tags.ads		20230707070819 491b781d ada.tags%s
 D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D adivinarnumerojuego.ads  20240503065854 21735cf9 adivinarnumerojuego%s
 D gameengine.ads	20240430085746 6fecc884 gameengine%s
-D gameengine.adb	20240503073127 27b19952 gameengine%b
+D gameengine.adb	20240503075724 183aa464 gameengine%b
 D juego.ads		20240503073119 d42d39aa juego%s
 D partida.ads		20240503000445 3fbeeca8 partida%s
 D system.ads		20230707070819 4635ec04 system%s
@@ -53,43 +55,56 @@ D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
 D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
 D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
 D s-stoele.adb		20230707070819 ed88f8fb system.storage_elements%b
+D s-stratt.ads		20230707070819 aedef97e system.stream_attributes%s
 D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
 D uigameengine.ads	20240503071953 a15a464e uigameengine%s
 G a e
 G c Z s b [play gameengine 5 15 none]
-G c Z b b [jugar_juego_dummy gameengine 9 14 none]
+G c Z b b [jugar_juego_dummy gameengine 10 14 none]
+G c Z b b [jugar_juego_adivinar_numero gameengine 30 14 none]
 G r c none [play gameengine 5 15 none] [mostrar_bienvenida uigameengine 5 15 none]
 G r c none [play gameengine 5 15 none] [jugar_partida partida 16 14 none]
 G r c none [play gameengine 5 15 none] [jugar_de_nuevo_al_mismo_juego uigameengine 15 14 none]
 G r c none [play gameengine 5 15 none] [jugar_a_otro_juego uigameengine 13 14 none]
 G r c none [play gameengine 5 15 none] [mostrar_despedida uigameengine 11 15 none]
-G r c none [jugar_juego_dummy gameengine 9 14 none] [jugar_mano juego 19 14 none]
-X 6 gameengine.ads
-3K9*GameEngine 7l5 7e15 7|6b14 41l5 41t15
-5U15*PLAY 7|16b15 39l9 39t13
-X 7 gameengine.adb
-9V14 JUGAR_JUEGO_DUMMY{9|7E10} 9b14 14l9 14t26 26r28
-10R14 ConfiguracionDummy<8|11R10> 10e70 11r26 11r48 8|19p14
-11r9 miConfiguracion{10R14} 13r27
-17i9 NUMERO_DE_MANOS_MAXIMO{integer} 30r55
-18i9 NUMERO_DE_MANOS_PARA_GANAR{integer} 30r79
-19p9 juegoElegido{9|8P10} 26m13 30r41
-20e9 ganador{9|7E10} 30m17
-24l9 Continuar_Jugando 34r18 35l18 35e35
-29l13 Continuar_Jugando_Al_Mismo_juego 31r22 32l22 32e54
-X 8 juego.ads
-9K9*Juego 7|4w6 4r17 8|21e10
-11R10*Configuracion 7|10r40 8|11e45
-19V14*JUGAR_MANO{9|7E10} 7|13s16
-X 9 partida.ads
-5K9*Partida 7|3w6 3r19 9|18e12
-7E10*RESULTADO 7|9r39 20r18 9|7e53
-8P10*JUGABLE(7E10) 7|19r23
-16V14*JUGAR_PARTIDA{7E10} 7|30s27
-X 22 uigameengine.ads
-3K9*UIGameEngine 6|1w6 1r24 7|2w6 2r24 22|19e17
-5U15*MOSTRAR_BIENVENIDA 7|22s9
-11U15*MOSTRAR_DESPEDIDA 7|37s9
-13V14*JUGAR_A_OTRO_JUEGO{boolean} 7|34s45
-15V14*JUGAR_DE_NUEVO_AL_MISMO_JUEGO{boolean} 7|31s64
+G r c none [jugar_juego_dummy gameengine 10 14 none] [jugar_mano juego 19 14 none]
+G r c none [jugar_juego_adivinar_numero gameengine 30 14 none] [jugar_mano adivinarnumerojuego 14 25 none]
+X 6 adivinarnumerojuego.ads
+3K9*AdivinarNumeroJuego 22e24 8|5w6 5r31
+6R10*ConfiguracionAdivinarNumero<9|11R10> 10e15 8|31r26 31r57
+7i9*maximo{natural} 8|31m100
+8i9*minimo{natural} 8|31m87
+9i9*intentos{natural} 8|31m114
+14V25*JUGAR_MANO{10|7E10}<9|19p14> 8|33s16
+X 7 gameengine.ads
+3K9*GameEngine 7l5 7e15 8|6b14 65l5 65t15
+5U15*PLAY 8|39b15 63l9 63t13
+X 8 gameengine.adb
+10V14 JUGAR_JUEGO_DUMMY{10|7E10} 10b14 28l9 28t26
+11R14 ConfiguracionDummy<9|11R10> 11e70 12r26 12r48 9|19p14
+12r9 miConfiguracion{11R14} 14r27
+30V14 JUGAR_JUEGO_ADIVINAR_NUMERO{10|7E10} 30b14 37l9 37t36 49r28
+31r9 miConfiguracion{6|6R10} 33r27
+40i9 NUMERO_DE_MANOS_MAXIMO{integer} 54r55
+41i9 NUMERO_DE_MANOS_PARA_GANAR{integer} 54r79
+42p9 juegoElegido{10|8P10} 49m13 54r41
+43e9 ganador{10|7E10} 54m17
+47l9 Continuar_Jugando 58r18 59l18 59e35
+53l13 Continuar_Jugando_Al_Mismo_juego 55r22 56l22 56e54
+X 9 juego.ads
+9K9*Juego 8|4w6 4r17 9|21e10
+11R10*Configuracion 8|11r40 9|11e45
+19V14*JUGAR_MANO{10|7E10} 8|14s16
+X 10 partida.ads
+5K9*Partida 8|3w6 3r19 10|18e12
+7E10*RESULTADO 8|10r39 30r49 43r18 10|7e53
+8P10*JUGABLE(7E10) 8|42r23
+16V14*JUGAR_PARTIDA{7E10} 8|54s27
+X 25 uigameengine.ads
+3K9*UIGameEngine 7|1w6 1r24 8|2w6 2r24 25|19e17
+5U15*MOSTRAR_BIENVENIDA 8|45s9
+11U15*MOSTRAR_DESPEDIDA 8|61s9
+13V14*JUGAR_A_OTRO_JUEGO{boolean} 8|58s45
+15V14*JUGAR_DE_NUEVO_AL_MISMO_JUEGO{boolean} 8|55s64
 

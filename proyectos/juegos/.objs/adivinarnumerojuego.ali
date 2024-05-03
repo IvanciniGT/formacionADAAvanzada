@@ -1,0 +1,99 @@
+V "GNAT Lib v10"
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U adivinarnumerojuego%b	adivinarnumerojuego.adb	fa0dbc68 OO PK IU
+W adivinarnumerohelpers%s  adivinarnumerohelpers.adb  adivinarnumerohelpers.ali
+W juego%s		juego.adb		juego.ali
+W partida%s		partida.adb		partida.ali
+W uiadivinarnumerojuego%s  uiadivinarnumerojuego.adb  uiadivinarnumerojuego.ali
+
+U adivinarnumerojuego%s	adivinarnumerojuego.ads	cae089fb EE OO PF PK IU
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.streams%s		a-stream.adb		a-stream.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W juego%s		juego.adb		juego.ali
+W partida%s		partida.adb		partida.ali
+Z system%s		system.ads		system.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D adivinarnumerohelpers.ads  20240503075605 d8839861 adivinarnumerohelpers%s
+D adivinarnumerojuego.ads  20240503065854 21735cf9 adivinarnumerojuego%s
+D adivinarnumerojuego.adb  20240503075654 3b799ddf adivinarnumerojuego%b
+D juego.ads		20240503073119 d42d39aa juego%s
+D partida.ads		20240503000445 3fbeeca8 partida%s
+D system.ads		20230707070819 4635ec04 system%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20230707070819 ed88f8fb system.storage_elements%b
+D s-stratt.ads		20230707070819 aedef97e system.stream_attributes%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D uiadivinarnumerojuego.ads  20240430115633 d317302d uiadivinarnumerojuego%s
+G a e
+G c Z s b [jugar_mano adivinarnumerojuego 14 25 none]
+G c Z s b [informar_al_jugador_si_falla_el_intento adivinarnumerojuego 20 15 none]
+G c Z s s [configuracionadivinarnumeroDA adivinarnumerojuego 6 10 none]
+G c Z s s [configuracionadivinarnumeroDF adivinarnumerojuego 6 10 none]
+G c Z s s [configuracionadivinarnumeroIP adivinarnumerojuego 6 10 none]
+G r c none [jugar_mano adivinarnumerojuego 14 25 none] [pedir_numero_a_la_computadora adivinarnumerohelpers 4 14 none]
+G r c none [jugar_mano adivinarnumerojuego 14 25 none] [pedir_numero_al_jugador uiadivinarnumerojuego 4 14 none]
+G r c none [jugar_mano adivinarnumerojuego 14 25 none] [mostrar_mensaje_al_usuario uiadivinarnumerojuego 6 15 none]
+G r c none [informar_al_jugador_si_falla_el_intento adivinarnumerojuego 20 15 none] [mostrar_mensaje_al_usuario uiadivinarnumerojuego 6 15 none]
+G r s configuracion [configuracionadivinarnumeroIP adivinarnumerojuego 6 10 none] [configuracionIP juego 11 10 none]
+X 6 adivinarnumerohelpers.ads
+2K9*AdivinarNumeroHelpers 6e26 8|4w6 4r33
+4V14*PEDIR_NUMERO_A_LA_COMPUTADORA{natural} 8|16s30
+X 7 adivinarnumerojuego.ads
+3K9*AdivinarNumeroJuego 22l5 22e24 8|6b14 34l5 34t24
+6R10*ConfiguracionAdivinarNumero<9|11R10> 10e15 14P25 14r51 8|8r51
+7i9*maximo{natural} 8|16r96
+8i9*minimo{natural} 8|16r74
+9i9*intentos{natural} 8|15r55
+14V25*JUGAR_MANO{10|7E10}<9|19p14> 14>36 8|8b25 27l9 27t19
+14r36 configuracion{6R10} 8|8b36 15r41 16r60 16r82
+20U15*INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO 20>55 20>85 8|23s13 29b15 32l9
+. 32t48
+20i55 numero_seleccionado{natural} 8|29b55
+20i85 numero_a_adivinar{natural} 8|29b85
+X 8 adivinarnumerojuego.adb
+9i9 numero_a_adivinar{natural} 16m9 19r38 23r73
+10i9 numero_seleccionado{natural} 18m13 19r16 23r53
+11i9 numero_de_intentos_restantes{natural} 15m9 17r15 24m13 24r45
+12e9 ganador{10|7E10} 14m9 20m17 26r16
+X 9 juego.ads
+9K9*Juego 7|2w6 2r17 8|2w6 2r17 9|21e10
+11R10*Configuracion 7|6r45 9|11e45
+X 10 partida.ads
+5K9*Partida 7|1w6 14r87 8|1w6 1r19 8r87 12r18 10|18e12
+7E10*RESULTADO 7|14r95 8|8r95 12r26 10|7e53
+7n24*COMPUTADORA{7E10} 8|14r19
+7n37*JUGADOR{7E10} 8|20r28
+X 23 uiadivinarnumerojuego.ads
+2K9*UIAdivinarNumeroJuego 8|3w6 3r33 23|8e26
+4V14*PEDIR_NUMERO_AL_JUGADOR{natural} 8|18s36
+6U15*MOSTRAR_MENSAJE_AL_USUARIO 8|31s9
+
