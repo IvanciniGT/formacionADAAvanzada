@@ -1,8 +1,17 @@
 -- Definir los juegos que hay disponibles
 with UIGameEngine; use UIGameEngine;
 with Partida; use Partida;
+with Juego; use Juego;
 
 package body GameEngine is
+
+    -- type JUGABLE is access function return RESULTADO;
+    function JUGAR_JUEGO_DUMMY return RESULTADO is
+        type ConfiguracionDummy is new Configuracion with null record;
+        miConfiguracion: ConfiguracionDummy := ConfiguracionDummy'(null record);
+    begin
+        return JUGAR_MANO(miConfiguracion);
+    end JUGAR_JUEGO_DUMMY;
 
     procedure PLAY is
         NUMERO_DE_MANOS_MAXIMO: constant integer := 3;
@@ -14,7 +23,8 @@ package body GameEngine is
 
         Continuar_Jugando: loop
 
-            juegoElegido:= ELEGIR_JUEGO;
+            juegoElegido:= JUGAR_JUEGO_DUMMY'Access;
+            --ELEGIR_JUEGO;
         
             Continuar_Jugando_Al_Mismo_juego: loop
                 ganador:= JUGAR_PARTIDA(juegoElegido, NUMERO_DE_MANOS_MAXIMO, NUMERO_DE_MANOS_PARA_GANAR);

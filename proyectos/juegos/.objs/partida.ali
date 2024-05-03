@@ -10,17 +10,17 @@ RV NO_ACCESS_SUBPROGRAMS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U partida%b		partida.adb		fe3e9438 NE OO PK
+U partida%b		partida.adb		f4f77398 NE OO PK
 Z interfaces%s		interfac.ads		interfac.ali
 W uigameengine%s	uigameengine.adb	uigameengine.ali
 
 U partida%s		partida.ads		3fbeeca8 EE NE OO PK
 
 D interfac.ads		20230707070819 5ab55268 interfaces%s
-D partida.ads		20240430100643 3fbeeca8 partida%s
-D partida.adb		20240430110336 6a13d97e partida%b
+D partida.ads		20240503000445 3fbeeca8 partida%s
+D partida.adb		20240430114630 6a13d97e partida%b
 D system.ads		20230707070819 4635ec04 system%s
-D uigameengine.ads	20240430094108 ab93a1ee uigameengine%s
+D uigameengine.ads	20240503071953 a15a464e uigameengine%s
 G a e
 G c Z s b [jugar_partida partida 16 14 none]
 G r c none [jugar_partida partida 16 14 none] [mostrar_resultado_mano uigameengine 7 15 none]

@@ -16,6 +16,6 @@ package Juego is
     -- Eso si... querré definirlo el dia de mañana.... en funcion del juego... por eso lo defino como tagged
     -- Es algo que suministraremos cuando queramos juagr una mano a ese juego
 
-    function JUGAR_MANO(configuracion: Configuracion) return Partida.RESULTADO;
+    function JUGAR_MANO(config: Configuracion) return Partida.RESULTADO;
 
 end Juego;
