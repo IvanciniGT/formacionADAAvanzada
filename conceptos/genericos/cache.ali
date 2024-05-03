@@ -1,0 +1,28 @@
+V "GNAT Lib v10"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U cache%b		cache.adb		5b75db55 NE OO PK GE
+
+U cache%s		cache.ads		2ca59336 BN EE NE OO PK GE
+
+D cache.ads		20240503082146 2ca59336 cache%s
+D cache.adb		20240503082154 77d04863 cache%b
+D system.ads		20230707070819 4635ec04 system%s
+G a e
+G c Z s b [cache standard 5 9 none]
+X 1 cache.ads
+2E10 TIPO_DE_DATO 9r30 10r31 2|4r20 6r30 11r31
+5k9*Cache 2z10 12l5 12e10 2|2b14 16l5 16t10
+9U15*guardar 9>24 2|6b15 9l9 9t16
+9*24 dato{2E10} 2|6b24 8r26
+10V14*recuperar{2E10} 2|11b14 14l9 14t18
+X 2 cache.adb
+4*5 dato_guardado{1|2E10} 8m9 13r16
+

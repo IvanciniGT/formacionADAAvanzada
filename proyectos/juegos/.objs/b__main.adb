@@ -22,18 +22,21 @@ package body ada_main is
    E050 : Short_Integer; pragma Import (Ada, E050, "system__dwarf_lines_E");
    E021 : Short_Integer; pragma Import (Ada, E021, "system__soft_links__initialize_E");
    E039 : Short_Integer; pragma Import (Ada, E039, "system__traceback__symbolic_E");
+   E110 : Short_Integer; pragma Import (Ada, E110, "ada__numerics_E");
    E101 : Short_Integer; pragma Import (Ada, E101, "ada__tags_E");
    E099 : Short_Integer; pragma Import (Ada, E099, "ada__streams_E");
-   E125 : Short_Integer; pragma Import (Ada, E125, "system__file_control_block_E");
-   E124 : Short_Integer; pragma Import (Ada, E124, "system__finalization_root_E");
-   E122 : Short_Integer; pragma Import (Ada, E122, "ada__finalization_E");
-   E121 : Short_Integer; pragma Import (Ada, E121, "system__file_io_E");
-   E117 : Short_Integer; pragma Import (Ada, E117, "ada__text_io_E");
+   E136 : Short_Integer; pragma Import (Ada, E136, "system__file_control_block_E");
+   E135 : Short_Integer; pragma Import (Ada, E135, "system__finalization_root_E");
+   E133 : Short_Integer; pragma Import (Ada, E133, "ada__finalization_E");
+   E132 : Short_Integer; pragma Import (Ada, E132, "system__file_io_E");
+   E116 : Short_Integer; pragma Import (Ada, E116, "ada__calendar_E");
+   E128 : Short_Integer; pragma Import (Ada, E128, "ada__text_io_E");
+   E114 : Short_Integer; pragma Import (Ada, E114, "system__random_seed_E");
    E109 : Short_Integer; pragma Import (Ada, E109, "adivinarnumerohelpers_E");
-   E113 : Short_Integer; pragma Import (Ada, E113, "partida_E");
-   E115 : Short_Integer; pragma Import (Ada, E115, "uigameengine_E");
-   E111 : Short_Integer; pragma Import (Ada, E111, "juego_E");
-   E129 : Short_Integer; pragma Import (Ada, E129, "uiadivinarnumerojuego_E");
+   E124 : Short_Integer; pragma Import (Ada, E124, "partida_E");
+   E126 : Short_Integer; pragma Import (Ada, E126, "uigameengine_E");
+   E122 : Short_Integer; pragma Import (Ada, E122, "juego_E");
+   E140 : Short_Integer; pragma Import (Ada, E140, "uiadivinarnumerojuego_E");
    E107 : Short_Integer; pragma Import (Ada, E107, "adivinarnumerojuego_E");
    E005 : Short_Integer; pragma Import (Ada, E005, "gameengine_E");
 
@@ -53,14 +56,14 @@ package body ada_main is
       begin
          F1;
       end;
-      E111 := E111 - 1;
+      E122 := E122 - 1;
       declare
          procedure F2;
          pragma Import (Ada, F2, "juego__finalize_spec");
       begin
          F2;
       end;
-      E117 := E117 - 1;
+      E128 := E128 - 1;
       declare
          procedure F3;
          pragma Import (Ada, F3, "ada__text_io__finalize_spec");
@@ -71,7 +74,7 @@ package body ada_main is
          procedure F4;
          pragma Import (Ada, F4, "system__file_io__finalize_body");
       begin
-         E121 := E121 - 1;
+         E132 := E132 - 1;
          F4;
       end;
       declare
@@ -208,29 +211,36 @@ package body ada_main is
       System.Traceback.Symbolic'Elab_Body;
       E039 := E039 + 1;
       E007 := E007 + 1;
+      Ada.Numerics'Elab_Spec;
+      E110 := E110 + 1;
       Ada.Tags'Elab_Spec;
       Ada.Tags'Elab_Body;
       E101 := E101 + 1;
       Ada.Streams'Elab_Spec;
       E099 := E099 + 1;
       System.File_Control_Block'Elab_Spec;
-      E125 := E125 + 1;
+      E136 := E136 + 1;
       System.Finalization_Root'Elab_Spec;
-      E124 := E124 + 1;
+      E135 := E135 + 1;
       Ada.Finalization'Elab_Spec;
-      E122 := E122 + 1;
+      E133 := E133 + 1;
       System.File_Io'Elab_Body;
-      E121 := E121 + 1;
+      E132 := E132 + 1;
+      Ada.Calendar'Elab_Spec;
+      Ada.Calendar'Elab_Body;
+      E116 := E116 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
-      E117 := E117 + 1;
+      E128 := E128 + 1;
+      System.Random_Seed'Elab_Body;
+      E114 := E114 + 1;
       E109 := E109 + 1;
-      E115 := E115 + 1;
-      E113 := E113 + 1;
+      E126 := E126 + 1;
+      E124 := E124 + 1;
       Juego'Elab_Spec;
       Juego'Elab_Body;
-      E111 := E111 + 1;
-      E129 := E129 + 1;
+      E122 := E122 + 1;
+      E140 := E140 + 1;
       ADIVINARNUMEROJUEGO'ELAB_SPEC;
       ADIVINARNUMEROJUEGO'ELAB_BODY;
       E107 := E107 + 1;

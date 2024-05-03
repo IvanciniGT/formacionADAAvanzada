@@ -14,7 +14,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U adivinarnumerojuego%b	adivinarnumerojuego.adb	fa0dbc68 OO PK IU
+U adivinarnumerojuego%b	adivinarnumerojuego.adb	e31d8d5f OO PK IU
 W adivinarnumerohelpers%s  adivinarnumerohelpers.adb  adivinarnumerohelpers.ali
 W juego%s		juego.adb		juego.ali
 W partida%s		partida.adb		partida.ali
@@ -37,7 +37,7 @@ D a-tags.ads		20230707070819 491b781d ada.tags%s
 D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
 D adivinarnumerohelpers.ads  20240503075605 d8839861 adivinarnumerohelpers%s
 D adivinarnumerojuego.ads  20240503065854 21735cf9 adivinarnumerojuego%s
-D adivinarnumerojuego.adb  20240503075654 3b799ddf adivinarnumerojuego%b
+D adivinarnumerojuego.adb  20240503084458 2269ace8 adivinarnumerojuego%b
 D juego.ads		20240503073119 d42d39aa juego%s
 D partida.ads		20240503000445 3fbeeca8 partida%s
 D system.ads		20230707070819 4635ec04 system%s

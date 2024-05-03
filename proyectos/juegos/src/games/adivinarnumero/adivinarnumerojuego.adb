@@ -28,7 +28,7 @@ package body AdivinarNumeroJuego is
 
     procedure INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO(numero_seleccionado: Natural; numero_a_adivinar: Natural) is
     begin
-        MOSTRAR_MENSAJE_AL_USUARIO("El numero seleccionado es incorrecto");
+        MOSTRAR_MENSAJE_AL_USUARIO("El numero seleccionado es incorrecto.");
     end INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO;
 
 end AdivinarNumeroJuego;
