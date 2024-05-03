@@ -1,9 +1,9 @@
 with Partida;
-with Juego; use Juego;
+with Juego;
 package AdivinarNumeroJuego is
 
     -- Defino la configuracion del juego... que ya es una configuracion particular para adivinar un numero
-    type ConfiguracionAdivinarNumero is new Configuracion with Record
+    type ConfiguracionAdivinarNumero is new Juego.Configuracion with Record
         maximo: Natural;
         minimo: Natural;
         intentos: Natural;

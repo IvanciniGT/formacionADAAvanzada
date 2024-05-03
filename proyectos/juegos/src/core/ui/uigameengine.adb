@@ -75,8 +75,8 @@ package body UIGameEngine is
         return PREGUNTAR_SI_O_NO("¿Quieres jugar de nuevo al mismo juego?", "Vale, no te gusta este juego...");
     end JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
 
-    function ELEGIR_JUEGO return JUGABLE is
-        juegoElegido: JUGABLE;
+    function ELEGIR_JUEGO return String is
+        juegoElegido: String := " ";
     begin
         -- Preguntar al usuario qué juego quiere jugar
         -- Devolver el juego elegido

@@ -14,6 +14,6 @@ package UIGameEngine is
 
     function JUGAR_DE_NUEVO_AL_MISMO_JUEGO return boolean;
 
-    function ELEGIR_JUEGO return JUGABLE;
+    function ELEGIR_JUEGO return String;
 
 end UIGameEngine;

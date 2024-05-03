@@ -1,8 +1,22 @@
 -- Definir los juegos que hay disponibles
 with UIGameEngine; use UIGameEngine;
 with Partida; use Partida;
-
+with AdivinarNumeroJuego; use AdivinarNumeroJuego;
+with Juego; use Juego;
 package body GameEngine is
+
+    function JUGAR_ADIVINAR_NUMERO return RESULTADO is
+        configuracion: ConfiguracionAdivinarNumero := ( minimo => 1, maximo => 20, intentos => 3);
+    begin
+        return JUGAR_MANO(configuracion);
+    end JUGAR_ADIVINAR_NUMERO;
+
+    function OTRO_JUGAR return RESULTADO is
+        type vacia is new Configuracion with null record;
+        configuracion: vacia := vacia'(null record);
+    begin
+        return JUGAR_MANO(configuracion);
+    end OTRO_JUGAR;
 
     procedure PLAY is
         NUMERO_DE_MANOS_MAXIMO: constant integer := 3;
@@ -13,8 +27,8 @@ package body GameEngine is
         MOSTRAR_BIENVENIDA;
 
         Continuar_Jugando: loop
-
-            juegoElegido:= ELEGIR_JUEGO;
+            --juegoElegido:= JUGABLE'(JUGAR_ADIVINAR_NUMERO'Access);
+            juegoElegido:= JUGABLE'(OTRO_JUGAR'Access);
         
             Continuar_Jugando_Al_Mismo_juego: loop
                 ganador:= JUGAR_PARTIDA(juegoElegido, NUMERO_DE_MANOS_MAXIMO, NUMERO_DE_MANOS_PARA_GANAR);

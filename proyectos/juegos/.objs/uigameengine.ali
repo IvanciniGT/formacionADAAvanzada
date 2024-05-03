@@ -1,25 +1,26 @@
 V "GNAT Lib v10"
 A -gnatA
-A -g
+A -gnat2012
 A -mtune=generic
 A -march=x86-64
-P ZX
+P SS ZX
 
 RN
 RV NO_IO
-RV NO_DEFAULT_INITIALIZATION
+RV NO_SECONDARY_STACK
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U uigameengine%b	uigameengine.adb	dfbe7c42 NE OO PK IU
+U uigameengine%b	uigameengine.adb	82f370bd NE OO PK IU
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z interfaces%s		interfac.ads		interfac.ali
 W partida%s		partida.adb		partida.ali
 Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 
-U uigameengine%s	uigameengine.ads	942d4d46 EE NE OO PK IU
+U uigameengine%s	uigameengine.ads	9ee4aae6 EE NE OO PK IU
 W partida%s		partida.adb		partida.ali
 
 D ada.ads		20230707070819 76789da1 ada%s
@@ -31,7 +32,7 @@ D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
 D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20230707070819 5ab55268 interfaces%s
 D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
-D partida.ads		20240430100643 3fbeeca8 partida%s
+D partida.ads		20240503000445 3fbeeca8 partida%s
 D system.ads		20230707070819 4635ec04 system%s
 D s-conca2.ads		20230707070819 02a0d7d0 system.concat_2%s
 D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
@@ -46,8 +47,8 @@ D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
 D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
-D uigameengine.ads	20240430094108 ab93a1ee uigameengine%s
-D uigameengine.adb	20240430111106 e567e469 uigameengine%b
+D uigameengine.ads	20240503003859 a15a464e uigameengine%s
+D uigameengine.adb	20240503003848 b2e30f36 uigameengine%b
 G a e
 G c Z s b [mostrar_bienvenida uigameengine 5 15 none]
 G c Z s b [mostrar_resultado_mano uigameengine 7 15 none]
@@ -71,24 +72,23 @@ X 10 partida.ads
 7n24*COMPUTADORA{7E10} 26|16r25 28r18
 7n37*JUGADOR{7E10} 26|14r22 26r18
 7n46*EMPATE{7E10} 26|30r18
-8P10*JUGABLE(7E10) 25|17r34 26|80r34 81r23
 X 25 uigameengine.ads
-3K9*UIGameEngine 19l5 19e17 26|5b14 88l5 88t17
+3K9*UIGameEngine 19l5 19e17 26|5b14 86l5 86t17
 5U15*MOSTRAR_BIENVENIDA 26|7b15 10l9 10t27
 7U15*MOSTRAR_RESULTADO_MANO 7>38 26|12b15 21l9 21t31
 7e38 ganador{10|7E10} 26|12b38 14r12 16r15
 9U15*MOSTRAR_RESULTADO_PARTIDA 9>41 26|23b15 33l9 33t34
 9e41 ganador{10|7E10} 26|23b41 25r14
 11U15*MOSTRAR_DESPEDIDA 26|35b15 38l9 38t26
-13V14*JUGAR_A_OTRO_JUEGO{boolean} 26|69b14 72l9 72t27
-15V14*JUGAR_DE_NUEVO_AL_MISMO_JUEGO{boolean} 26|74b14 77l9 77t38
-17V14*ELEGIR_JUEGO{10|8P10} 26|80b14 86l9 86t21
+13V14*JUGAR_A_OTRO_JUEGO{boolean} 26|68b14 71l9 71t27
+15V14*JUGAR_DE_NUEVO_AL_MISMO_JUEGO{boolean} 26|73b14 76l9 76t38
+17V14*ELEGIR_JUEGO{string} 26|78b14 84l9 84t21
 X 26 uigameengine.adb
-41V14 PREGUNTAR_SI_O_NO{boolean} 41b14 41>32 41>50 66l9 66t26 71s16 76s16
+41V14 PREGUNTAR_SI_O_NO{boolean} 41b14 41>32 41>50 66l9 66t26 70s16 75s16
 41a32 pregunta{string} 46r17
 41a50 respuesta_si_no_atina{string} 60r34
 42b9 respuesta{boolean} 52m21 65r16
 43e9 caracter_pulsado{character} 47m17 50r18
 45i13 Oportunidades{integer} 57r24
-81p9 juegoElegido{10|8P10} 85r16
+79a9 juegoElegido{string} 83r16
 

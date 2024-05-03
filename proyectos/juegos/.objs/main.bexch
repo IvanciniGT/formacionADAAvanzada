@@ -1,11 +1,15 @@
 [GENERATED OBJECT FILE]
 b__main.o
 [PROJECT FILES]
-/home/parallels/Desktop/ada/proyectos/juegos/juego.gpr
-20240430085856 b826f62b20617ba5b9a88ead1037ab7c
+/home/parallels/Desktop/ada/proyectos/juegos/juegos.gpr
+20240503004721 9415343ef70abeb0e49357f0079c8646
 [BOUND OBJECT FILES]
+/home/parallels/Desktop/ada/proyectos/juegos/.objs/adivinarnumerohelpers.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/uigameengine.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/partida.o
+/home/parallels/Desktop/ada/proyectos/juegos/.objs/juego.o
+/home/parallels/Desktop/ada/proyectos/juegos/.objs/uiadivinarnumerojuego.o
+/home/parallels/Desktop/ada/proyectos/juegos/.objs/adivinarnumerojuego.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/gameengine.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/main.o
 [GENERATED SOURCE FILES]

@@ -1,7 +1,7 @@
-with Partida;
+with Partida; use Partida;
 with Juego; use Juego;
 with UIAdivinarNumeroJuego; use UIAdivinarNumeroJuego;
-with AdivinarJuegoHelpers; use AdivinarJuegoHelpers;
+with AdivinarNumeroHelpers; use AdivinarNumeroHelpers;
 
 package body AdivinarNumeroJuego is
 
@@ -14,15 +14,15 @@ package body AdivinarNumeroJuego is
         ganador:= COMPUTADORA; -- Asumo por defecto que gana la computadora
         numero_de_intentos_restantes := configuracion.intentos;
         numero_a_adivinar := PEDIR_NUMERO_A_LA_COMPUTADORA(configuracion.minimo, configuracion.maximo);
-        while numero_de_intentos_restantes > 0 loop
+        salir:while numero_de_intentos_restantes > 0 loop
             numero_seleccionado := PEDIR_NUMERO_AL_JUGADOR;
             if numero_seleccionado = numero_a_adivinar then
                 ganador := JUGADOR;
-                exit;
+                exit salir;
             end if;
-            INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO;
+            INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO(numero_seleccionado, numero_a_adivinar);
             numero_de_intentos_restantes := numero_de_intentos_restantes - 1;
-        end loop;
+        end loop salir;
         return ganador;
     end JUGAR_MANO;
 

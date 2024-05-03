@@ -1,7 +1,7 @@
 V "GNAT Lib v10"
 M P W=b
 A -gnatA
-A -g
+A -gnat2012
 A -mtune=generic
 A -march=x86-64
 P ZX
@@ -15,9 +15,9 @@ W gameengine%s		gameengine.adb		gameengine.ali
 
 D gameengine.ads	20240430085746 6fecc884 gameengine%s
 D main.adb		20240430074551 88418ba7 main%b
-D partida.ads		20240430100643 3fbeeca8 partida%s
+D partida.ads		20240503000445 3fbeeca8 partida%s
 D system.ads		20230707070819 4635ec04 system%s
-D uigameengine.ads	20240430094108 ab93a1ee uigameengine%s
+D uigameengine.ads	20240503003859 a15a464e uigameengine%s
 G a e
 G c Z b b [main standard 3 11 none]
 G r c none [main standard 3 11 none] [play gameengine 5 15 none]
