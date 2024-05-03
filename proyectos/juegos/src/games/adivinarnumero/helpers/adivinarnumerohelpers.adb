@@ -16,5 +16,7 @@ package body AdivinarNumeroHelpers is
         Reset(generador_numeros_aleatorios);
         return Random(generador_numeros_aleatorios);
     end PEDIR_NUMERO_A_LA_COMPUTADORA;
+    
+    -- Refactorizar el código y a Optimizar
 
 end AdivinarNumeroHelpers;
