@@ -4,7 +4,6 @@ package UIJuegoAhorcado is
 
     function PEDIR_LETRA_AL_JUGADOR return Character;
 
-    procedure MOSTRAR_ESTADO(vidas: Integer; palabraEnmascarada:String; letrasUsadas: Unbounded_String);
+    procedure MOSTRAR_ESTADO(vidas: Integer; palabra_enmascarada:String; letras_usadas: Unbounded_String);
 
-end package UIJuegoAhorcado is
-;
+end UIJuegoAhorcado ;
