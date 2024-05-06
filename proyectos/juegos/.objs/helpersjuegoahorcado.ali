@@ -19,7 +19,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U helpersjuegoahorcado%b  helpersjuegoahorcado.adb  61fe52ea NE OO PK IU
+U helpersjuegoahorcado%b  helpersjuegoahorcado.adb  d0c82f0d NE OO PK IU
 W ada%s			ada.ads			ada.ali
 W ada.characters%s	a-charac.ads		a-charac.ali
 W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
@@ -92,8 +92,8 @@ D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
 D a-tiinio.ads		20230707070819 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20230707070819 eff36322 ada.unchecked_deallocation%s
-D helpersjuegoahorcado.ads  20240506101444 7b7f636a helpersjuegoahorcado%s
-D helpersjuegoahorcado.adb  20240506110850 d7bf51af helpersjuegoahorcado%b
+D helpersjuegoahorcado.ads  20240506111931 7b7f636a helpersjuegoahorcado%s
+D helpersjuegoahorcado.adb  20240506111946 66892c48 helpersjuegoahorcado%b
 D interfac.ads		20230707070819 5ab55268 interfaces%s
 D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
 D randomhelpers.ads	20240506073420 0f0e06fb randomhelpers%s
@@ -269,7 +269,7 @@ X 2 a-charac.ads
 16K13*Characters 18e19 28|4r10 4r39
 X 3 a-chahan.ads
 36K24*Handling 159e28 28|4w21 4r50
-71V13*To_Upper{string} 28|39s19
+71V13*To_Upper{string} 28|39s16
 X 5 a-contai.ads
 16K13*Containers 28e19 27|1r10 5r47
 X 9 a-convec.ads
@@ -327,7 +327,7 @@ X 27 helpersjuegoahorcado.ads
 12V14*NORMALIZAR_PALABRA{string} 12>33 28|32b14 35l9 35t27
 12a33 palabra{string} 28|32b33 34r26
 13V14*NORMALIZAR_CARACTER{string} 13>34 28|37b14 40l9 40t28
-13a34 letra{string} 28|37b34 39r28
+13a34 letra{string} 28|37b34 39r25
 14V14*CARGAR_PALABRAS_DE_FICHERO{9R13} 14>41 28|42b14 61l9 61t35
 14a41 tematica{string} 28|42b41 49r21
 15V14*ELEGIR_PALABRA_ALEATORIAMENTE{string} 15>44 28|63b14 68l9 68t38

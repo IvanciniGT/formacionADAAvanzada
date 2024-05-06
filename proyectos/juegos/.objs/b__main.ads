@@ -409,7 +409,7 @@ package ada_main is
    pragma Export (C, u00185, "ada__strings__fixedB");
    u00186 : constant Version_32 := 16#fec1aafc#;
    pragma Export (C, u00186, "ada__strings__fixedS");
-   u00187 : constant Version_32 := 16#61fe52ea#;
+   u00187 : constant Version_32 := 16#d0c82f0d#;
    pragma Export (C, u00187, "helpersjuegoahorcadoB");
    u00188 : constant Version_32 := 16#13021cee#;
    pragma Export (C, u00188, "helpersjuegoahorcadoS");

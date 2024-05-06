@@ -68,7 +68,7 @@ D a-strunb.ads		20230707070819 1656705b ada.strings.unbounded%s
 D a-tags.ads		20230707070819 491b781d ada.tags%s
 D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20230707070819 eff36322 ada.unchecked_deallocation%s
-D helpersjuegoahorcado.ads  20240506101444 7b7f636a helpersjuegoahorcado%s
+D helpersjuegoahorcado.ads  20240506111931 7b7f636a helpersjuegoahorcado%s
 D juego.ads		20240503073119 d42d39aa juego%s
 D juegoahorcado.ads	20240506101256 c925a914 juegoahorcado%s
 D juegoahorcado.adb	20240506101635 7eccc2fa juegoahorcado%b

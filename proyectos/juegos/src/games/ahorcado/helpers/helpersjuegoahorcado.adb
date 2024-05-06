@@ -36,7 +36,7 @@ package body HelpersJuegoAhorcado is
     
     function NORMALIZAR_CARACTER(letra: String) return String is
     begin
-        return ""&TO_UPPER(letra); -- Convertimos a mayusculas un caracter. Ada.Characters.Handling.TO_UPPER(character) 
+        return TO_UPPER(letra); -- Convertimos a mayusculas un caracter. Ada.Characters.Handling.TO_UPPER(character) 
     end NORMALIZAR_CARACTER;
     
     function CARGAR_PALABRAS_DE_FICHERO(tematica: String) return ListadoPalabras is
