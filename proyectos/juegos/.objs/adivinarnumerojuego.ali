@@ -14,10 +14,10 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U adivinarnumerojuego%b	adivinarnumerojuego.adb	e31d8d5f OO PK IU
-W adivinarnumerohelpers%s  adivinarnumerohelpers.adb  adivinarnumerohelpers.ali
+U adivinarnumerojuego%b	adivinarnumerojuego.adb	758a590c OO PK IU
 W juego%s		juego.adb		juego.ali
 W partida%s		partida.adb		partida.ali
+W randomhelpers%s	randomhelpers.adb	randomhelpers.ali
 W uiadivinarnumerojuego%s  uiadivinarnumerojuego.adb  uiadivinarnumerojuego.ali
 
 U adivinarnumerojuego%s	adivinarnumerojuego.ads	cae089fb EE OO PF PK IU
@@ -35,11 +35,11 @@ D a-except.ads		20230707070819 a7106115 ada.exceptions%s
 D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
 D a-tags.ads		20230707070819 491b781d ada.tags%s
 D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
-D adivinarnumerohelpers.ads  20240503075605 d8839861 adivinarnumerohelpers%s
 D adivinarnumerojuego.ads  20240503065854 21735cf9 adivinarnumerojuego%s
-D adivinarnumerojuego.adb  20240503084458 2269ace8 adivinarnumerojuego%b
+D adivinarnumerojuego.adb  20240506073442 6373e621 adivinarnumerojuego%b
 D juego.ads		20240503073119 d42d39aa juego%s
 D partida.ads		20240503000445 3fbeeca8 partida%s
+D randomhelpers.ads	20240506073420 0f0e06fb randomhelpers%s
 D system.ads		20230707070819 4635ec04 system%s
 D s-exctab.ads		20230707070819 54135002 system.exception_table%s
 D s-parame.ads		20230707070819 48ec542b system.parameters%s
@@ -59,41 +59,41 @@ G c Z s b [informar_al_jugador_si_falla_el_intento adivinarnumerojuego 20 15 non
 G c Z s s [configuracionadivinarnumeroDA adivinarnumerojuego 6 10 none]
 G c Z s s [configuracionadivinarnumeroDF adivinarnumerojuego 6 10 none]
 G c Z s s [configuracionadivinarnumeroIP adivinarnumerojuego 6 10 none]
-G r c none [jugar_mano adivinarnumerojuego 14 25 none] [pedir_numero_a_la_computadora adivinarnumerohelpers 4 14 none]
+G r c none [jugar_mano adivinarnumerojuego 14 25 none] [pedir_numero_a_la_computadora randomhelpers 4 14 none]
 G r c none [jugar_mano adivinarnumerojuego 14 25 none] [pedir_numero_al_jugador uiadivinarnumerojuego 4 14 none]
 G r c none [jugar_mano adivinarnumerojuego 14 25 none] [mostrar_mensaje_al_usuario uiadivinarnumerojuego 6 15 none]
 G r c none [informar_al_jugador_si_falla_el_intento adivinarnumerojuego 20 15 none] [mostrar_mensaje_al_usuario uiadivinarnumerojuego 6 15 none]
 G r s configuracion [configuracionadivinarnumeroIP adivinarnumerojuego 6 10 none] [configuracionIP juego 11 10 none]
-X 6 adivinarnumerohelpers.ads
-2K9*AdivinarNumeroHelpers 6e26 8|4w6 4r33
-4V14*PEDIR_NUMERO_A_LA_COMPUTADORA{natural} 8|16s30
-X 7 adivinarnumerojuego.ads
-3K9*AdivinarNumeroJuego 22l5 22e24 8|6b14 34l5 34t24
-6R10*ConfiguracionAdivinarNumero<9|11R10> 10e15 14P25 14r51 8|8r51
-7i9*maximo{natural} 8|16r96
-8i9*minimo{natural} 8|16r74
-9i9*intentos{natural} 8|15r55
-14V25*JUGAR_MANO{10|7E10}<9|19p14> 14>36 8|8b25 27l9 27t19
-14r36 configuracion{6R10} 8|8b36 15r41 16r60 16r82
-20U15*INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO 20>55 20>85 8|23s13 29b15 32l9
+X 6 adivinarnumerojuego.ads
+3K9*AdivinarNumeroJuego 22l5 22e24 7|6b14 34l5 34t24
+6R10*ConfiguracionAdivinarNumero<8|11R10> 10e15 14P25 14r51 7|8r51
+7i9*maximo{natural} 7|16r96
+8i9*minimo{natural} 7|16r74
+9i9*intentos{natural} 7|15r55
+14V25*JUGAR_MANO{9|7E10}<8|19p14> 14>36 7|8b25 27l9 27t19
+14r36 configuracion{6R10} 7|8b36 15r41 16r60 16r82
+20U15*INFORMAR_AL_JUGADOR_SI_FALLA_EL_INTENTO 20>55 20>85 7|23s13 29b15 32l9
 . 32t48
-20i55 numero_seleccionado{natural} 8|29b55
-20i85 numero_a_adivinar{natural} 8|29b85
-X 8 adivinarnumerojuego.adb
+20i55 numero_seleccionado{natural} 7|29b55
+20i85 numero_a_adivinar{natural} 7|29b85
+X 7 adivinarnumerojuego.adb
 9i9 numero_a_adivinar{natural} 16m9 19r38 23r73
 10i9 numero_seleccionado{natural} 18m13 19r16 23r53
 11i9 numero_de_intentos_restantes{natural} 15m9 17r15 24m13 24r45
-12e9 ganador{10|7E10} 14m9 20m17 26r16
-X 9 juego.ads
-9K9*Juego 7|2w6 2r17 8|2w6 2r17 9|21e10
-11R10*Configuracion 7|6r45 9|11e45
-X 10 partida.ads
-5K9*Partida 7|1w6 14r87 8|1w6 1r19 8r87 12r18 10|18e12
-7E10*RESULTADO 7|14r95 8|8r95 12r26 10|7e53
-7n24*COMPUTADORA{7E10} 8|14r19
-7n37*JUGADOR{7E10} 8|20r28
+12e9 ganador{9|7E10} 14m9 20m17 26r16
+X 8 juego.ads
+9K9*Juego 6|2w6 2r17 7|2w6 2r17 8|21e10
+11R10*Configuracion 6|6r45 8|11e45
+X 9 partida.ads
+5K9*Partida 6|1w6 14r87 7|1w6 1r19 8r87 12r18 9|18e12
+7E10*RESULTADO 6|14r95 7|8r95 12r26 9|7e53
+7n24*COMPUTADORA{7E10} 7|14r19
+7n37*JUGADOR{7E10} 7|20r28
+X 10 randomhelpers.ads
+2K9*RandomHelpers 7|4w6 4r25 10|6e18
+4V14*PEDIR_NUMERO_A_LA_COMPUTADORA{natural} 7|16s30
 X 23 uiadivinarnumerojuego.ads
-2K9*UIAdivinarNumeroJuego 8|3w6 3r33 23|8e26
-4V14*PEDIR_NUMERO_AL_JUGADOR{natural} 8|18s36
-6U15*MOSTRAR_MENSAJE_AL_USUARIO 8|31s9
+2K9*UIAdivinarNumeroJuego 7|3w6 3r33 23|8e26
+4V14*PEDIR_NUMERO_AL_JUGADOR{natural} 7|18s36
+6U15*MOSTRAR_MENSAJE_AL_USUARIO 7|31s9
 

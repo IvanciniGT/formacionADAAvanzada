@@ -1,0 +1,74 @@
+V "GNAT Lib v10"
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U randomhelpers%b	randomhelpers.adb	c06f7bb4 NE OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
+W system%s		system.ads		system.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+
+U randomhelpers%s	randomhelpers.ads	0f0e06fb EE NE OO PK IU
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-numeri.ads		20230707070819 bb51c45a ada.numerics%s
+D a-nudira.ads		20230707070819 71e55def ada.numerics.discrete_random%s
+D a-nudira.adb		20230707070819 72908cdb ada.numerics.discrete_random%b
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D randomhelpers.ads	20240506073420 0f0e06fb randomhelpers%s
+D randomhelpers.adb	20240506073416 be8420a0 randomhelpers%b
+D system.ads		20230707070819 4635ec04 system%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-imguns.ads		20230707070819 9ff43cf7 system.img_uns%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-rannum.ads		20230707070819 99ade2f2 system.random_numbers%s
+D s-rannum.adb		20230707070819 20ba1217 system.random_numbers%b
+D s-ransee.ads		20230707070819 01a57b33 system.random_seed%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-valuns.ads		20230707070819 35067db9 system.val_uns%s
+G a e
+G c Z s b [pedir_numero_a_la_computadora randomhelpers 4 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 8|1r6 9r42
+X 2 a-numeri.ads
+16K13*Numerics 32e17 8|1r10 9r46
+X 3 a-nudira.ads
+42E9 Result_Subtype 8|10r13
+44k22*Discrete_Random 75e33 8|1w19 9r55
+50R9 Generator<13|63R9> 8|13r39[9]
+52V13 Random{integer} 8|17s16[9]
+55U14 Reset<13|100p14> 8|16s9[9]
+X 4 a-nudira.adb
+53V16 Random[13|83]{integer} 14|392b13[8|9]
+X 6 interfac.ads
+74M9*Unsigned_32
+77M9*Unsigned_64
+X 7 randomhelpers.ads
+2K9*RandomHelpers 6l5 6e18 8|3b14 23l5 23t18
+4V14*PEDIR_NUMERO_A_LA_COMPUTADORA{natural} 4>44 4>61 8|5b14 18l9 18t38
+4i44 minimo{natural} 8|5b44 7r49
+4i61 maximo{natural} 8|5b61 7r59
+X 8 randomhelpers.adb
+7I17 Rango_Numerico{natural} 10r31
+9K17 NumerosAleatorios[3|44] 11r16
+13r9 generador_numeros_aleatorios{3|50R9[9]} 16r15 17r23
+X 13 s-rannum.ads
+75V13*Random{6|74M9} 14|221i21
+76V13*Random{6|77M9} 14|221i21
+

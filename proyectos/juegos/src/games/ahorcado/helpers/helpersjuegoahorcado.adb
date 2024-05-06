@@ -25,6 +25,7 @@ package body HelpersJuegoAhorcado is
                 Replace_Element(palabra_enmascarada, INDICE_ACTUAL, '_'); --- palabra_enmascarada(INDICE_ACTUAL) = '_';
             end if;
         end loop;
+        return palabra_enmascarada;
     end ENMASCARAR;
     
     function NORMALIZAR_PALABRA(palabra: String) return String is
@@ -32,9 +33,9 @@ package body HelpersJuegoAhorcado is
         return Translate(palabra, Upper_Case_Map ); -- Convertimos a mayusculas la palabra (string)... explicado en el ejemplo de strings
     end NORMALIZAR_PALABRA;
     
-    function NORMALIZAR_CARACTER(letra: Character) return String is
+    function NORMALIZAR_CARACTER(letra: String) return String is
     begin
-        return TO_UPPER(letra); -- Convertimos a mayusculas un caracter. Ada.Characters.Handling.TO_UPPER(character) 
+        return ""&TO_UPPER(letra); -- Convertimos a mayusculas un caracter. Ada.Characters.Handling.TO_UPPER(character) 
     end NORMALIZAR_CARACTER;
     
     function CARGAR_PALABRAS_DE_FICHERO(tematica: String) return ListadoPalabras is
@@ -62,7 +63,7 @@ package body HelpersJuegoAhorcado is
         indice_palabra: Natural;
     begin
         indice_palabra := PEDIR_NUMERO_A_LA_COMPUTADORA(palabras.FIRST_INDEX, palabras.LAST_INDEX);
-        return palabras(indice_palabra);
+        return To_String(palabras(indice_palabra));
     end ELEGIR_PALABRA_ALEATORIAMENTE;
 
 end HelpersJuegoAhorcado;

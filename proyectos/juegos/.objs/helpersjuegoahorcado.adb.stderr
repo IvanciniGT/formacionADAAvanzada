@@ -1,0 +1,43 @@
+helpersjuegoahorcado.adb:22:40: expected private type "Ada.Strings.Unbounded.Unbounded_String"
+helpersjuegoahorcado.adb:22:40: found type "Standard.String"
+helpersjuegoahorcado.adb:23:26: no candidate interpretations match the actuals:
+helpersjuegoahorcado.adb:23:26: missing argument for parameter "From" in call to "INDEX" declared at a-strunb.ads:385
+helpersjuegoahorcado.adb:23:26: missing argument for parameter "From" in call to "INDEX" declared at a-strunb.ads:371
+helpersjuegoahorcado.adb:23:26: missing argument for parameter "From" in call to "INDEX" declared at a-strunb.ads:358
+helpersjuegoahorcado.adb:23:26: missing argument for parameter "Mapping" in call to "INDEX" declared at a-strunb.ads:341
+helpersjuegoahorcado.adb:23:26: missing argument for parameter "From" in call to "INDEX" declared at a-strfix.ads:177
+helpersjuegoahorcado.adb:23:26: missing argument for parameter "Mapping" in call to "INDEX" declared at a-strfix.ads:152
+helpersjuegoahorcado.adb:23:26: missing argument for parameter "From" in call to "INDEX" declared at a-strfix.ads:117
+helpersjuegoahorcado.adb:23:26: missing argument for parameter "From" in call to "INDEX" declared at a-strfix.ads:104
+helpersjuegoahorcado.adb:23:32: expected private type "Ada.Strings.Unbounded.Unbounded_String"
+helpersjuegoahorcado.adb:23:32: found type "Standard.String"
+helpersjuegoahorcado.adb:23:32:   ==> in call to "Index" at a-strunb.ads:350
+helpersjuegoahorcado.adb:23:32:   ==> in call to "Index" at a-strunb.ads:332
+helpersjuegoahorcado.adb:23:51: expected private type "Ada.Strings.Maps.Character_Set"
+helpersjuegoahorcado.adb:23:51: found type "Standard.Character"
+helpersjuegoahorcado.adb:23:51:   ==> in call to "Index" at a-strfix.ads:169
+helpersjuegoahorcado.adb:23:51:   ==> in call to "Index" at a-strfix.ads:143
+helpersjuegoahorcado.adb:24:26: no candidate interpretations match the actuals:
+helpersjuegoahorcado.adb:24:26: missing argument for parameter "From" in call to "INDEX" declared at a-strunb.ads:385
+helpersjuegoahorcado.adb:24:26: missing argument for parameter "From" in call to "INDEX" declared at a-strunb.ads:371
+helpersjuegoahorcado.adb:24:26: missing argument for parameter "From" in call to "INDEX" declared at a-strunb.ads:358
+helpersjuegoahorcado.adb:24:26: missing argument for parameter "Mapping" in call to "INDEX" declared at a-strunb.ads:341
+helpersjuegoahorcado.adb:24:26: missing argument for parameter "From" in call to "INDEX" declared at a-strfix.ads:177
+helpersjuegoahorcado.adb:24:26: missing argument for parameter "Mapping" in call to "INDEX" declared at a-strfix.ads:152
+helpersjuegoahorcado.adb:24:26: missing argument for parameter "From" in call to "INDEX" declared at a-strfix.ads:117
+helpersjuegoahorcado.adb:24:26: missing argument for parameter "From" in call to "INDEX" declared at a-strfix.ads:104
+helpersjuegoahorcado.adb:24:32: expected private type "Ada.Strings.Unbounded.Unbounded_String"
+helpersjuegoahorcado.adb:24:32: found type "Standard.String"
+helpersjuegoahorcado.adb:24:32:   ==> in call to "Index" at a-strunb.ads:350
+helpersjuegoahorcado.adb:24:32:   ==> in call to "Index" at a-strunb.ads:332
+helpersjuegoahorcado.adb:24:55: expected private type "Ada.Strings.Maps.Character_Set"
+helpersjuegoahorcado.adb:24:55: found type "Standard.Character"
+helpersjuegoahorcado.adb:24:55:   ==> in call to "Index" at a-strfix.ads:169
+helpersjuegoahorcado.adb:24:55:   ==> in call to "Index" at a-strfix.ads:143
+helpersjuegoahorcado.adb:25:33: expected private type "Ada.Strings.Unbounded.Unbounded_String"
+helpersjuegoahorcado.adb:25:33: found type "Standard.String"
+helpersjuegoahorcado.adb:25:33:   ==> in call to "Replace_Element" at a-strunb.ads:198
+helpersjuegoahorcado.adb:55:39: expected private type "Ada.Containers.Vectors.Vector" from instance at helpersjuegoahorcado.ads:5
+helpersjuegoahorcado.adb:55:39: found type "Standard.String"
+helpersjuegoahorcado.adb:55:39:   ==> in call to "Append" at a-convec.ads:426, instance at helpersjuegoahorcado.ads:5
+helpersjuegoahorcado.adb:55:39:   ==> in call to "Append" at a-convec.ads:431, instance at helpersjuegoahorcado.ads:5

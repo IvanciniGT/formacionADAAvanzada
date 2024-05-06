@@ -6,7 +6,10 @@ project Juego is
                         "./src/core/ui",
                         "./src/core/helpers",
                         "./src/games/adivinarnumero",
-                        "./src/games/adivinarnumero/ui"
+                        "./src/games/adivinarnumero/ui",
+                        "./src/games/ahorcado",
+                        "./src/games/ahorcado/helpers",
+                        "./src/games/ahorcado/ui"
                         );
    for Exec_Dir use "bin";
    package Compiler is
