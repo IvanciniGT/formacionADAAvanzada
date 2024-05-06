@@ -1,6 +1,6 @@
 with Ada.Numerics.Discrete_Random;
 
-package body AdivinarNumeroHelpers is
+package body RandomHelpers is
 
     function PEDIR_NUMERO_A_LA_COMPUTADORA(minimo: Natural; maximo: Natural) return Natural is 
 
@@ -17,6 +17,7 @@ package body AdivinarNumeroHelpers is
         return Random(generador_numeros_aleatorios);
     end PEDIR_NUMERO_A_LA_COMPUTADORA;
     
-    -- Refactorizar el código y a Optimizar
+    -- TODO Refactorizar el código 
+    -- TODO Optimizarlo
 
-end AdivinarNumeroHelpers;
+end RandomHelpers;

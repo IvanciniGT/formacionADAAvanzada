@@ -1,7 +1,7 @@
 with Partida; use Partida;
 with Juego; use Juego;
 with UIAdivinarNumeroJuego; use UIAdivinarNumeroJuego;
-with AdivinarNumeroHelpers; use AdivinarNumeroHelpers;
+with RandomHelpers; use RandomHelpers;
 
 package body AdivinarNumeroJuego is
 
