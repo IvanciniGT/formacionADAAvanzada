@@ -83,7 +83,7 @@ D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
 D uigameengine.ads	20240506112746 69cbd67e uigameengine%s
-D uigameengine.adb	20240506114508 5e1b8463 uigameengine%b
+D uigameengine.adb	20240506114526 5e1b8463 uigameengine%b
 G a e
 G c Z s b [mostrar_bienvenida uigameengine 5 15 none]
 G c Z s b [mostrar_resultado_mano uigameengine 7 15 none]
@@ -98,8 +98,8 @@ X 1 ada.ads
 X 8 a-convec.ads
 78I12*Extended_Index{integer}
 88R9*Vector<10|43R9>
-512V13*First_Index{integer} 50|82s56[22|8]
-522V13*Last_Index{78I12[22|8]} 50|82s96[22|8] 85s61[22|8]
+512V13*First_Index{integer} 50|83s56[22|8]
+522V13*Last_Index{78I12[22|8]} 50|83s96[22|8] 87s61[22|8]
 X 11 a-inteio.ads
 18K13*Integer_Text_IO[20|46] 50|4w10 4r35
 X 13 a-iteint.ads
@@ -109,18 +109,18 @@ X 15 a-string.ads
 16K13*Strings 35e16 50|2r10 2r37
 X 17 a-strunb.ads
 82K21*Unbounded 756e26 50|2w18 2r45
-116V13*To_String{string} 50|83s52 88s16
+116V13*To_String{string} 50|84s52 93s16
 238V14*"="{boolean} 8|64i19
 256V14*"<"{boolean} 6|44i19
 X 19 a-textio.ads
 57K13*Text_IO 727e16 50|1w10 1r27
-273U14*Skip_Line 50|49s13 87s9
+273U14*Skip_Line 50|49s13 91s9
 381U14*Get 50|48s13
-465U14*Put 50|47s13 85s9
+465U14*Put 50|47s13 87s9
 508U14*Put_Line 50|10s9 16s13 18s13 20s13 28s17 30s17 32s17 38s9 59s25 61s25
-. 83s13
+. 84s13
 X 20 a-tiinio.ads
-59U14*Get 50|86s9[11|18]
+59U14*Get 50|89s9[11|18]
 X 22 gamelibrary.ads
 5K9*GameLibrary 27e16 49|2w6 17r53 50|79r53
 12R13*T_LISTADO_NOMBRES_JUEGOS{8|88R9[8]} 49|17r65 50|79r65
@@ -131,7 +131,7 @@ X 25 partida.ads
 7n37*JUGADOR{7E10} 50|15r22 27r18
 7n46*EMPATE{7E10} 50|31r18
 X 49 uigameengine.ads
-3K9*UIGameEngine 19l5 19e17 50|6b14 91l5 91t17
+3K9*UIGameEngine 19l5 19e17 50|6b14 97l5 97t17
 5U15*MOSTRAR_BIENVENIDA 50|8b15 11l9 11t27
 7U15*MOSTRAR_RESULTADO_MANO 7>38 50|13b15 22l9 22t31
 7e38 ganador{25|7E10} 50|13b38 15r12 17r15
@@ -140,9 +140,9 @@ X 49 uigameengine.ads
 11U15*MOSTRAR_DESPEDIDA 50|36b15 39l9 39t26
 13V14*JUGAR_A_OTRO_JUEGO{boolean} 50|69b14 72l9 72t27
 15V14*JUGAR_DE_NUEVO_AL_MISMO_JUEGO{boolean} 50|74b14 77l9 77t38
-17V14*ELEGIR_JUEGO{string} 17>27 50|79b14 89l9 89t21
-17r27 V_LISTADO_NOMBRES_JUEGOS{22|12R13} 50|79b27 82r31 82r71 83r62 85r36
-. 88r26
+17V14*ELEGIR_JUEGO{string} 17>27 50|79b14 95l9 95t21
+17r27 V_LISTADO_NOMBRES_JUEGOS{22|12R13} 50|79b27 83r31 83r71 84r62 87r36
+. 93r26
 X 50 uigameengine.adb
 42V14 PREGUNTAR_SI_O_NO{boolean} 42b14 42>32 42>50 67l9 67t26 71s16 76s16
 42a32 pregunta{string} 47r17
@@ -150,6 +150,6 @@ X 50 uigameengine.adb
 43b9 respuesta{boolean} 53m21 66r16
 44e9 caracter_pulsado{character} 48m17 51r18
 46i13 Oportunidades{integer} 58r24
-80i9 V_OPCION_ELEGIDA{integer} 86m13 88r51
-82i13 V_NUMERO_JUEGO{integer} 83r22 83r87
+80i9 V_OPCION_ELEGIDA{integer} 89m13 93r51
+83i13 V_NUMERO_JUEGO{integer} 84r22 84r87
 

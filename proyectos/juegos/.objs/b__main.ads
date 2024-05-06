@@ -405,7 +405,7 @@ package ada_main is
    pragma Export (C, u00183, "uiadivinarnumerojuegoB");
    u00184 : constant Version_32 := 16#d317302d#;
    pragma Export (C, u00184, "uiadivinarnumerojuegoS");
-   u00185 : constant Version_32 := 16#1ce6fc05#;
+   u00185 : constant Version_32 := 16#c881d29f#;
    pragma Export (C, u00185, "juegoahorcadoB");
    u00186 : constant Version_32 := 16#34e00c4d#;
    pragma Export (C, u00186, "juegoahorcadoS");
