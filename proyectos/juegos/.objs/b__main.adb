@@ -22,30 +22,30 @@ package body ada_main is
    E050 : Short_Integer; pragma Import (Ada, E050, "system__dwarf_lines_E");
    E021 : Short_Integer; pragma Import (Ada, E021, "system__soft_links__initialize_E");
    E039 : Short_Integer; pragma Import (Ada, E039, "system__traceback__symbolic_E");
-   E152 : Short_Integer; pragma Import (Ada, E152, "ada__numerics_E");
+   E174 : Short_Integer; pragma Import (Ada, E174, "ada__numerics_E");
    E099 : Short_Integer; pragma Import (Ada, E099, "ada__tags_E");
    E122 : Short_Integer; pragma Import (Ada, E122, "ada__streams_E");
-   E147 : Short_Integer; pragma Import (Ada, E147, "system__file_control_block_E");
+   E149 : Short_Integer; pragma Import (Ada, E149, "system__file_control_block_E");
    E124 : Short_Integer; pragma Import (Ada, E124, "system__finalization_root_E");
    E120 : Short_Integer; pragma Import (Ada, E120, "ada__finalization_E");
-   E146 : Short_Integer; pragma Import (Ada, E146, "system__file_io_E");
+   E148 : Short_Integer; pragma Import (Ada, E148, "system__file_io_E");
    E126 : Short_Integer; pragma Import (Ada, E126, "system__storage_pools_E");
    E117 : Short_Integer; pragma Import (Ada, E117, "system__finalization_masters_E");
    E115 : Short_Integer; pragma Import (Ada, E115, "system__storage_pools__subpools_E");
    E107 : Short_Integer; pragma Import (Ada, E107, "ada__strings__unbounded_E");
-   E158 : Short_Integer; pragma Import (Ada, E158, "ada__calendar_E");
-   E142 : Short_Integer; pragma Import (Ada, E142, "ada__text_io_E");
-   E192 : Short_Integer; pragma Import (Ada, E192, "system__pool_global_E");
-   E156 : Short_Integer; pragma Import (Ada, E156, "system__random_seed_E");
-   E151 : Short_Integer; pragma Import (Ada, E151, "randomhelpers_E");
-   E188 : Short_Integer; pragma Import (Ada, E188, "helpersjuegoahorcado_E");
-   E164 : Short_Integer; pragma Import (Ada, E164, "uiadivinarnumerojuego_E");
-   E198 : Short_Integer; pragma Import (Ada, E198, "uijuegoahorcado_E");
+   E180 : Short_Integer; pragma Import (Ada, E180, "ada__calendar_E");
+   E144 : Short_Integer; pragma Import (Ada, E144, "ada__text_io_E");
+   E194 : Short_Integer; pragma Import (Ada, E194, "system__pool_global_E");
+   E178 : Short_Integer; pragma Import (Ada, E178, "system__random_seed_E");
+   E173 : Short_Integer; pragma Import (Ada, E173, "randomhelpers_E");
+   E190 : Short_Integer; pragma Import (Ada, E190, "helpersjuegoahorcado_E");
+   E184 : Short_Integer; pragma Import (Ada, E184, "uiadivinarnumerojuego_E");
+   E200 : Short_Integer; pragma Import (Ada, E200, "uijuegoahorcado_E");
    E138 : Short_Integer; pragma Import (Ada, E138, "partida_E");
    E105 : Short_Integer; pragma Import (Ada, E105, "gamelibrary_E");
    E136 : Short_Integer; pragma Import (Ada, E136, "juego_E");
    E134 : Short_Integer; pragma Import (Ada, E134, "adivinarnumerojuego_E");
-   E184 : Short_Integer; pragma Import (Ada, E184, "juegoahorcado_E");
+   E186 : Short_Integer; pragma Import (Ada, E186, "juegoahorcado_E");
    E140 : Short_Integer; pragma Import (Ada, E140, "uigameengine_E");
    E005 : Short_Integer; pragma Import (Ada, E005, "gameengine_E");
 
@@ -65,7 +65,7 @@ package body ada_main is
          E105 := E105 - 1;
          F1;
       end;
-      E184 := E184 - 1;
+      E186 := E186 - 1;
       declare
          procedure F2;
          pragma Import (Ada, F2, "juegoahorcado__finalize_spec");
@@ -92,21 +92,21 @@ package body ada_main is
       begin
          F5;
       end;
-      E188 := E188 - 1;
+      E190 := E190 - 1;
       declare
          procedure F6;
          pragma Import (Ada, F6, "helpersjuegoahorcado__finalize_spec");
       begin
          F6;
       end;
-      E192 := E192 - 1;
+      E194 := E194 - 1;
       declare
          procedure F7;
          pragma Import (Ada, F7, "system__pool_global__finalize_spec");
       begin
          F7;
       end;
-      E142 := E142 - 1;
+      E144 := E144 - 1;
       declare
          procedure F8;
          pragma Import (Ada, F8, "ada__text_io__finalize_spec");
@@ -138,7 +138,7 @@ package body ada_main is
          procedure F12;
          pragma Import (Ada, F12, "system__file_io__finalize_body");
       begin
-         E146 := E146 - 1;
+         E148 := E148 - 1;
          F12;
       end;
       declare
@@ -276,20 +276,20 @@ package body ada_main is
       E039 := E039 + 1;
       E007 := E007 + 1;
       Ada.Numerics'Elab_Spec;
-      E152 := E152 + 1;
+      E174 := E174 + 1;
       Ada.Tags'Elab_Spec;
       Ada.Tags'Elab_Body;
       E099 := E099 + 1;
       Ada.Streams'Elab_Spec;
       E122 := E122 + 1;
       System.File_Control_Block'Elab_Spec;
-      E147 := E147 + 1;
+      E149 := E149 + 1;
       System.Finalization_Root'Elab_Spec;
       E124 := E124 + 1;
       Ada.Finalization'Elab_Spec;
       E120 := E120 + 1;
       System.File_Io'Elab_Body;
-      E146 := E146 + 1;
+      E148 := E148 + 1;
       System.Storage_Pools'Elab_Spec;
       E126 := E126 + 1;
       System.Finalization_Masters'Elab_Spec;
@@ -301,19 +301,19 @@ package body ada_main is
       E107 := E107 + 1;
       Ada.Calendar'Elab_Spec;
       Ada.Calendar'Elab_Body;
-      E158 := E158 + 1;
+      E180 := E180 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
-      E142 := E142 + 1;
+      E144 := E144 + 1;
       System.Pool_Global'Elab_Spec;
-      E192 := E192 + 1;
+      E194 := E194 + 1;
       System.Random_Seed'Elab_Body;
-      E156 := E156 + 1;
-      E151 := E151 + 1;
+      E178 := E178 + 1;
+      E173 := E173 + 1;
       HELPERSJUEGOAHORCADO'ELAB_SPEC;
-      E188 := E188 + 1;
-      E164 := E164 + 1;
-      E198 := E198 + 1;
+      E190 := E190 + 1;
+      E184 := E184 + 1;
+      E200 := E200 + 1;
       GAMELIBRARY'ELAB_SPEC;
       Juego'Elab_Spec;
       Juego'Elab_Body;
@@ -323,7 +323,7 @@ package body ada_main is
       E134 := E134 + 1;
       JUEGOAHORCADO'ELAB_SPEC;
       JUEGOAHORCADO'ELAB_BODY;
-      E184 := E184 + 1;
+      E186 := E186 + 1;
       E140 := E140 + 1;
       GAMELIBRARY'ELAB_BODY;
       E105 := E105 + 1;

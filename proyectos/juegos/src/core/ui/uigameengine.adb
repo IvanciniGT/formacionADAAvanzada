@@ -1,6 +1,7 @@
 with Ada.Text_IO; use Ada.Text_IO;
-
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Partida; use Partida;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 package body UIGameEngine is
 
@@ -76,11 +77,21 @@ package body UIGameEngine is
     end JUGAR_DE_NUEVO_AL_MISMO_JUEGO;
 
     function ELEGIR_JUEGO(V_LISTADO_NOMBRES_JUEGOS: GameLibrary.T_LISTADO_NOMBRES_JUEGOS) return String is
-        juegoElegido: String := " ";
+        V_OPCION_ELEGIDA: Integer;
     begin
-        -- Preguntar al usuario qué juego quiere jugar
-        -- Devolver el juego elegido
-        return juegoElegido;
+        
+        for V_NUMERO_JUEGO in V_LISTADO_NOMBRES_JUEGOS.FIRST_INDEX .. V_LISTADO_NOMBRES_JUEGOS.LAST_INDEX loop
+            Put_Line(V_NUMERO_JUEGO'Image & ". " & TO_STRING(V_LISTADO_NOMBRES_JUEGOS(V_NUMERO_JUEGO)));
+        end loop;
+        
+        Put("Elige un juego (1-" & V_LISTADO_NOMBRES_JUEGOS.LAST_INDEX'Image & "): ");
+        
+        Get(V_OPCION_ELEGIDA);
+        
+        Skip_Line;
+        
+        return TO_STRING(V_LISTADO_NOMBRES_JUEGOS(V_OPCION_ELEGIDA));
+
     end ELEGIR_JUEGO;
 
 end UIGameEngine;
