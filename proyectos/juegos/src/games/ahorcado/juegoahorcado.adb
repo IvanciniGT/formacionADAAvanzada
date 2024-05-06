@@ -44,7 +44,7 @@ package body JuegoAhorcado is
                     intentos_restantes := intentos_restantes - 1;
                 end if;
             end loop;
-            MOSTRAR_ESTADO(intentos_restantes, palabra_enmascarada, letras_usadas);
+            MOSTRAR_ESTADO(intentos_restantes, palabra_a_adivinar, letras_usadas);
         end;
         return ganador;
     end JUGAR_MANO;
