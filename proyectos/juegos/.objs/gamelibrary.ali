@@ -1,0 +1,501 @@
+V "GNAT Lib v10"
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U gamelibrary%b		gamelibrary.adb		d729a618 OO PF PK IU
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.indefinite_ordered_maps%s
+W ada.containers.vectors%s
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W adivinarnumerojuego%s	adivinarnumerojuego.adb	adivinarnumerojuego.ali
+W juego%s		juego.adb		juego.ali
+W juegoahorcado%s	juegoahorcado.adb	juegoahorcado.ali
+W partida%s		partida.adb		partida.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+W uigameengine%s	uigameengine.adb	uigameengine.ali
+
+U gamelibrary%s		gamelibrary.ads		cb8c6f80 EE OO PF PK IU
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+Z ada.containers.generic_array_sort%s
+Z ada.containers.helpers%s  a-conhel.adb	a-conhel.ali
+W ada.containers.indefinite_ordered_maps%s
+Z ada.containers.red_black_trees%s  a-crbltr.ads  a-crbltr.ali
+Z ada.containers.red_black_trees.generic_keys%s
+Z ada.containers.red_black_trees.generic_operations%s
+W ada.containers.vectors%s
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.iterator_interfaces%s
+Z ada.streams%s		a-stream.adb		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z ada.unchecked_deallocation%s
+Z interfaces%s		interfac.ads		interfac.ali
+W partida%s		partida.adb		partida.ali
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+Z system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
+W uigameengine%s	uigameengine.adb	uigameengine.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-charac.ads		20230707070819 2d3ec45b ada.characters%s
+D a-chlat1.ads		20230707070819 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20230707070819 61e5e089 ada.containers%s
+D a-cgarso.ads		20230707070819 9129bfa8 ada.containers.generic_array_sort%s
+D a-conhel.ads		20230707070819 20298884 ada.containers.helpers%s
+D a-conhel.adb		20230707070819 e8b6ff51 ada.containers.helpers%b
+D a-ciorma.ads		20230707070819 e1f95638 ada.containers.indefinite_ordered_maps%s
+D a-ciorma.adb		20230707070819 b118274c ada.containers.indefinite_ordered_maps%b
+D a-crbltr.ads		20230707070819 c3e90a86 ada.containers.red_black_trees%s
+D a-crbtgk.ads		20230707070819 ab25d217 ada.containers.red_black_trees.generic_keys%s
+D a-crbtgk.adb		20230707070819 cffbc19e ada.containers.red_black_trees.generic_keys%b
+D a-crbtgo.ads		20230707070819 e494c304 ada.containers.red_black_trees.generic_operations%s
+D a-crbtgo.adb		20230707070819 a4b4aead ada.containers.red_black_trees.generic_operations%b
+D a-convec.ads		20230707070819 7e2b0fdf ada.containers.vectors%s
+D a-convec.adb		20230707070819 08afd670 ada.containers.vectors%b
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-finali.ads		20230707070819 bf4f806b ada.finalization%s
+D a-iteint.ads		20230707070819 7c7305e9 ada.iterator_interfaces%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-string.ads		20230707070819 90ac6797 ada.strings%s
+D a-strmap.ads		20230707070819 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20230707070819 1656705b ada.strings.unbounded%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20230707070819 eff36322 ada.unchecked_deallocation%s
+D adivinarnumerojuego.ads  20240503065854 21735cf9 adivinarnumerojuego%s
+D gamelibrary.ads	20240506111329 dcececda gamelibrary%s
+D gamelibrary.adb	20240506111420 20de05df gamelibrary%b
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D juego.ads		20240503073119 d42d39aa juego%s
+D juegoahorcado.ads	20240506101256 c925a914 juegoahorcado%s
+D partida.ads		20240503000445 3fbeeca8 partida%s
+D system.ads		20230707070819 4635ec04 system%s
+D s-atocou.ads		20230707070819 b45c2d8d system.atomic_counters%s
+D s-atocou.adb		20230707070819 b65612c0 system.atomic_counters%b
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-finmas.ads		20230707070819 7811a767 system.finalization_masters%s
+D s-finroo.ads		20230707070819 4ff27390 system.finalization_root%s
+D s-memory.ads		20230707070819 597d6634 system.memory%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-pooglo.ads		20230707070819 ede33ef8 system.pool_global%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stalib.adb		20230707070819 f2fe2716 system.standard_library%b
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20230707070819 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20230707070819 b16154c2 system.storage_pools%s
+D s-stposu.ads		20230707070819 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20230707070819 aedef97e system.stream_attributes%s
+D s-string.ads		20230707070819 8fe54fb7 system.strings%s
+D s-ststop.ads		20230707070819 5fbf1b38 system.strings.stream_ops%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D uigameengine.ads	20240503071953 a15a464e uigameengine%s
+G a e
+G c Z s s [has_element gamelibrary__q_listado_nombres_juegos 107 13 9_5]
+G c Z s s [Oeq gamelibrary__q_listado_nombres_juegos 117 24 9_5]
+G c Z s s [to_vector gamelibrary__q_listado_nombres_juegos 126 13 9_5]
+G c Z s s [to_vector gamelibrary__q_listado_nombres_juegos 129 13 9_5]
+G c Z s s [Oconcat gamelibrary__q_listado_nombres_juegos 135 13 9_5]
+G c Z s s [Oconcat gamelibrary__q_listado_nombres_juegos 139 13 9_5]
+G c Z s s [Oconcat gamelibrary__q_listado_nombres_juegos 143 13 9_5]
+G c Z s s [Oconcat gamelibrary__q_listado_nombres_juegos 147 13 9_5]
+G c Z s s [capacity gamelibrary__q_listado_nombres_juegos 151 13 9_5]
+G c Z s s [reserve_capacity gamelibrary__q_listado_nombres_juegos 154 14 9_5]
+G c Z s s [length gamelibrary__q_listado_nombres_juegos 165 13 9_5]
+G c Z s s [set_length gamelibrary__q_listado_nombres_juegos 168 14 9_5]
+G c Z s s [is_empty gamelibrary__q_listado_nombres_juegos 177 13 9_5]
+G c Z s s [clear gamelibrary__q_listado_nombres_juegos 180 14 9_5]
+G c Z s s [to_cursor gamelibrary__q_listado_nombres_juegos 184 13 9_5]
+G c Z s s [to_index gamelibrary__q_listado_nombres_juegos 191 13 9_5]
+G c Z s s [element gamelibrary__q_listado_nombres_juegos 196 13 9_5]
+G c Z s s [element gamelibrary__q_listado_nombres_juegos 203 13 9_5]
+G c Z s s [replace_element gamelibrary__q_listado_nombres_juegos 207 14 9_5]
+G c Z s s [replace_element gamelibrary__q_listado_nombres_juegos 218 14 9_5]
+G c Z s s [query_element gamelibrary__q_listado_nombres_juegos 229 14 9_5]
+G c Z s s [query_element gamelibrary__q_listado_nombres_juegos 240 14 9_5]
+G c Z s s [update_element gamelibrary__q_listado_nombres_juegos 249 14 9_5]
+G c Z s s [update_element gamelibrary__q_listado_nombres_juegos 266 14 9_5]
+G c Z s s [constant_reference gamelibrary__q_listado_nombres_juegos 293 13 9_5]
+G c Z s s [reference gamelibrary__q_listado_nombres_juegos 298 13 9_5]
+G c Z s s [constant_reference gamelibrary__q_listado_nombres_juegos 303 13 9_5]
+G c Z s s [reference gamelibrary__q_listado_nombres_juegos 308 13 9_5]
+G c Z s s [assign gamelibrary__q_listado_nombres_juegos 313 14 9_5]
+G c Z s s [copy gamelibrary__q_listado_nombres_juegos 315 13 9_5]
+G c Z s s [move gamelibrary__q_listado_nombres_juegos 317 14 9_5]
+G c Z s s [insert gamelibrary__q_listado_nombres_juegos 323 14 9_5]
+G c Z s s [insert gamelibrary__q_listado_nombres_juegos 341 14 9_5]
+G c Z s s [insert gamelibrary__q_listado_nombres_juegos 352 14 9_5]
+G c Z s s [insert gamelibrary__q_listado_nombres_juegos 363 14 9_5]
+G c Z s s [insert gamelibrary__q_listado_nombres_juegos 370 14 9_5]
+G c Z s s [insert gamelibrary__q_listado_nombres_juegos 377 14 9_5]
+G c Z s s [insert gamelibrary__q_listado_nombres_juegos 386 14 9_5]
+G c Z s s [insert gamelibrary__q_listado_nombres_juegos 403 14 9_5]
+G c Z s s [prepend gamelibrary__q_listado_nombres_juegos 414 14 9_5]
+G c Z s s [prepend gamelibrary__q_listado_nombres_juegos 419 14 9_5]
+G c Z s s [append gamelibrary__q_listado_nombres_juegos 426 14 9_5]
+G c Z s s [append gamelibrary__q_listado_nombres_juegos 431 14 9_5]
+G c Z s s [insert_space gamelibrary__q_listado_nombres_juegos 438 14 9_5]
+G c Z s s [insert_space gamelibrary__q_listado_nombres_juegos 455 14 9_5]
+G c Z s s [delete gamelibrary__q_listado_nombres_juegos 466 14 9_5]
+G c Z s s [delete gamelibrary__q_listado_nombres_juegos 476 14 9_5]
+G c Z s s [delete_first gamelibrary__q_listado_nombres_juegos 485 14 9_5]
+G c Z s s [delete_last gamelibrary__q_listado_nombres_juegos 490 14 9_5]
+G c Z s s [reverse_elements gamelibrary__q_listado_nombres_juegos 498 14 9_5]
+G c Z s s [swap gamelibrary__q_listado_nombres_juegos 501 14 9_5]
+G c Z s s [swap gamelibrary__q_listado_nombres_juegos 506 14 9_5]
+G c Z s s [first_index gamelibrary__q_listado_nombres_juegos 512 13 9_5]
+G c Z s s [first gamelibrary__q_listado_nombres_juegos 515 13 9_5]
+G c Z s s [first_element gamelibrary__q_listado_nombres_juegos 519 13 9_5]
+G c Z s s [last_index gamelibrary__q_listado_nombres_juegos 522 13 9_5]
+G c Z s s [last gamelibrary__q_listado_nombres_juegos 526 13 9_5]
+G c Z s s [last_element gamelibrary__q_listado_nombres_juegos 530 13 9_5]
+G c Z s s [next gamelibrary__q_listado_nombres_juegos 533 13 9_5]
+G c Z s s [next gamelibrary__q_listado_nombres_juegos 539 14 9_5]
+G c Z s s [previous gamelibrary__q_listado_nombres_juegos 542 13 9_5]
+G c Z s s [previous gamelibrary__q_listado_nombres_juegos 548 14 9_5]
+G c Z s s [find_index gamelibrary__q_listado_nombres_juegos 551 13 9_5]
+G c Z s s [find gamelibrary__q_listado_nombres_juegos 561 13 9_5]
+G c Z s s [reverse_find_index gamelibrary__q_listado_nombres_juegos 575 13 9_5]
+G c Z s s [reverse_find gamelibrary__q_listado_nombres_juegos 587 13 9_5]
+G c Z s s [contains gamelibrary__q_listado_nombres_juegos 601 13 9_5]
+G c Z s s [iterate gamelibrary__q_listado_nombres_juegos 606 14 9_5]
+G c Z s s [reverse_iterate gamelibrary__q_listado_nombres_juegos 614 14 9_5]
+G c Z s s [iterate gamelibrary__q_listado_nombres_juegos 621 13 9_5]
+G c Z s s [iterate gamelibrary__q_listado_nombres_juegos 624 13 9_5]
+G c Z s s [adjust gamelibrary__q_listado_nombres_juegos__implementation 90 28 678_4_9_5]
+G c Z s s [finalize gamelibrary__q_listado_nombres_juegos__implementation 93 28 678_4_9_5]
+G c Z s s [zero_counts gamelibrary__q_listado_nombres_juegos__implementation 96 17 678_4_9_5]
+G c Z s s [busy gamelibrary__q_listado_nombres_juegos__implementation 100 17 678_4_9_5]
+G c Z s s [unbusy gamelibrary__q_listado_nombres_juegos__implementation 104 17 678_4_9_5]
+G c Z s s [lock gamelibrary__q_listado_nombres_juegos__implementation 108 17 678_4_9_5]
+G c Z s s [unlock gamelibrary__q_listado_nombres_juegos__implementation 112 17 678_4_9_5]
+G c Z s s [tc_check gamelibrary__q_listado_nombres_juegos__implementation 116 17 678_4_9_5]
+G c Z s s [te_check gamelibrary__q_listado_nombres_juegos__implementation 120 17 678_4_9_5]
+G c Z s s [initialize gamelibrary__q_listado_nombres_juegos__implementation 139 28 678_4_9_5]
+G c Z s s [finalize gamelibrary__q_listado_nombres_juegos__implementation 140 28 678_4_9_5]
+G c Z s s [initialize gamelibrary__q_listado_nombres_juegos__implementation 145 28 678_4_9_5]
+G c Z s s [finalize gamelibrary__q_listado_nombres_juegos__implementation 146 28 678_4_9_5]
+G c Z s s [reference_control_typeDA gamelibrary__q_listado_nombres_juegos__implementation 84 12 678_4_9_5]
+G c Z s s [reference_control_typeDF gamelibrary__q_listado_nombres_juegos__implementation 84 12 678_4_9_5]
+G c Z s s [reference_control_typeIP gamelibrary__q_listado_nombres_juegos__implementation 84 12 678_4_9_5]
+G c Z s s [with_busyDF gamelibrary__q_listado_nombres_juegos__implementation 136 12 678_4_9_5]
+G c Z s s [with_busyIP gamelibrary__q_listado_nombres_juegos__implementation 136 12 678_4_9_5]
+G c Z s s [with_lockDF gamelibrary__q_listado_nombres_juegos__implementation 142 12 678_4_9_5]
+G c Z s s [with_lockIP gamelibrary__q_listado_nombres_juegos__implementation 142 12 678_4_9_5]
+G c Z s s [adjust gamelibrary__q_listado_nombres_juegos 699 25 9_5]
+G c Z s s [finalize gamelibrary__q_listado_nombres_juegos 700 25 9_5]
+G c Z s s [write gamelibrary__q_listado_nombres_juegos 702 14 9_5]
+G c Z s s [read gamelibrary__q_listado_nombres_juegos 708 14 9_5]
+G c Z s s [read gamelibrary__q_listado_nombres_juegos 722 14 9_5]
+G c Z s s [write gamelibrary__q_listado_nombres_juegos 728 14 9_5]
+G c Z s s [write gamelibrary__q_listado_nombres_juegos 747 14 9_5]
+G c Z s s [read gamelibrary__q_listado_nombres_juegos 753 14 9_5]
+G c Z s s [write gamelibrary__q_listado_nombres_juegos 769 14 9_5]
+G c Z s s [read gamelibrary__q_listado_nombres_juegos 775 14 9_5]
+G c Z s s [pseudo_reference gamelibrary__q_listado_nombres_juegos 786 13 9_5]
+G c Z s s [get_element_access gamelibrary__q_listado_nombres_juegos 795 13 9_5]
+G c Z s s [cursorIP gamelibrary__q_listado_nombres_juegos 717 9 9_5]
+G c Z s s [vectorDA gamelibrary__q_listado_nombres_juegos 693 9 9_5]
+G c Z s s [vectorDF gamelibrary__q_listado_nombres_juegos 693 9 9_5]
+G c Z s s [vectorIP gamelibrary__q_listado_nombres_juegos 693 9 9_5]
+G c Z s s [constant_reference_typeDI gamelibrary__q_listado_nombres_juegos 737 9 9_5]
+G c Z s s [constant_reference_typeDA gamelibrary__q_listado_nombres_juegos 737 9 9_5]
+G c Z s s [constant_reference_typeDF gamelibrary__q_listado_nombres_juegos 737 9 9_5]
+G c Z s s [constant_reference_typeIP gamelibrary__q_listado_nombres_juegos 737 9 9_5]
+G c Z s s [reference_typeDI gamelibrary__q_listado_nombres_juegos 759 9 9_5]
+G c Z s s [reference_typeDA gamelibrary__q_listado_nombres_juegos 759 9 9_5]
+G c Z s s [reference_typeDF gamelibrary__q_listado_nombres_juegos 759 9 9_5]
+G c Z s s [reference_typeIP gamelibrary__q_listado_nombres_juegos 759 9 9_5]
+G c Z s s [finalize gamelibrary__q_listado_nombres_juegos 811 25 9_5]
+G c Z s s [first gamelibrary__q_listado_nombres_juegos 813 24 9_5]
+G c Z s s [last gamelibrary__q_listado_nombres_juegos 814 24 9_5]
+G c Z s s [next gamelibrary__q_listado_nombres_juegos 816 24 9_5]
+G c Z s s [previous gamelibrary__q_listado_nombres_juegos 820 24 9_5]
+G c Z s s [elements_arrayIP gamelibrary__q_listado_nombres_juegos 681 9 9_5]
+G c Z s s [elements_arrayDI gamelibrary__q_listado_nombres_juegos 681 9 9_5]
+G c Z s s [elements_arrayDA gamelibrary__q_listado_nombres_juegos 681 9 9_5]
+G c Z s s [elements_arrayDF gamelibrary__q_listado_nombres_juegos 681 9 9_5]
+G c Z s s [elements_typeDI gamelibrary__q_listado_nombres_juegos 684 9 9_5]
+G c Z s s [elements_typeDF gamelibrary__q_listado_nombres_juegos 684 9 9_5]
+G c Z s s [elements_typeIP gamelibrary__q_listado_nombres_juegos 684 9 9_5]
+G c Z s s [iteratorDF gamelibrary__q_listado_nombres_juegos 803 9 9_5]
+G c Z s s [iteratorIP gamelibrary__q_listado_nombres_juegos 803 9 9_5]
+G c Z s s [free gamelibrary__q_listado_nombres_juegos 41 14 9_5]
+G c Z s s [append_slow_path gamelibrary__q_listado_nombres_juegos 44 14 9_5]
+G c Z s s [equivalent_keys gamelibrary__q_mapa_jugables 52 13 16_5]
+G c Z s s [has_element gamelibrary__q_mapa_jugables 68 13 16_5]
+G c Z s s [Oeq gamelibrary__q_mapa_jugables 73 13 16_5]
+G c Z s s [length gamelibrary__q_mapa_jugables 75 13 16_5]
+G c Z s s [is_empty gamelibrary__q_mapa_jugables 77 13 16_5]
+G c Z s s [clear gamelibrary__q_mapa_jugables 79 14 16_5]
+G c Z s s [key gamelibrary__q_mapa_jugables 81 13 16_5]
+G c Z s s [element gamelibrary__q_mapa_jugables 83 13 16_5]
+G c Z s s [replace_element gamelibrary__q_mapa_jugables 85 14 16_5]
+G c Z s s [query_element gamelibrary__q_mapa_jugables 90 14 16_5]
+G c Z s s [update_element gamelibrary__q_mapa_jugables 95 14 16_5]
+G c Z s s [constant_reference gamelibrary__q_mapa_jugables 110 13 16_5]
+G c Z s s [reference gamelibrary__q_mapa_jugables 115 13 16_5]
+G c Z s s [constant_reference gamelibrary__q_mapa_jugables 120 13 16_5]
+G c Z s s [reference gamelibrary__q_mapa_jugables 125 13 16_5]
+G c Z s s [assign gamelibrary__q_mapa_jugables 130 14 16_5]
+G c Z s s [copy gamelibrary__q_mapa_jugables 132 13 16_5]
+G c Z s s [move gamelibrary__q_mapa_jugables 134 14 16_5]
+G c Z s s [insert gamelibrary__q_mapa_jugables 136 14 16_5]
+G c Z s s [insert gamelibrary__q_mapa_jugables 143 14 16_5]
+G c Z s s [include gamelibrary__q_mapa_jugables 148 14 16_5]
+G c Z s s [replace gamelibrary__q_mapa_jugables 153 14 16_5]
+G c Z s s [exclude gamelibrary__q_mapa_jugables 158 14 16_5]
+G c Z s s [delete gamelibrary__q_mapa_jugables 160 14 16_5]
+G c Z s s [delete gamelibrary__q_mapa_jugables 162 14 16_5]
+G c Z s s [delete_first gamelibrary__q_mapa_jugables 164 14 16_5]
+G c Z s s [delete_last gamelibrary__q_mapa_jugables 166 14 16_5]
+G c Z s s [first gamelibrary__q_mapa_jugables 168 13 16_5]
+G c Z s s [first_element gamelibrary__q_mapa_jugables 170 13 16_5]
+G c Z s s [first_key gamelibrary__q_mapa_jugables 172 13 16_5]
+G c Z s s [last gamelibrary__q_mapa_jugables 174 13 16_5]
+G c Z s s [last_element gamelibrary__q_mapa_jugables 176 13 16_5]
+G c Z s s [last_key gamelibrary__q_mapa_jugables 178 13 16_5]
+G c Z s s [next gamelibrary__q_mapa_jugables 180 13 16_5]
+G c Z s s [next gamelibrary__q_mapa_jugables 182 14 16_5]
+G c Z s s [previous gamelibrary__q_mapa_jugables 184 13 16_5]
+G c Z s s [previous gamelibrary__q_mapa_jugables 186 14 16_5]
+G c Z s s [find gamelibrary__q_mapa_jugables 188 13 16_5]
+G c Z s s [element gamelibrary__q_mapa_jugables 190 13 16_5]
+G c Z s s [floor gamelibrary__q_mapa_jugables 192 13 16_5]
+G c Z s s [ceiling gamelibrary__q_mapa_jugables 194 13 16_5]
+G c Z s s [contains gamelibrary__q_mapa_jugables 196 13 16_5]
+G c Z s s [Olt gamelibrary__q_mapa_jugables 198 13 16_5]
+G c Z s s [Ogt gamelibrary__q_mapa_jugables 200 13 16_5]
+G c Z s s [Olt gamelibrary__q_mapa_jugables 202 13 16_5]
+G c Z s s [Ogt gamelibrary__q_mapa_jugables 204 13 16_5]
+G c Z s s [Olt gamelibrary__q_mapa_jugables 206 13 16_5]
+G c Z s s [Ogt gamelibrary__q_mapa_jugables 208 13 16_5]
+G c Z s s [iterate gamelibrary__q_mapa_jugables 210 14 16_5]
+G c Z s s [reverse_iterate gamelibrary__q_mapa_jugables 214 14 16_5]
+G c Z s s [iterate gamelibrary__q_mapa_jugables 222 13 16_5]
+G c Z s s [iterate gamelibrary__q_mapa_jugables 226 13 16_5]
+G c Z s s [node_typeIP gamelibrary__q_mapa_jugables 242 9 16_5]
+G c Z s s [adjust gamelibrary__q_mapa_jugables__tree_types__implementation 90 28 52_7_251_4_16_5]
+G c Z s s [finalize gamelibrary__q_mapa_jugables__tree_types__implementation 93 28 52_7_251_4_16_5]
+G c Z s s [zero_counts gamelibrary__q_mapa_jugables__tree_types__implementation 96 17 52_7_251_4_16_5]
+G c Z s s [busy gamelibrary__q_mapa_jugables__tree_types__implementation 100 17 52_7_251_4_16_5]
+G c Z s s [unbusy gamelibrary__q_mapa_jugables__tree_types__implementation 104 17 52_7_251_4_16_5]
+G c Z s s [lock gamelibrary__q_mapa_jugables__tree_types__implementation 108 17 52_7_251_4_16_5]
+G c Z s s [unlock gamelibrary__q_mapa_jugables__tree_types__implementation 112 17 52_7_251_4_16_5]
+G c Z s s [tc_check gamelibrary__q_mapa_jugables__tree_types__implementation 116 17 52_7_251_4_16_5]
+G c Z s s [te_check gamelibrary__q_mapa_jugables__tree_types__implementation 120 17 52_7_251_4_16_5]
+G c Z s s [initialize gamelibrary__q_mapa_jugables__tree_types__implementation 139 28 52_7_251_4_16_5]
+G c Z s s [finalize gamelibrary__q_mapa_jugables__tree_types__implementation 140 28 52_7_251_4_16_5]
+G c Z s s [initialize gamelibrary__q_mapa_jugables__tree_types__implementation 145 28 52_7_251_4_16_5]
+G c Z s s [finalize gamelibrary__q_mapa_jugables__tree_types__implementation 146 28 52_7_251_4_16_5]
+G c Z s s [reference_control_typeDA gamelibrary__q_mapa_jugables__tree_types__implementation 84 12 52_7_251_4_16_5]
+G c Z s s [reference_control_typeDF gamelibrary__q_mapa_jugables__tree_types__implementation 84 12 52_7_251_4_16_5]
+G c Z s s [reference_control_typeIP gamelibrary__q_mapa_jugables__tree_types__implementation 84 12 52_7_251_4_16_5]
+G c Z s s [with_busyDF gamelibrary__q_mapa_jugables__tree_types__implementation 136 12 52_7_251_4_16_5]
+G c Z s s [with_busyIP gamelibrary__q_mapa_jugables__tree_types__implementation 136 12 52_7_251_4_16_5]
+G c Z s s [with_lockDF gamelibrary__q_mapa_jugables__tree_types__implementation 142 12 52_7_251_4_16_5]
+G c Z s s [with_lockIP gamelibrary__q_mapa_jugables__tree_types__implementation 142 12 52_7_251_4_16_5]
+G c Z s s [tree_typeDA gamelibrary__q_mapa_jugables__tree_types 44 12 251_4_16_5]
+G c Z s s [tree_typeDF gamelibrary__q_mapa_jugables__tree_types 44 12 251_4_16_5]
+G c Z s s [tree_typeIP gamelibrary__q_mapa_jugables__tree_types 44 12 251_4_16_5]
+G c Z s s [adjust gamelibrary__q_mapa_jugables 259 25 16_5]
+G c Z s s [write gamelibrary__q_mapa_jugables 268 14 16_5]
+G c Z s s [read gamelibrary__q_mapa_jugables 274 14 16_5]
+G c Z s s [write gamelibrary__q_mapa_jugables 288 14 16_5]
+G c Z s s [read gamelibrary__q_mapa_jugables 294 14 16_5]
+G c Z s s [read gamelibrary__q_mapa_jugables 313 14 16_5]
+G c Z s s [write gamelibrary__q_mapa_jugables 319 14 16_5]
+G c Z s s [read gamelibrary__q_mapa_jugables 335 14 16_5]
+G c Z s s [write gamelibrary__q_mapa_jugables 341 14 16_5]
+G c Z s s [pseudo_reference gamelibrary__q_mapa_jugables 352 13 16_5]
+G c Z s s [get_element_access gamelibrary__q_mapa_jugables 359 13 16_5]
+G c Z s s [mapDA gamelibrary__q_mapa_jugables 255 9 16_5]
+G c Z s s [mapDF gamelibrary__q_mapa_jugables 255 9 16_5]
+G c Z s s [mapIP gamelibrary__q_mapa_jugables 255 9 16_5]
+G c Z s s [cursorIP gamelibrary__q_mapa_jugables 283 9 16_5]
+G c Z s s [constant_reference_typeDI gamelibrary__q_mapa_jugables 303 9 16_5]
+G c Z s s [constant_reference_typeDA gamelibrary__q_mapa_jugables 303 9 16_5]
+G c Z s s [constant_reference_typeDF gamelibrary__q_mapa_jugables 303 9 16_5]
+G c Z s s [constant_reference_typeIP gamelibrary__q_mapa_jugables 303 9 16_5]
+G c Z s s [reference_typeDI gamelibrary__q_mapa_jugables 325 9 16_5]
+G c Z s s [reference_typeDA gamelibrary__q_mapa_jugables 325 9 16_5]
+G c Z s s [reference_typeDF gamelibrary__q_mapa_jugables 325 9 16_5]
+G c Z s s [reference_typeIP gamelibrary__q_mapa_jugables 325 9 16_5]
+G c Z s s [finalize gamelibrary__q_mapa_jugables 375 25 16_5]
+G c Z s s [first gamelibrary__q_mapa_jugables 377 24 16_5]
+G c Z s s [last gamelibrary__q_mapa_jugables 378 24 16_5]
+G c Z s s [next gamelibrary__q_mapa_jugables 380 24 16_5]
+G c Z s s [previous gamelibrary__q_mapa_jugables 384 24 16_5]
+G c Z s s [iteratorDF gamelibrary__q_mapa_jugables 367 9 16_5]
+G c Z s s [iteratorIP gamelibrary__q_mapa_jugables 367 9 16_5]
+G c Z s s [color gamelibrary__q_mapa_jugables 56 13 16_5]
+G c Z s s [left gamelibrary__q_mapa_jugables 59 13 16_5]
+G c Z s s [parent gamelibrary__q_mapa_jugables 62 13 16_5]
+G c Z s s [right gamelibrary__q_mapa_jugables 65 13 16_5]
+G c Z s s [set_parent gamelibrary__q_mapa_jugables 68 14 16_5]
+G c Z s s [set_left gamelibrary__q_mapa_jugables 71 14 16_5]
+G c Z s s [set_right gamelibrary__q_mapa_jugables 74 14 16_5]
+G c Z s s [set_color gamelibrary__q_mapa_jugables 77 14 16_5]
+G c Z s s [copy_node gamelibrary__q_mapa_jugables 84 13 16_5]
+G c Z s s [free gamelibrary__q_mapa_jugables 87 14 16_5]
+G c Z s s [is_equal_node_node gamelibrary__q_mapa_jugables 89 13 16_5]
+G c Z s s [is_greater_key_node gamelibrary__q_mapa_jugables 93 13 16_5]
+G c Z s s [is_less_key_node gamelibrary__q_mapa_jugables 98 13 16_5]
+G c Z s s [min gamelibrary__q_mapa_jugables__tree_operations 51 13 107_4_16_5]
+G c Z s s [max gamelibrary__q_mapa_jugables__tree_operations 54 13 107_4_16_5]
+G c Z s s [vet gamelibrary__q_mapa_jugables__tree_operations 64 13 107_4_16_5]
+G c Z s s [next gamelibrary__q_mapa_jugables__tree_operations 68 13 107_4_16_5]
+G c Z s s [previous gamelibrary__q_mapa_jugables__tree_operations 71 13 107_4_16_5]
+G c Z s s [delete_node_sans_free gamelibrary__q_mapa_jugables__tree_operations 81 14 107_4_16_5]
+G c Z s s [rebalance_for_insert gamelibrary__q_mapa_jugables__tree_operations 157 14 107_4_16_5]
+G c Z s s [delete_fixup gamelibrary__q_mapa_jugables__tree_operations 49 14 107_4_16_5]
+G c Z s s [delete_swap gamelibrary__q_mapa_jugables__tree_operations 51 14 107_4_16_5]
+G c Z s s [left_rotate gamelibrary__q_mapa_jugables__tree_operations 53 14 107_4_16_5]
+G c Z s s [right_rotate gamelibrary__q_mapa_jugables__tree_operations 54 14 107_4_16_5]
+G c Z s s [delete_treeR gamelibrary__q_mapa_jugables__delete_treeGP4641 110 14 16_5]
+G c Z s s [delete_tree gamelibrary__q_mapa_jugables 110 14 16_5]
+G c Z s s [copy_treeR gamelibrary__q_mapa_jugables__copy_treeGP4723 113 13 16_5]
+G c Z s s [copy_tree gamelibrary__q_mapa_jugables 113 13 16_5]
+G c Z s s [find gamelibrary__q_mapa_jugables__key_ops 156 13 118_4_16_5]
+G c Z s s [ceiling gamelibrary__q_mapa_jugables__key_ops 161 13 118_4_16_5]
+G c Z s s [floor gamelibrary__q_mapa_jugables__key_ops 166 13 118_4_16_5]
+G c Z s s [upper_bound gamelibrary__q_mapa_jugables__key_ops 171 13 118_4_16_5]
+G c Z s s [free_key gamelibrary__q_mapa_jugables 125 14 16_5]
+G c Z s s [free_element gamelibrary__q_mapa_jugables 128 14 16_5]
+G c Z s s [is_equalR gamelibrary__q_mapa_jugables__is_equalGP5280 131 13 16_5]
+G c Z s s [is_equal gamelibrary__q_mapa_jugables 131 13 16_5]
+G c Z s s [adjustR gamelibrary__q_mapa_jugables__adjustGP9551 273 14 16_5]
+G c Z s s [adjust gamelibrary__q_mapa_jugables 273 14 16_5]
+G c Z s s [clearR gamelibrary__q_mapa_jugables__clearGP10833 326 14 16_5]
+G c Z s s [clear gamelibrary__q_mapa_jugables 326 14 16_5]
+G c Z s s [moveR gamelibrary__q_mapa_jugables__moveGP32899 1132 14 16_5]
+G c Z s s [move gamelibrary__q_mapa_jugables 1132 14 16_5]
+G c Z s b [f_get_game_names gamelibrary 22 14 none]
+G c Z s b [f_get_jugable gamelibrary 24 14 none]
+G c Z s b [p_init_library gamelibrary 26 15 none]
+G c Z b b [jugar_juego_adivinar_numero gamelibrary 17 14 none]
+G c Z b b [jugar_juego_ahorcado_paises gamelibrary 26 14 none]
+G r c none [jugar_juego_adivinar_numero gamelibrary 17 14 none] [jugar_mano adivinarnumerojuego 14 25 none]
+G r c none [jugar_juego_ahorcado_paises gamelibrary 26 14 none] [jugar_mano juegoahorcado 10 25 none]
+X 1 ada.ads
+16K9*Ada 20e8 28|3r6 4r6 5r6 5r33 9r45 16r36 29|3r6 4r6 8r6 8r33
+X 4 a-contai.ads
+16K13*Containers 28e19 28|3r10 4r10 9r49 16r40 29|3r10 4r10
+X 8 a-ciorma.ads
+41+9 Key_Type 28|17r9
+42+9 Element_Type 28|18r9
+47k24*Indefinite_Ordered_Maps 388e43 28|4w21 16r51 29|4w21
+54R9*Map<18|43R9> 28|20r48[16]
+148U14*Include 29|53s25[28|16] 58s25[28|16]
+236R9 Node_Type
+237P9 Node_Access(236R9[28|16])
+X 9 a-ciorma.adb
+56V13 Color{10|37E9} 13|45i19[28|16]
+59V13 Left{8|237P9} 13|41i19
+62V13 Parent{8|237P9} 13|39i19
+65V13 Right{8|237P9[28|16]} 13|43i19[28|16]
+68U14 Set_Parent 13|40i19
+71U14 Set_Left 13|42i19
+74U14 Set_Right 13|44i19[28|16]
+77U14 Set_Color 13|46i19[28|16]
+X 15 a-convec.ads
+61I9 Index_Type 28|10r9
+62+9 Element_Type 28|11r9
+73k24*Vectors 824e27 28|3w21 9r60 29|3w21
+88R9*Vector<18|43R9> 28|13r66[9]
+431U14*Append 29|54s34[28|9] 59s34[28|9]
+X 19 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[8|70]>
+X 21 a-string.ads
+16K13*Strings 35e16 28|5r10 5r37 29|8r10 8r37
+X 23 a-strunb.ads
+82K21*Unbounded 756e26 28|5w18 5r45 29|8w18 8r45
+87R9*Unbounded_String<18|43R9> 739e14 28|11r25 17r25 24r43 29|40r43 47r22
+103V13*To_Unbounded_String{87R9} 29|27s97 51s24 56s24
+238V14*"="{boolean} 15|64i19
+256V14*"<"{boolean} 8|44i19
+X 27 adivinarnumerojuego.ads
+3K9*AdivinarNumeroJuego 22e24 29|6w6 6r31 20r16
+6R10*ConfiguracionAdivinarNumero<31|11R10> 10e15 29|18r26 18r57
+7i9*maximo{natural} 29|18m100
+8i9*minimo{natural} 29|18m87
+9i9*intentos{natural} 29|18m114
+14V25*JUGAR_MANO{33|7E10}<31|19p14> 29|20s36
+X 28 gamelibrary.ads
+6K9*GameLibrary 28l5 28e16 29|9b14 62l5 62t16
+9K13*Q_LISTADO_NOMBRES_JUEGOS[15|73] 13r41
+13R13*T_LISTADO_NOMBRES_JUEGOS{15|88R9[9]} 22r38 29|12r33 35r38
+16K13*Q_MAPA_JUGABLES[8|47] 20r32
+20R13*T_MAPA_JUGABLES{8|54R9[16]} 29|11r33
+22V14*F_GET_GAME_NAMES{13R13} 29|35b14 38l9 38t25
+24V14*F_GET_JUGABLE{33|8P10} 24>29 29|40b14 44l9 44t22
+24r29 V_GAME_NAME{23|87R9} 29|40b29 43r33
+26U15*P_INIT_LIBRARY 29|46b15 60l9 60t23
+X 29 gamelibrary.adb
+11r5 V_MAPA_JUGABLES{28|20R13} 43r17 53m9 53r9 58m9 58r9
+12r5 V_LISTADO_NOMBRES_JUEGOS{28|13R13} 37r16 54m9 54r9 59m9 59r9
+17V14 JUGAR_JUEGO_ADIVINAR_NUMERO{33|7E10} 17b14 24l9 24t36 52r22
+18r9 miConfiguracion{27|6R10} 20r47
+26V14 JUGAR_JUEGO_AHORCADO_PAISES{33|7E10} 26b14 31l9 31t36 57r22
+27r9 miConfiguracion{32|7R10} 30r28
+47r9 V_GAME_NAME{23|87R9} 51m9 53r33 54r41 56m9 58r33 59r41
+48p9 V_JUGABLE{33|8P10} 52m9 53r46 57m9 58r46
+X 31 juego.ads
+9K9*Juego 29|5w6 5r17 31|21e10
+X 32 juegoahorcado.ads
+5K9*JuegoAhorcado 29|7w6 7r25 32|12e18
+7R10*ConfiguracionJuegoAhorcado<31|11R10> 29|27r26 27r56 32|9e15
+8r9*tematica{23|87R9} 29|27m85
+10V25*JUGAR_MANO{33|7E10}<31|19p14> 29|30s17
+X 33 partida.ads
+5K9*Partida 28|2w6 2r19 24r68 29|2w6 40r68 48r20 33|18e12
+7E10*RESULTADO 29|17r49 26r49 33|7e53
+8P10*JUGABLE(7E10) 28|18r25 24r76 29|40r76 48r28
+X 34 system.ads
+67M9*Address
+X 40 s-memory.ads
+53V13*Alloc{34|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{34|67M9} 105i<c,__gnat_realloc>22
+X 47 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+X 57 uigameengine.ads
+3K9*UIGameEngine 28|1w6 1r24 29|1w6 1r24 57|19e17
+

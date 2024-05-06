@@ -24,11 +24,11 @@ package body GameLibrary is
     end JUGAR_JUEGO_ADIVINAR_NUMERO;
 
     function JUGAR_JUEGO_AHORCADO_PAISES return RESULTADO is
-        miConfiguracion: ConfiguracionJuegoAhorcado := ConfiguracionJuegoAhorcado'( tematica => "paises" );
+        miConfiguracion: ConfiguracionJuegoAhorcado := ConfiguracionJuegoAhorcado'( tematica => To_Unbounded_String("paises") );
     begin
         return --JuegoAhorcado.
                 JUGAR_MANO(miConfiguracion);
-    end JUGAR_JUEGO_ADIVINAR_NUMERO;
+    end JUGAR_JUEGO_AHORCADO_PAISES;
 
     -- FUNCIONES DE LA LIBRERIA DE JUEGOS -------------------------------------------------------------
 

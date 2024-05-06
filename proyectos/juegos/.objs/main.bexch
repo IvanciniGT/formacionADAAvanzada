@@ -8,8 +8,12 @@ b__main.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/partida.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/juego.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/randomhelpers.o
+/home/parallels/Desktop/ada/proyectos/juegos/.objs/helpersjuegoahorcado.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/uiadivinarnumerojuego.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/adivinarnumerojuego.o
+/home/parallels/Desktop/ada/proyectos/juegos/.objs/uijuegoahorcado.o
+/home/parallels/Desktop/ada/proyectos/juegos/.objs/juegoahorcado.o
+/home/parallels/Desktop/ada/proyectos/juegos/.objs/gamelibrary.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/gameengine.o
 /home/parallels/Desktop/ada/proyectos/juegos/.objs/main.o
 [GENERATED SOURCE FILES]

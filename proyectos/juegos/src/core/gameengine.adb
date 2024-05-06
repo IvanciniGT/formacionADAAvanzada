@@ -1,6 +1,6 @@
 with UIGameEngine; use UIGameEngine;
 with Partida; use Partida;
-with JuegoAhorcado; 
+with GameLibrary; 
 
 package body GameEngine is
 
@@ -14,7 +14,7 @@ package body GameEngine is
 
         Continuar_Jugando: loop
 
-            juegoElegido:= JUGAR_JUEGO_ADIVINAR_NUMERO'Access;
+            --juegoElegido:= JUGAR_JUEGO_ADIVINAR_NUMERO'Access;
             --JUGAR_JUEGO_DUMMY'Access;
             --ELEGIR_JUEGO(nombres_juegos_disponibles); -> string: nombre_de_un_juego -> getJugable(nombre_de_un_juego)
         

@@ -6,7 +6,7 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 package body UIJuegoAhorcado is
 
     function PEDIR_LETRA_AL_JUGADOR return String is
-        caracter_pulsado: String;
+        caracter_pulsado: String(1..1):= " ";
     begin
             Put("Dame una letra: ");
             Get(caracter_pulsado); -- Leo 1 caracter
