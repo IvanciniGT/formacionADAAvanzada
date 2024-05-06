@@ -62,3 +62,60 @@ Es una función que:
 
     En computación solemos usar algoritmos de huella con una probabilidad de colisión mucho menor: MD5, SHA-512, SHA-1024.. 2048
 
+---
+
+Jugadores
+
+- Al empezar a jugar, me pide el nombre
+- Si ya tengo juegos previos (estadísticas) que las cargue... y las muestre por pantalla
+- Si no tengo, que genere unas nuevas... y me de la bienvenida
+
+- Cada vez que acabe una partida, que se actualicen las estadísticas:
+    GANADO, PERDIDO o EMPATADO
+- Las estadísticas serán: número total de partidas jugadas: Ganadas/Perdidas/Empatadas
+- Vamos a tener un fichero por persona
+
+PRIMERA VERSION DE LAS ESTADISTICAS
+---
+En segunda versión:
+- Las estadísticas serán: 
+    número total de partidas jugadas: Ganadas/Perdidas/Empatadas por juego
+        + TOTAL
+
+---
+Cuándo leo el archivo de un jugador?
+Después de meter el nombre
+Cuándo lo escribo?
+Cuando termine de jugar cada partida
+
+Y entonces.. Si solo lo leo cuando escribe su nombre... 
+Si quiero volver a sacar las estadísticas después de una partida, necesito:
+- O lo vuelvo a leer después de modificarlo
+- O Las estadísticas las guardo en RAM (cache)
+    - Y uso el fichero sólo para persistencia! Que una vez acabado el programa, no pierda los datos.
+
+Cómo vamos a manejar el fichero?
+MODOS DE ACCESO A UN FICHERO?
+- Podemos trabajar a nivel de caracter... o como binario.
+- Los ficheros tienen 2 formas de trabajarse en escritura:
+    - Acceso secuencial
+    - Acceso aleatorio
+
+En acceso secuencial, leo o escribo desde una determinada posición del archivo
+    - Cuando lo abro en modo lectura: La posición se establece en el byte 0 del archivo
+    - Cuando lo abro en modo escritura, puedo elegir si la posición se establece en el byte 0 o en el último (APPEND)
+
+En acceso aletorio, la diferencia es que yo elijo en que byte quiero posicionar la aguja del HDD:
+Dónde quiero empezar a leer/escribir?... y hasta dónde?
+
+De cara a editar un archivo:
+- Cuando trabajo con acceso secuencial, el problema es que: O reescribo el fichero o le añado cosas al final:
+    Ejemplos de programas que trabajan de esta forma: Cualquier editor de texto, Word, excel
+        Si tengo un archivo muy grande... y le cambio 4 letras... en guardar tarda lo mismo que si cambio todas as letras del archivo.
+
+    VERSION 1
+
+- Cuando trabajo con acceso aletaorio, puedo elegir que porción del archivo edito:  BBDD (cualquier BBDD)
+    Problema: Gestión mucho más compleja.
+
+    VERSION 2

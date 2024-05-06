@@ -33,6 +33,7 @@ package body JuegoAhorcado is
                 MOSTRAR_ESTADO(intentos_restantes, palabra_enmascarada, letras_usadas);
                 caracter_elegido := PEDIR_LETRA_AL_JUGADOR;
                 caracter_elegido := NORMALIZAR_CARACTER(caracter_elegido);
+                -- TODO: No añadir, si ya lo contiene
                 letras_usadas := letras_usadas & caracter_elegido;
                 if ACIERTA_CON_LA_LETRA(palabra_para_validar, caracter_elegido, letras_usadas) then
                     palabra_enmascarada := ENMASCARAR(palabra_a_adivinar, palabra_para_validar, To_String(letras_usadas), caracteres_especiales);
