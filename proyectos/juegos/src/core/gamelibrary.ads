@@ -1,4 +1,3 @@
-with UIGameEngine; use UIGameEngine;
 with Partida; use Partida;
 with Ada.Containers.Vectors;
 with Ada.Containers.Indefinite_Ordered_Maps;
@@ -21,7 +20,7 @@ package GameLibrary is
 
     function F_GET_GAME_NAMES return T_LISTADO_NOMBRES_JUEGOS;
 
-    function F_GET_JUGABLE (V_GAME_NAME : Unbounded_String) return Partida.Jugable;
+    function F_GET_JUGABLE (V_GAME_NAME : String) return Partida.Jugable;
 
     procedure P_INIT_LIBRARY; -- LOAD_GAMES
 

@@ -10,13 +10,13 @@ package body GameEngine is
         juegoElegido: JUGABLE;
         ganador: RESULTADO;
     begin
+        GameLibrary.P_INIT_LIBRARY;
+
         MOSTRAR_BIENVENIDA;
 
         Continuar_Jugando: loop
 
-            --juegoElegido:= JUGAR_JUEGO_ADIVINAR_NUMERO'Access;
-            --JUGAR_JUEGO_DUMMY'Access;
-            --ELEGIR_JUEGO(nombres_juegos_disponibles); -> string: nombre_de_un_juego -> getJugable(nombre_de_un_juego)
+            juegoElegido := GameLibrary.F_GET_JUGABLE(ELEGIR_JUEGO(GameLibrary.F_GET_GAME_NAMES));
         
             Continuar_Jugando_Al_Mismo_juego: loop
                 ganador:= JUGAR_PARTIDA(juegoElegido, NUMERO_DE_MANOS_MAXIMO, NUMERO_DE_MANOS_PARA_GANAR);

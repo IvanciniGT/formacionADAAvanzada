@@ -37,10 +37,10 @@ package body GameLibrary is
         return V_LISTADO_NOMBRES_JUEGOS;
     end F_GET_GAME_NAMES;
 
-    function F_GET_JUGABLE (V_GAME_NAME : Unbounded_String) return Partida.Jugable is
+    function F_GET_JUGABLE (V_GAME_NAME : String) return Partida.Jugable is
     begin
         return --Jugable'Image(V_MAPA_JUGABLES(V_GAME_NAME));
-                V_MAPA_JUGABLES(V_GAME_NAME);
+                V_MAPA_JUGABLES(To_Unbounded_String(V_GAME_NAME));
     end F_GET_JUGABLE;
 
     procedure P_INIT_LIBRARY is

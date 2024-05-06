@@ -1,5 +1,5 @@
 with Partida; use Partida;
-
+with GameLibrary;
 package UIGameEngine is
 
     procedure MOSTRAR_BIENVENIDA;
@@ -14,6 +14,6 @@ package UIGameEngine is
 
     function JUGAR_DE_NUEVO_AL_MISMO_JUEGO return boolean;
 
-    function ELEGIR_JUEGO return String;
+    function ELEGIR_JUEGO(V_LISTADO_NOMBRES_JUEGOS: GameLibrary.T_LISTADO_NOMBRES_JUEGOS) return String;
 
 end UIGameEngine;

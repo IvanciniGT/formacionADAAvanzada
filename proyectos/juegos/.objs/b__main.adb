@@ -7,23 +7,23 @@ with Ada.Exceptions;
 
 package body ada_main is
 
-   E073 : Short_Integer; pragma Import (Ada, E073, "system__os_lib_E");
-   E018 : Short_Integer; pragma Import (Ada, E018, "ada__exceptions_E");
-   E014 : Short_Integer; pragma Import (Ada, E014, "system__soft_links_E");
-   E012 : Short_Integer; pragma Import (Ada, E012, "system__exception_table_E");
-   E009 : Short_Integer; pragma Import (Ada, E009, "ada__containers_E");
-   E068 : Short_Integer; pragma Import (Ada, E068, "ada__io_exceptions_E");
-   E053 : Short_Integer; pragma Import (Ada, E053, "ada__strings_E");
-   E055 : Short_Integer; pragma Import (Ada, E055, "ada__strings__maps_E");
-   E059 : Short_Integer; pragma Import (Ada, E059, "ada__strings__maps__constants_E");
-   E041 : Short_Integer; pragma Import (Ada, E041, "interfaces__c_E");
-   E022 : Short_Integer; pragma Import (Ada, E022, "system__exceptions_E");
-   E079 : Short_Integer; pragma Import (Ada, E079, "system__object_reader_E");
-   E048 : Short_Integer; pragma Import (Ada, E048, "system__dwarf_lines_E");
-   E097 : Short_Integer; pragma Import (Ada, E097, "system__soft_links__initialize_E");
-   E036 : Short_Integer; pragma Import (Ada, E036, "system__traceback__symbolic_E");
+   E075 : Short_Integer; pragma Import (Ada, E075, "system__os_lib_E");
+   E007 : Short_Integer; pragma Import (Ada, E007, "ada__exceptions_E");
+   E013 : Short_Integer; pragma Import (Ada, E013, "system__soft_links_E");
+   E025 : Short_Integer; pragma Import (Ada, E025, "system__exception_table_E");
+   E040 : Short_Integer; pragma Import (Ada, E040, "ada__containers_E");
+   E070 : Short_Integer; pragma Import (Ada, E070, "ada__io_exceptions_E");
+   E055 : Short_Integer; pragma Import (Ada, E055, "ada__strings_E");
+   E057 : Short_Integer; pragma Import (Ada, E057, "ada__strings__maps_E");
+   E061 : Short_Integer; pragma Import (Ada, E061, "ada__strings__maps__constants_E");
+   E045 : Short_Integer; pragma Import (Ada, E045, "interfaces__c_E");
+   E027 : Short_Integer; pragma Import (Ada, E027, "system__exceptions_E");
+   E081 : Short_Integer; pragma Import (Ada, E081, "system__object_reader_E");
+   E050 : Short_Integer; pragma Import (Ada, E050, "system__dwarf_lines_E");
+   E021 : Short_Integer; pragma Import (Ada, E021, "system__soft_links__initialize_E");
+   E039 : Short_Integer; pragma Import (Ada, E039, "system__traceback__symbolic_E");
    E152 : Short_Integer; pragma Import (Ada, E152, "ada__numerics_E");
-   E105 : Short_Integer; pragma Import (Ada, E105, "ada__tags_E");
+   E099 : Short_Integer; pragma Import (Ada, E099, "ada__tags_E");
    E122 : Short_Integer; pragma Import (Ada, E122, "ada__streams_E");
    E147 : Short_Integer; pragma Import (Ada, E147, "system__file_control_block_E");
    E124 : Short_Integer; pragma Import (Ada, E124, "system__finalization_root_E");
@@ -32,21 +32,21 @@ package body ada_main is
    E126 : Short_Integer; pragma Import (Ada, E126, "system__storage_pools_E");
    E117 : Short_Integer; pragma Import (Ada, E117, "system__finalization_masters_E");
    E115 : Short_Integer; pragma Import (Ada, E115, "system__storage_pools__subpools_E");
-   E101 : Short_Integer; pragma Import (Ada, E101, "ada__strings__unbounded_E");
+   E107 : Short_Integer; pragma Import (Ada, E107, "ada__strings__unbounded_E");
    E158 : Short_Integer; pragma Import (Ada, E158, "ada__calendar_E");
    E142 : Short_Integer; pragma Import (Ada, E142, "ada__text_io_E");
    E192 : Short_Integer; pragma Import (Ada, E192, "system__pool_global_E");
    E156 : Short_Integer; pragma Import (Ada, E156, "system__random_seed_E");
-   E138 : Short_Integer; pragma Import (Ada, E138, "partida_E");
-   E140 : Short_Integer; pragma Import (Ada, E140, "uigameengine_E");
-   E136 : Short_Integer; pragma Import (Ada, E136, "juego_E");
    E151 : Short_Integer; pragma Import (Ada, E151, "randomhelpers_E");
    E188 : Short_Integer; pragma Import (Ada, E188, "helpersjuegoahorcado_E");
    E164 : Short_Integer; pragma Import (Ada, E164, "uiadivinarnumerojuego_E");
-   E134 : Short_Integer; pragma Import (Ada, E134, "adivinarnumerojuego_E");
    E198 : Short_Integer; pragma Import (Ada, E198, "uijuegoahorcado_E");
+   E138 : Short_Integer; pragma Import (Ada, E138, "partida_E");
+   E105 : Short_Integer; pragma Import (Ada, E105, "gamelibrary_E");
+   E136 : Short_Integer; pragma Import (Ada, E136, "juego_E");
+   E134 : Short_Integer; pragma Import (Ada, E134, "adivinarnumerojuego_E");
    E184 : Short_Integer; pragma Import (Ada, E184, "juegoahorcado_E");
-   E007 : Short_Integer; pragma Import (Ada, E007, "gamelibrary_E");
+   E140 : Short_Integer; pragma Import (Ada, E140, "uigameengine_E");
    E005 : Short_Integer; pragma Import (Ada, E005, "gameengine_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
@@ -62,40 +62,40 @@ package body ada_main is
          procedure F1;
          pragma Import (Ada, F1, "gamelibrary__finalize_body");
       begin
-         E007 := E007 - 1;
+         E105 := E105 - 1;
          F1;
-      end;
-      declare
-         procedure F2;
-         pragma Import (Ada, F2, "gamelibrary__finalize_spec");
-      begin
-         F2;
       end;
       E184 := E184 - 1;
       declare
-         procedure F3;
-         pragma Import (Ada, F3, "juegoahorcado__finalize_spec");
+         procedure F2;
+         pragma Import (Ada, F2, "juegoahorcado__finalize_spec");
       begin
-         F3;
+         F2;
       end;
       E134 := E134 - 1;
       declare
-         procedure F4;
-         pragma Import (Ada, F4, "adivinarnumerojuego__finalize_spec");
+         procedure F3;
+         pragma Import (Ada, F3, "adivinarnumerojuego__finalize_spec");
       begin
-         F4;
-      end;
-      E188 := E188 - 1;
-      declare
-         procedure F5;
-         pragma Import (Ada, F5, "helpersjuegoahorcado__finalize_spec");
-      begin
-         F5;
+         F3;
       end;
       E136 := E136 - 1;
       declare
+         procedure F4;
+         pragma Import (Ada, F4, "juego__finalize_spec");
+      begin
+         F4;
+      end;
+      declare
+         procedure F5;
+         pragma Import (Ada, F5, "gamelibrary__finalize_spec");
+      begin
+         F5;
+      end;
+      E188 := E188 - 1;
+      declare
          procedure F6;
-         pragma Import (Ada, F6, "juego__finalize_spec");
+         pragma Import (Ada, F6, "helpersjuegoahorcado__finalize_spec");
       begin
          F6;
       end;
@@ -113,7 +113,7 @@ package body ada_main is
       begin
          F8;
       end;
-      E101 := E101 - 1;
+      E107 := E107 - 1;
       declare
          procedure F9;
          pragma Import (Ada, F9, "ada__strings__unbounded__finalize_spec");
@@ -248,38 +248,38 @@ package body ada_main is
       Ada.Exceptions'Elab_Spec;
       System.Soft_Links'Elab_Spec;
       System.Exception_Table'Elab_Body;
-      E012 := E012 + 1;
+      E025 := E025 + 1;
       Ada.Containers'Elab_Spec;
-      E009 := E009 + 1;
+      E040 := E040 + 1;
       Ada.Io_Exceptions'Elab_Spec;
-      E068 := E068 + 1;
+      E070 := E070 + 1;
       Ada.Strings'Elab_Spec;
-      E053 := E053 + 1;
-      Ada.Strings.Maps'Elab_Spec;
       E055 := E055 + 1;
+      Ada.Strings.Maps'Elab_Spec;
+      E057 := E057 + 1;
       Ada.Strings.Maps.Constants'Elab_Spec;
-      E059 := E059 + 1;
+      E061 := E061 + 1;
       Interfaces.C'Elab_Spec;
-      E041 := E041 + 1;
+      E045 := E045 + 1;
       System.Exceptions'Elab_Spec;
-      E022 := E022 + 1;
+      E027 := E027 + 1;
       System.Object_Reader'Elab_Spec;
-      E079 := E079 + 1;
+      E081 := E081 + 1;
       System.Dwarf_Lines'Elab_Spec;
-      E048 := E048 + 1;
+      E050 := E050 + 1;
       System.Os_Lib'Elab_Body;
-      E073 := E073 + 1;
+      E075 := E075 + 1;
       System.Soft_Links.Initialize'Elab_Body;
-      E097 := E097 + 1;
-      E014 := E014 + 1;
+      E021 := E021 + 1;
+      E013 := E013 + 1;
       System.Traceback.Symbolic'Elab_Body;
-      E036 := E036 + 1;
-      E018 := E018 + 1;
+      E039 := E039 + 1;
+      E007 := E007 + 1;
       Ada.Numerics'Elab_Spec;
       E152 := E152 + 1;
       Ada.Tags'Elab_Spec;
       Ada.Tags'Elab_Body;
-      E105 := E105 + 1;
+      E099 := E099 + 1;
       Ada.Streams'Elab_Spec;
       E122 := E122 + 1;
       System.File_Control_Block'Elab_Spec;
@@ -298,7 +298,7 @@ package body ada_main is
       System.Storage_Pools.Subpools'Elab_Spec;
       E115 := E115 + 1;
       Ada.Strings.Unbounded'Elab_Spec;
-      E101 := E101 + 1;
+      E107 := E107 + 1;
       Ada.Calendar'Elab_Spec;
       Ada.Calendar'Elab_Body;
       E158 := E158 + 1;
@@ -309,25 +309,25 @@ package body ada_main is
       E192 := E192 + 1;
       System.Random_Seed'Elab_Body;
       E156 := E156 + 1;
-      E140 := E140 + 1;
-      E138 := E138 + 1;
-      Juego'Elab_Spec;
-      Juego'Elab_Body;
-      E136 := E136 + 1;
       E151 := E151 + 1;
       HELPERSJUEGOAHORCADO'ELAB_SPEC;
       E188 := E188 + 1;
       E164 := E164 + 1;
+      E198 := E198 + 1;
+      GAMELIBRARY'ELAB_SPEC;
+      Juego'Elab_Spec;
+      Juego'Elab_Body;
+      E136 := E136 + 1;
       ADIVINARNUMEROJUEGO'ELAB_SPEC;
       ADIVINARNUMEROJUEGO'ELAB_BODY;
       E134 := E134 + 1;
-      E198 := E198 + 1;
       JUEGOAHORCADO'ELAB_SPEC;
       JUEGOAHORCADO'ELAB_BODY;
       E184 := E184 + 1;
-      GAMELIBRARY'ELAB_SPEC;
+      E140 := E140 + 1;
       GAMELIBRARY'ELAB_BODY;
-      E007 := E007 + 1;
+      E105 := E105 + 1;
+      E138 := E138 + 1;
       E005 := E005 + 1;
    end adainit;
 
@@ -366,16 +366,16 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/uigameengine.o
-   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/partida.o
-   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/juego.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/randomhelpers.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/helpersjuegoahorcado.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/uiadivinarnumerojuego.o
-   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/adivinarnumerojuego.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/uijuegoahorcado.o
+   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/juego.o
+   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/adivinarnumerojuego.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/juegoahorcado.o
+   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/uigameengine.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/gamelibrary.o
+   --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/partida.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/gameengine.o
    --   /home/parallels/Desktop/ada/proyectos/juegos/.objs/main.o
    --   -L/home/parallels/Desktop/ada/proyectos/juegos/.objs/
