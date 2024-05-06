@@ -7,7 +7,7 @@ package HelpersJuegoAhorcado is
     );
     subtype ListadoPalabras is ListadoPalabrasVectors.Vector;
 
-    function ENMASCARAR(palabra: String; caracteres_usados: String; caracteres_especiales: String) return String;
+    function ENMASCARAR(palabra_a_adivinar: String; palabra_a_validar: String; caracteres_usados: String; caracteres_especiales: String) return String;
     function NORMALIZAR_PALABRA(palabra: String) return String;
     function NORMALIZAR_CARACTER(letra: Character) return String;
     function CARGAR_PALABRAS_DE_FICHERO(tematica: String) return ListadoPalabras;

@@ -19,11 +19,9 @@ package body JuegoAhorcado is
             intentos_restantes      : Integer           := 6;
             letras_usadas           : Unbounded_String  := "";
             caracteres_especiales   : constant String   := " -";
-
             palabra_a_adivinar      : constant String   := ELEGIR_PALABRA_ALEATORIAMENTE(palabras); -- Opción 2
             palabra_para_validar    : constant String   := NORMALIZAR_PALABRA(palabra_a_adivinar);
-            palabra_enmascarada     : String            := ENMASCARAR(palabra_para_validar, letras_usadas, caracteres_especiales);
-
+            palabra_enmascarada     : String            := ENMASCARAR(palabra_a_adivinar, palabra_para_validar, letras_usadas, caracteres_especiales);
             caracter_elegido        : Character;
         begin
             while intentos_restantes > 0 loop
@@ -32,7 +30,7 @@ package body JuegoAhorcado is
                 caracter_elegido := NORMALIZAR_CARACTER(caracter_elegido);
                 letras_usadas := letras_usadas & caracter_elegido;
                 if ACIERTA_CON_LA_LETRA(palabra_para_validar, caracter_elegido, letras_usadas) then
-                    palabra_enmascarada := ENMASCARAR(palabra_para_validar, letras_usadas, caracteres_especiales);
+                    palabra_enmascarada := ENMASCARAR(palabra_a_adivinar, palabra_para_validar, letras_usadas, caracteres_especiales);
                     if palabra_enmascarada = palabra_para_validar then
                         ganador := Partida.RESULTADO.JUGADOR;
                         exit;
