@@ -1,6 +1,18 @@
 with Q_STATISTICS;
 package body Q_PLAYER is
 
+    procedure P_SUBSCRIBE_TO_PLAYER(V_PLAYER: in out T_PLAYER; V_OBSERVER: T_OBSERVER) is
+    begin
+        V_PLAYER.OBSERVERS.APPEND(V_OBSERVER);
+    end P_SUBSCRIBE_TO_PLAYER;
+            
+    procedure NOTIFY_OBSERVERS(V_PLAYER: T_PLAYER) is
+    begin
+        for OBSERVER of V_PLAYER loop
+            OBSERVER.all(V_PLAYER'ACCESS);
+        end loop;
+    end NOTIFY_OBSERVERS;
+
     function F_CREATE_EXISTING_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER is
         V_PLAYER: T_PLAYER;
     begin
@@ -37,19 +49,19 @@ package body Q_PLAYER is
 
     procedure P_SET_NAME(V_PLAYER: in out T_PLAYER; V_NAME: T_NAME_VALUE) is 
     begin
-        -- hacer las comproibaciones necesarias para el nombre... 
-        -- y si al final cuela el nombre?
-        -- cambiar el fichero
-            -- Lo cambio aqui?
         V_PLAYER.NAME := V_NAME;
+        NOTIFY_OBSERVERS(V_PLAYER);
+        -- Y ya el observador, decidirá si quiere cambiar el fichero o no.
+        -- O el observador decidirá si apuntar este cambio en un log o no
     end F_SET_NAME;
     
     procedure P_SET_EMAIL(V_PLAYER: in out T_PLAYER; V_EMAIL: T_EMAIL_VALUE) is
     begin
-        -- Validar que lo que meta sea realmente un email... con su arroba... y sus puntitos.
         V_PLAYER.EMAIL := V_EMAIL;
+        -- o el observador decidirá si quiere mandar un email al usuario para confirmar el cambio o no
+        NOTIFY_OBSERVERS(V_PLAYER);
     end F_SET_EMAIL;
-            
+
 end Q_PLAYER;
 --- Queremos que alguien se pueda subscribir a un player... de forma que cuando se edite un dato, el player le avise.
 --- Y ya ese hará lo que le venga bien hacer!... No es mi problema! Mi problema es avisar de que me han tocao el nombre,

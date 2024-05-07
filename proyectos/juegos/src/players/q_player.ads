@@ -1,4 +1,5 @@
 with Q_STATISTICS;
+with Ada.Containers.Vectors;
 package Q_PLAYER is
 
     type T_PLAYER; -- Solo digo que habrá un tipo T_PLAYER
@@ -17,29 +18,33 @@ package Q_PLAYER is
     -- Jugadores leidos de un fichero
     function F_CREATE_EXISTING_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
 
-    private type T_PLAYER is tagged record
-        R_NAME:         T_NAME_VALUE;
-        R_EMAIL:        T_EMAIL_VALUE;
-        R_STATISTICS:   Q_STATISTICS.T_STATISTICS;
-        R_OBSERVERS:    T_OBSERVER_VECTOR;
-    end record;
-
-
-    -- El private hace que externos no puedan acceder a los datos (ni paa verlos, ni para modificarlos)
-    -- Pero si permite que externos guarden refencias al record.
-
     -- Getters
     function F_GET_NAME(V_PLAYER: T_PLAYER) return T_NAME_VALUE;
-    
     function F_GET_EMAIL(V_PLAYER: T_PLAYER) return T_EMAIL_VALUE;
-    
     function F_GET_STATISTICS(V_PLAYER: T_PLAYER) return Q_STATISTICS.T_STATISTICS;
 
     -- Setters
     procedure P_SET_NAME(V_PLAYER: in out T_PLAYER; V_NAME: T_NAME_VALUE);
-    
     procedure P_SET_EMAIL(V_PLAYER: in out T_PLAYER; V_EMAIL: T_EMAIL_VALUE);
-              
+    procedure P_SUBSCRIBE_TO_PLAYER(V_PLAYER: in out T_PLAYER; V_OBSERVER: T_OBSERVER); -- muy habitual sería devolver una función (access function) de des-suscribirse
+    
+    private 
+        -- El private hace que externos no puedan acceder a los datos (ni paa verlos, ni para modificarlos)
+        -- Pero si permite que externos guarden refencias al record.
+        
+        package Q_PLAYER_VECTOR is new Ada.Containers.Vectors(
+            Index_Type => Positive ,
+            Element_Type => T_OBSERVER
+        ); -- 10 jugadores
+
+        subtype T_OBSERVER_VECTOR is Q_PLAYER_VECTOR.Vector;
+
+        type T_PLAYER is tagged record
+            R_NAME:         T_NAME_VALUE;
+            R_EMAIL:        T_EMAIL_VALUE;
+            R_STATISTICS:   Q_STATISTICS.T_STATISTICS;
+            R_OBSERVERS:    T_OBSERVER_VECTOR;
+        end record;
 
 end Q_PLAYER;
 
