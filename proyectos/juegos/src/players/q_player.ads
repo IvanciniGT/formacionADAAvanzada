@@ -13,6 +13,7 @@ package Q_PLAYER is
 
     subtype T_EMAIL_VALUE is String(1..50);              -- 50 bytes
     subtype T_NAME_VALUE  is Wide_String(1..50);         -- 100 bytes (ver nota 1)
+    
     -- Nuevos jugadores
     function F_CREATE_NEW_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
     -- Jugadores leidos de un fichero

@@ -18,7 +18,23 @@ package Q_STATISTICS is
     subtype T_STATISTICS_COUNT is Natural range 0 .. 255; -- 65535
         -- El haber metido un subtipo tiene un impacto adicional? Controlar el desbordamiento
 
-    type T_STATISTICS is tagged record
+    function F_CREATE_NEW_STATISTICS return T_STATISTICS;
+    function F_CREATE_EXISTING_STATISTICS(
+        V_WINS   : T_STATISTICS_COUNT;
+        V_LOSSES : T_STATISTICS_COUNT;
+        V_TIES   : T_STATISTICS_COUNT
+    ) return T_STATISTICS;
+    
+    function F_GET_WINS (V_STATISTICS : T_STATISTICS) return T_STATISTICS_COUNT;
+    function F_GET_LOSSES (V_STATISTICS : T_STATISTICS) return T_STATISTICS_COUNT;
+    function F_GET_TIES (V_STATISTICS : T_STATISTICS) return T_STATISTICS_COUNT;
+    function F_GET_PLAYED_GAMES (V_STATISTICS : T_STATISTICS) return Natural;
+
+    procedure P_INCREMENT_WINS (V_STATISTICS : in out T_STATISTICS);
+    procedure P_INCREMENT_LOSSES (V_STATISTICS : in out T_STATISTICS);
+    procedure P_INCREMENT_TIES (V_STATISTICS : in out T_STATISTICS);
+
+    private type T_STATISTICS is tagged record
         R_WINS   : T_STATISTICS_COUNT := 0;
         R_LOSSES : T_STATISTICS_COUNT := 0;
         R_TIES   : T_STATISTICS_COUNT := 0;
