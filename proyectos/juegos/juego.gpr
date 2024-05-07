@@ -9,7 +9,8 @@ project Juego is
                         "./src/games/adivinarnumero/ui",
                         "./src/games/ahorcado",
                         "./src/games/ahorcado/helpers",
-                        "./src/games/ahorcado/ui"
+                        "./src/games/ahorcado/ui",
+                        "./src/players"
                         );
    for Exec_Dir use "bin";
    package Compiler is
