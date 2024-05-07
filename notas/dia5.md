@@ -85,3 +85,49 @@ Y sobre esos tipos de datos nuevos, podré ejecutar ciertas operaciones que ante
                 7 de Abril de 2024 > "Hace un mes"
                 10 de Mayo de 2024 > "Dentro de 3 días"
 
+---
+
+Que compliado es hacer un buen diseño de un sistema <<< JODIDO DE NARICES
+Nos cuesta un huevo pensarlo... por mucha experiencia que tengamos...
+Y para no regarla mucho, solemos adoptar una ARQUITECTURA DE DESARROLLO.
+Hay muchas arquitecturas de desarrollo de software, 
+igual que hay muchos patrones de desarrollo de sofytware.
+Arquitecturas:
+- Arquitectura limpia (CLEAN ARQUITECTURE)
+- Arquitectura Hexagonal
+- Arquitectura de cebolla
+
+La idea es asegurar que respetamos esos principios SOLID.
+En concreto el de responsabilidad UNICA.
+
+Imaginad que la entrada a crear un nuevo jugador, la hago en Q_PLAYER.
+    Imaginad ahora que quiero asociar una determinada LOGICA DE NEGOCIO a esa operacion: 
+        Al dar de alta un jugador, se le debe mandar un email!
+        Cuál sería el único lugar donde podría poner esa llamada? LA LLAMADA A ENVIAR EMAIL
+        P_ENVIAR_EMAIL(EMILIO, ASUNTO=> "BIENVENIDA");
+
+---
+Aplicacion WEB
+
+    DENTRO DEL NAVEGADOR                            SERVIDOR
+----------------------------------------------   -------------------------------------------------------------------------------------------------
+ Formulario de jugador > Servicio Jugadores    >   Controlador REST     > Servicio Jugadores   > Repositorio           >                BBDD
+
+   Recoger unos datos     Comunicaciones            Recibir peticiones    Aportar lógica      Aportar lógica                        persistir
+   válidos de un usuario    Servidor                 de clientes           de negocio         de persistencia                        datos
+                                                                                                                                    validar DNI
+                                                                            altaJugador
+                                                                                validacion (1)                                       AASSABSHD
+                                                                                persistir
+                                                                                solicitarEnvioEmail
+
+                                                                        > Servicio de envío de email
+    DENTRO DE UN TELEFONO
+App. nativa Android
+Formulario recoger datos >> Servicio que      >>
+                            comunica con el servidor
+
+Quier validar el DNI de la persona
+Fecha de Nacimiento
+    ¿Quién valida que la fecha sea una fecha?
+    Estoy montando una pagina de apuestas deportivas.. y no puedo dar de alta a gente menor de 18 años. (1)

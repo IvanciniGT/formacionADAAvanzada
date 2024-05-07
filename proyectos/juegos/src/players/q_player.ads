@@ -13,11 +13,11 @@ package Q_PLAYER is
 
     subtype T_EMAIL_VALUE is String(1..50);              -- 50 bytes
     subtype T_NAME_VALUE  is Wide_String(1..50);         -- 100 bytes (ver nota 1)
-    
+
     -- Nuevos jugadores
-    function F_CREATE_NEW_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
+    -- function F_CREATE_NEW_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
     -- Jugadores leidos de un fichero
-    function F_CREATE_EXISTING_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
+    -- function F_CREATE_EXISTING_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
 
     -- Getters
     function F_GET_NAME(V_PLAYER: T_PLAYER) return T_NAME_VALUE;
@@ -40,7 +40,7 @@ package Q_PLAYER is
 
         subtype T_OBSERVER_VECTOR is Q_PLAYER_VECTOR.Vector;
 
-        type T_PLAYER is tagged record
+        type T_PLAYER is tagged record      --- limited
             R_NAME:         T_NAME_VALUE;
             R_EMAIL:        T_EMAIL_VALUE;
             R_STATISTICS:   Q_STATISTICS.T_STATISTICS;

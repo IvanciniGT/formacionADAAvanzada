@@ -17,6 +17,7 @@ package Q_STATISTICS is
 
     subtype T_STATISTICS_COUNT is Natural range 0 .. 255; -- 65535
         -- El haber metido un subtipo tiene un impacto adicional? Controlar el desbordamiento
+    type T_STATISTICS is private;
 
     function F_CREATE_NEW_STATISTICS return T_STATISTICS;
     function F_CREATE_EXISTING_STATISTICS(
