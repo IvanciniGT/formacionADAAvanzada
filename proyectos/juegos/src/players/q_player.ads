@@ -1,8 +1,50 @@
 with Q_STATISTICS;
 package Q_PLAYER is
 
+    type T_PLAYER; -- Solo digo que habrá un tipo T_PLAYER
+    type T_PLAYER_ACCESS is access constant T_PLAYER; -- Tipo de acceso a T_PLAYER
+                                   -- all:      Puedo modificar el player
+                                   -- constant: No puedo modificar el player
+    type T_OBSERVER is access procedure(V_PLAYER_ACCESS: T_PLAYER_ACCESS);
+
+    -- Que es un observador? Una función a la que llamaré cuando ocurre un evento.
+    -- La llamaremos cuando se cambie alguno de los datos del jugador
+
     subtype T_EMAIL_VALUE is String(1..50);              -- 50 bytes
-    subtype T_NAME_VALUE  is Wide_String(1..50);         -- 100 bytes
+    subtype T_NAME_VALUE  is Wide_String(1..50);         -- 100 bytes (ver nota 1)
+    -- Nuevos jugadores
+    function F_CREATE_NEW_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
+    -- Jugadores leidos de un fichero
+    function F_CREATE_EXISTING_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
+
+    private type T_PLAYER is tagged record
+        R_NAME:         T_NAME_VALUE;
+        R_EMAIL:        T_EMAIL_VALUE;
+        R_STATISTICS:   Q_STATISTICS.T_STATISTICS;
+        R_OBSERVERS:    T_OBSERVER_VECTOR;
+    end record;
+
+
+    -- El private hace que externos no puedan acceder a los datos (ni paa verlos, ni para modificarlos)
+    -- Pero si permite que externos guarden refencias al record.
+
+    -- Getters
+    function F_GET_NAME(V_PLAYER: T_PLAYER) return T_NAME_VALUE;
+    
+    function F_GET_EMAIL(V_PLAYER: T_PLAYER) return T_EMAIL_VALUE;
+    
+    function F_GET_STATISTICS(V_PLAYER: T_PLAYER) return Q_STATISTICS.T_STATISTICS;
+
+    -- Setters
+    procedure P_SET_NAME(V_PLAYER: in out T_PLAYER; V_NAME: T_NAME_VALUE);
+    
+    procedure P_SET_EMAIL(V_PLAYER: in out T_PLAYER; V_EMAIL: T_EMAIL_VALUE);
+              
+
+end Q_PLAYER;
+
+
+-- nota 1:
     -- Tengo que tener en cuenta control de desbordamiento.. Con el unbouded string no tengo que preocuparme por el tamaño... al menos tan grande.
     -- 50 caracteres. Cuánto ocupa 1 caracter en RAM?
     -- Depende del caracter:
@@ -21,33 +63,3 @@ package Q_PLAYER is
             -- Si uso Wide_String: Se compone de un array de Wide_Character             2 bytes por caracter
                 -- Puedo poner la Ñ... pero no puedo poner: Un caracter chino o un emoji
             -- Si uso Wide_Wide_String: Se compone de un array de Wide_Wide_Character   4 bytes por caracter
-    -- Nuevos jugadores
-    function F_CREATE_NEW_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
-    -- Jugadores leidos de un fichero
-    function F_CREATE_EXISTING_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
-
-    private type T_PLAYER is tagged record
-        R_NAME:         T_NAME_VALUE;
-        R_EMAIL:        T_EMAIL_VALUE;
-        R_STATISTICS:   Q_STATISTICS.T_STATISTICS;
-    end record;
-    -- El private hace que externos no puedan acceder a los datos (ni paa verlos, ni para modificarlos)
-    -- Pero si permite que externos guarden refencias al record.
-
-    -- Getters
-    function F_GET_NAME(V_PLAYER: T_PLAYER) return T_NAME_VALUE;
-    
-    function F_GET_EMAIL(V_PLAYER: T_PLAYER) return T_EMAIL_VALUE;
-    
-    function F_GET_STATISTICS(V_PLAYER: T_PLAYER) return Q_STATISTICS.T_STATISTICS;
-
-    -- Setters
-    procedure P_SET_NAME(V_PLAYER: in out T_PLAYER; V_NAME: T_NAME_VALUE);
-    
-    procedure P_SET_EMAIL(V_PLAYER: in out T_PLAYER; V_EMAIL: T_EMAIL_VALUE);
-           
-    -- Que es un observador? Una función a la que llamaré cuando ocurre un evento.
-    -- La llamaremos cuando se cambie alguno de los datos del jugador
-    type T_OBSERVER is access procedure(V_PLAYER: T_PLAYER);
-
-end Q_PLAYER;
