@@ -22,9 +22,9 @@ package Q_PLAYER is
                 -- Puedo poner la Ñ... pero no puedo poner: Un caracter chino o un emoji
             -- Si uso Wide_Wide_String: Se compone de un array de Wide_Wide_Character   4 bytes por caracter
     -- Nuevos jugadores
-    function F_CREATE_NEW_PLAYER(P_NAME: T_NAME_VALUE; P_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
+    function F_CREATE_NEW_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
     -- Jugadores leidos de un fichero
-    function F_CREATE_EXISTING_PLAYER(P_NAME: T_NAME_VALUE; P_EMAIL: T_EMAIL_VALUE; P_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
+    function F_CREATE_EXISTING_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
 
     private type T_PLAYER is tagged record
         R_NAME:         T_NAME_VALUE;
@@ -35,19 +35,19 @@ package Q_PLAYER is
     -- Pero si permite que externos guarden refencias al record.
 
     -- Getters
-    function F_GET_NAME(P_PLAYER: T_PLAYER) return T_NAME_VALUE;
+    function F_GET_NAME(V_PLAYER: T_PLAYER) return T_NAME_VALUE;
     
-    function F_GET_EMAIL(P_PLAYER: T_PLAYER) return T_EMAIL_VALUE;
+    function F_GET_EMAIL(V_PLAYER: T_PLAYER) return T_EMAIL_VALUE;
     
-    function F_GET_STATISTICS(P_PLAYER: T_PLAYER) return Q_STATISTICS.T_STATISTICS;
+    function F_GET_STATISTICS(V_PLAYER: T_PLAYER) return Q_STATISTICS.T_STATISTICS;
 
     -- Setters
-    procedure P_SET_NAME(P_PLAYER: in out T_PLAYER; P_NAME: T_NAME_VALUE);
+    procedure P_SET_NAME(V_PLAYER: in out T_PLAYER; V_NAME: T_NAME_VALUE);
     
-    procedure P_SET_EMAIL(P_PLAYER: in out T_PLAYER; P_EMAIL: T_EMAIL_VALUE);
+    procedure P_SET_EMAIL(V_PLAYER: in out T_PLAYER; V_EMAIL: T_EMAIL_VALUE);
            
     -- Que es un observador? Una función a la que llamaré cuando ocurre un evento.
     -- La llamaremos cuando se cambie alguno de los datos del jugador
-    type T_OBSERVER is access procedure(P_PLAYER: T_PLAYER);
+    type T_OBSERVER is access procedure(V_PLAYER: T_PLAYER);
 
 end Q_PLAYER;
