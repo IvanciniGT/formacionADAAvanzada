@@ -4,24 +4,26 @@ package Q_PLAYER is
 
     EX_PLAYER_NOT_FOUND: EXCEPTION;
     EX_ERROR_LOADING_PLAYER: EXCEPTION;
-
+    EX_PLAYER_ALREADY_EXISTS: EXCEPTION;
 
     type T_PLAYER is private; -- Solo digo que habrá un tipo T_PLAYER
-    type T_PLAYER_ACCESS is access constant T_PLAYER; --T_PLAYER; -- Tipo de acceso a T_PLAYER
+    --type T_PLAYER_ACCESS is access constant T_PLAYER; --T_PLAYER; -- Tipo de acceso a T_PLAYER
                                    -- all:      Puedo modificar el player
                                    -- constant: No puedo modificar el player
-    type T_OBSERVER is access procedure(V_PLAYER_ACCESS: T_PLAYER_ACCESS);
+    subtype T_EMAIL_VALUE is String(1..50);              -- 50 bytes
+    subtype T_NAME_VALUE  is String(1..50); -- TODO --Wide_String(1..50);         -- 100 bytes (ver nota 1)
+
+    type T_PLAYER_CHANGES is tagged record
+        R_PLAYER: T_PLAYER;
+        R_OLD_NAME: T_NAME_VALUE;
+        R_OLD_EMAIL: T_EMAIL_VALUE;
+    end record;
+
+    type T_OBSERVER is access procedure(V_PLAYER_CHANGES: T_PLAYER_CHANGES); --_ACCESS: T_PLAYER_ACCESS);
 
     -- Que es un observador? Una función a la que llamaré cuando ocurre un evento.
     -- La llamaremos cuando se cambie alguno de los datos del jugador
 
-    subtype T_EMAIL_VALUE is String(1..50);              -- 50 bytes
-    subtype T_NAME_VALUE  is String(1..50); -- TODO --Wide_String(1..50);         -- 100 bytes (ver nota 1)
-
-    -- Nuevos jugadores
-    -- function F_CREATE_NEW_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
-    -- Jugadores leidos de un fichero
-    -- function F_CREATE_EXISTING_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
 
     -- Getters
     function F_GET_NAME(V_PLAYER: T_PLAYER) return T_NAME_VALUE;
@@ -50,6 +52,11 @@ package Q_PLAYER is
             R_STATISTICS:   Q_STATISTICS.T_STATISTICS;
             R_OBSERVERS:    T_OBSERVER_VECTOR;
         end record;
+
+    -- Nuevos jugadores
+    function F_CREATE_NEW_PLAYER_ENTITY(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
+    -- Jugadores leidos de un fichero
+    function F_CREATE_EXISTING_PLAYER_ENTITY(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE; V_STATISTICS: Q_STATISTICS.T_STATISTICS) return T_PLAYER;
 
 end Q_PLAYER;
 
