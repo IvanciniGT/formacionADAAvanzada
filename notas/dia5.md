@@ -154,3 +154,18 @@ WINS=10
 LOSSES=10
 TIES=10
 WINS=10
+
+--->
+
+A nivel de SO, los archivos y la terminal se tratan de la misma form.
+
+TODO PROCESO QUE CORRE EN UN SO (me da igual WINDOWS, LINUX, MACOS, UNIX(POSIX))
+por defecto tiene 3 canales de comunicación:
+  ID
+- 0 - ENTRADA ESTANDAR
+- 1 - SALIDA ESTANDAR
+- 2 - SALIDA DE ERROR
+
+Cuando hacemos un PUT_LINE(CANAL, TEXTO) ... si no le paso canal... se usa 1
+Cuando hacemos un GET_LINE(CANAL,VARIABLE) .. si no le paso cana... se usa el 0
+

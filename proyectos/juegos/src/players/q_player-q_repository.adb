@@ -45,7 +45,7 @@ package body Q_PLAYER.Q_REPOSITORY is
             Mode => Ada.Text_IO.Out_File
         );
 
-        Ada.Text_IO.Put_Line("# Este es el fichero de: " & V_PLAYER.R_NAME);
+        Ada.Text_IO.Put_Line(referencia_al_archivo, "# Este es el fichero de: " & V_PLAYER.R_NAME);
         ---....
 
         Ada.Text_IO.Close(referencia_al_archivo);
