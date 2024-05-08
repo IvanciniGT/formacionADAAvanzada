@@ -28,24 +28,44 @@ package body Q_PLAYER.Q_PLAYER_MANAGER is
         end if;
     end F_EXISTS_PLAYER;
     
+
+--    function F_GET_PLAYER(V_PLAYER_NAME: T_NAME_VALUE) return T_PLAYER is
+--        V_PLAYER: T_PLAYER;
+--    begin
+--        if V_PLAYERS_CACHE.Exists(V_PLAYER_NAME) then -- Lo primero, mirar si está en la cache
+--            return V_PLAYERS_CACHE.Element(V_PLAYER_NAME);
+--        else                                          -- Si no está en cache? Mirar si existe el fichero
+--            if Q_REPOSITORY.F_EXISTS_PLAYER(V_PLAYER_NAME) then
+--                V_PLAYER :=  Q_REPOSITORY.F_LOAD_PLAYER(V_PLAYER_NAME);
+--                V_PLAYERS_CACHE.Insert(V_PLAYER_NAME, V_PLAYER);
+--                return V_PLAYER;
+--            else
+--                raise Q_PLAYER.Q_PLAYER_NOT_FOUND;
+--            end if;
+--        end if;
+--    end F_GET_PLAYER;
+
+
     function F_GET_PLAYER(V_PLAYER_NAME: T_NAME_VALUE) return T_PLAYER is
     begin
-        if V_PLAYERS_CACHE.Exists(V_PLAYER_NAME) then -- Lo primero, mirar si está en la cache
-            return V_PLAYERS_CACHE.Element(V_PLAYER_NAME);
-        else                                          -- Si no está en cache? Mirar si existe el fichero
+        if not V_PLAYERS_CACHE.Exists(V_PLAYER_NAME) then -- Lo primero, mirar si está en la cache
             if Q_REPOSITORY.F_EXISTS_PLAYER(V_PLAYER_NAME) then
-                return Q_REPOSITORY.F_LOAD_PLAYER(V_PLAYER_NAME);
+                V_PLAYERS_CACHE.Insert(V_PLAYER_NAME, Q_REPOSITORY.F_LOAD_PLAYER(V_PLAYER_NAME));
             else
                 raise Q_PLAYER.Q_PLAYER_NOT_FOUND;
             end if;
         end if;
+        return V_PLAYERS_CACHE.Element(V_PLAYER_NAME);
     end F_GET_PLAYER;
+
     
-    function F_SAVE_PLAYER(V_PLAYER: T_PLAYER) return BOOLEAN is
+    procedure P_SAVE_PLAYER(V_PLAYER: T_PLAYER) is
     begin
         -- Lo guardo en cache
+        V_PLAYERS_CACHE.Insert(V_PLAYER.R_NAME, V_PLAYER);
         -- Lo guardo en fichero
-    end F_SAVE_PLAYER;
+        Q_PLAYER.Q_REPOSITORY.F_SAVE_PLAYER(V_PLAYER);
+    end P_SAVE_PLAYER;
 
     function F_CREATE_NEW_PLAYER(V_PLAYER_NAME: T_NAME_VALUE; V_PLAYER_EMAIL: T_EMAIL_VALUE) return T_PLAYER is
     begin

@@ -115,7 +115,7 @@ package body Q_PLAYER.Q_REPOSITORY is
 -- Al final me hace falta controlar con condicionales (case, if) que campo es el que tengo que asignar
 -- Otra alternativa?
 
-    function F_SAVE_PLAYER(V_PLAYER: T_PLAYER) return BOOLEAN is
+    procedure P_SAVE_PLAYER(V_PLAYER: T_PLAYER) is
             V_FILE_CHANNEL: Ada.Text_IO.File_Type;
     begin
         Ada.Text_IO.Create(
@@ -141,6 +141,6 @@ package body Q_PLAYER.Q_REPOSITORY is
         Ada.Text_IO.Put_Line(V_FILE_CHANNEL, Natural'Image(V_PLAYER.R_STATISTICS.R_TIES));
         
         Ada.Text_IO.Close(V_FILE_CHANNEL);
-    end F_SAVE_PLAYER;
+    end P_SAVE_PLAYER;
 
 end Q_PLAYER.Q_REPOSITORY;
