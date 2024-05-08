@@ -2,8 +2,8 @@ with Q_STATISTICS;
 with Ada.Containers.Vectors;
 package Q_PLAYER is
 
-    type T_PLAYER; -- Solo digo que habrá un tipo T_PLAYER
-    type T_PLAYER_ACCESS is access constant T_PLAYER; -- Tipo de acceso a T_PLAYER
+    type T_PLAYER is private; -- Solo digo que habrá un tipo T_PLAYER
+    type T_PLAYER_ACCESS is access constant T_PLAYER; --T_PLAYER; -- Tipo de acceso a T_PLAYER
                                    -- all:      Puedo modificar el player
                                    -- constant: No puedo modificar el player
     type T_OBSERVER is access procedure(V_PLAYER_ACCESS: T_PLAYER_ACCESS);

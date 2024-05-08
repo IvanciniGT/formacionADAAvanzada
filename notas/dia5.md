@@ -117,7 +117,7 @@ Aplicacion WEB
    válidos de un usuario    Servidor                 de clientes           de negocio         de persistencia                        datos
                                                                                                                                     validar DNI
                                                                             altaJugador
-                                                                                validacion (1)                                       AASSABSHD
+                                                                                validacion (1)                                       12345678W
                                                                                 persistir
                                                                                 solicitarEnvioEmail
 
@@ -131,3 +131,26 @@ Quier validar el DNI de la persona
 Fecha de Nacimiento
     ¿Quién valida que la fecha sea una fecha?
     Estoy montando una pagina de apuestas deportivas.. y no puedo dar de alta a gente menor de 18 años. (1)
+
+
+---
+
+wins
+losses
+ties
+
+felipe.txt
+# Este es el fichero de: felipe
+EMAIL=
+LOSSES=10
+
+# Otros comentarios
+TIES=10
+WINS=10
+
+
+--->
+# Este es el fichero de: felipe
+LOSSES=10
+TIES=10
+WINS=10
