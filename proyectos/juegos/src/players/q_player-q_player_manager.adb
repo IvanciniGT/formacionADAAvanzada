@@ -64,8 +64,16 @@ package body Q_PLAYER.Q_PLAYER_MANAGER is
     
     procedure P_SAVE_PLAYER(V_PLAYER: T_PLAYER) is
     begin
+        -- Meter el jugador en una cache
         V_PLAYERS_CACHE.Insert(V_PLAYER.R_NAME, V_PLAYER);
+        -- Solicitar al repo el guardado del player
+        -- o llamar al procedimiento P_SAVE_PLAYER con el jugador
         Q_PLAYER.Q_REPOSITORY.P_SAVE_PLAYER(V_PLAYER);
+        -- Estoy  llamando al procedimiento P_SAVE_PLAYER del paquete Q_REPOSITORY
+        -- Que es el paquete que está haciendo el tio ese del bigote... NO YO !!!
+        --- El problma está en que estamos llamando al P_SAVE_PLAYER del paquete Q_REPOSITORY
+        --- Y si se llamase a OTRO P_SAVE_PLAYER???
+        --- De que estoy hablando?
     end P_SAVE_PLAYER;
 
     procedure P_PLAYER_UPDATED(V_PLAYER_CHANGES: T_PLAYER_CHANGES) is
@@ -83,14 +91,16 @@ package body Q_PLAYER.Q_PLAYER_MANAGER is
     function F_CREATE_NEW_PLAYER(V_PLAYER_NAME: T_NAME_VALUE; V_PLAYER_EMAIL: T_EMAIL_VALUE) return T_PLAYER is
         V_PLAYER: T_PLAYER;
     begin
+        -- comprobar que el usuario no exista previamente
         if F_EXISTS_PLAYER(V_PLAYER_NAME) then
             raise Q_PLAYER.EX_PLAYER_ALREADY_EXISTS;
         end if;
-        -- Creo un jugador nuevo
+        -- Crear un jugador nuevo
         V_PLAYER := F_CREATE_NEW_PLAYER_ENTITY(V_PLAYER_NAME, V_PLAYER_EMAIL);
-            -- Me subscribo a sus actualizaciones
+        -- Me subscribo a sus actualizaciones
         V_PLAYER.P_SUBSCRIBE_TO_PLAYER(P_PLAYER_UPDATED'ACCESS);
-        -- Lo guardo en fichero > ESTO HAY QUE DELEGARLO A OTRO PAQUETE
+        -- Llamar al procedimiento P_SAVE_PLAYER, con el jugador.
+                    -- XXXXX Lo guardo en fichero > ESTO HAY QUE DELEGARLO A OTRO PAQUETE
         P_SAVE_PLAYER(V_PLAYER);
 
         return V_PLAYER;
