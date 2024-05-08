@@ -5,7 +5,7 @@ package body Q_PLAYER.Q_PLAYER_MANAGER is
 
     package Q_PLAYERS_CACHE is new Ada.Containers.Indefinite_Hashed_Maps(
         Key_Type => T_NAME_VALUE,
-        Element_Type => T_PLAYER
+        Element_Type => T_PLAYER,
         Hash => Ada.Wide_Strings.Hash,
         Equivalent_Keys => "="
     ); 
@@ -30,10 +30,15 @@ package body Q_PLAYER.Q_PLAYER_MANAGER is
     
     function F_GET_PLAYER(V_PLAYER_NAME: T_NAME_VALUE) return T_PLAYER is
     begin
-        -- Lo primero, mirar si está en la cache. Si está, lo devuelvo de ahí
-        -- Si no? Lo leo del fichero si existe
-            -- Que también genero un objeto de tipo T_PLAYER
-                -- Me subscribo a sus actualizaciones
+        if V_PLAYERS_CACHE.Exists(V_PLAYER_NAME) then -- Lo primero, mirar si está en la cache
+            return V_PLAYERS_CACHE.Element(V_PLAYER_NAME);
+        else                                          -- Si no está en cache? Mirar si existe el fichero
+            if Q_REPOSITORY.F_EXISTS_PLAYER(V_PLAYER_NAME) then
+                return Q_REPOSITORY.F_LOAD_PLAYER(V_PLAYER_NAME);
+            else
+                raise Q_PLAYER.Q_PLAYER_NOT_FOUND;
+            end if;
+        end if;
     end F_GET_PLAYER;
     
     function F_SAVE_PLAYER(V_PLAYER: T_PLAYER) return BOOLEAN is

@@ -2,6 +2,10 @@ with Q_STATISTICS;
 with Ada.Containers.Vectors;
 package Q_PLAYER is
 
+    EX_PLAYER_NOT_FOUND: EXCEPTION;
+    EX_ERROR_LOADING_PLAYER: EXCEPTION;
+
+
     type T_PLAYER is private; -- Solo digo que habrá un tipo T_PLAYER
     type T_PLAYER_ACCESS is access constant T_PLAYER; --T_PLAYER; -- Tipo de acceso a T_PLAYER
                                    -- all:      Puedo modificar el player
@@ -12,7 +16,7 @@ package Q_PLAYER is
     -- La llamaremos cuando se cambie alguno de los datos del jugador
 
     subtype T_EMAIL_VALUE is String(1..50);              -- 50 bytes
-    subtype T_NAME_VALUE  is Wide_String(1..50);         -- 100 bytes (ver nota 1)
+    subtype T_NAME_VALUE  is String(1..50); -- TODO --Wide_String(1..50);         -- 100 bytes (ver nota 1)
 
     -- Nuevos jugadores
     -- function F_CREATE_NEW_PLAYER(V_NAME: T_NAME_VALUE; V_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
