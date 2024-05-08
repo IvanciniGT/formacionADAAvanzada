@@ -70,13 +70,13 @@ package body Q_PLAYER.Q_PLAYER_MANAGER is
 
     procedure P_PLAYER_UPDATED(V_PLAYER_CHANGES: T_PLAYER_CHANGES) is
     begin
-        -- Cambio el nombre en cache
-        -- Cambio el nombre en fichero
-        -- AQUI TENGO UN PROBLEMA!
-            -- Puedo cambiar el nombre en cache??
-            --- NO... solo puedo meterlo otra vez con el nuevo nombre
-            --- CAMBIARLO implicaría tener el anterior... y no lo tengo... Mas vale que me lo pasen
-        Ada.Text_IO.PUT_LINE("Cambiando el nombre de " & V_PLAYER.R_NAME);
+        if V_PLAYER_CHANGES.R_PLAYER.R_NAME /= V_PLAYER_CHANGES.R_OLD_NAME then
+            -- Cambio el nombre en cache
+            V_PLAYERS_CACHE.Delete(V_PLAYER_CHANGES.R_OLD_NAME);
+            Q_PLAYER.Q_REPOSITORY.P_DELETE_PLAYER(V_PLAYER_CHANGES.R_OLD_NAME);
+
+            P_SAVE_PLAYER(V_PLAYER_CHANGES.R_PLAYER); -- lo guarda en cache y en archivo
+    end if;
     end P_PLAYER_UPDATED;
 
 

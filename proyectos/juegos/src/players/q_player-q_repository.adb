@@ -1,7 +1,7 @@
 with Ada.Directories;
 with Ada.Text_IO; 
 with Ada.Strings.Fixed; 
-with Ada.Strings.Unbounded; 
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
 package body Q_PLAYER.Q_REPOSITORY is
 
@@ -10,6 +10,10 @@ package body Q_PLAYER.Q_REPOSITORY is
         return Ada.Directories.EXISTS(V_PLAYER_NAME & "txt");
     end F_EXISTS_PLAYER;
 
+    procedure P_DELETE_PLAYER(V_PLAYER_NAME: T_NAME_VALUE) is
+    begin
+        Ada.Directories.DELETE_FILE(V_PLAYER_NAME & "txt");
+    end P_DELETE_PLAYER;
 
 
     function F_LINE_CONTAINS_VALID_VALUE(V_LINE: STRING) return BOOLEAN is
@@ -50,7 +54,7 @@ package body Q_PLAYER.Q_REPOSITORY is
         V_PLAYER_LOSSES: Q_STATISTICS.T_STATISTICS_COUNT;
         V_PLAYER_TIES: Q_STATISTICS.T_STATISTICS_COUNT;
         V_FIELD_NAME: Unbounded_String;
-        V_FIELD_VALUE: Ada.Strings.Unbounded.Unbounded_String;
+        V_FIELD_VALUE: Unbounded_String;
         V_FOUND: Boolean;
     begin
         while not (Ada.Text_IO.End_Of_File(V_FILE_CHANNEL))loop
@@ -65,7 +69,7 @@ package body Q_PLAYER.Q_REPOSITORY is
                             V_FOUND => V_FOUND);
                     if V_FOUND then
                         if V_FIELD_NAME = "EMAIL" then
-                                V_PLAYER_EMAIL := TO_String(V_FIELD_VALUE);
+                                V_PLAYER_EMAIL := To_String(V_FIELD_VALUE);
                         elsif V_FIELD_NAME = "WINS" then
                                 V_PLAYER_WINS := Q_STATISTICS.T_STATISTICS_COUNT'Value(TO_STRING(V_FIELD_VALUE));
                         elsif V_FIELD_NAME = "LOSSES" then

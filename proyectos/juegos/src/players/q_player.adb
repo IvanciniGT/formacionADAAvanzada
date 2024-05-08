@@ -8,7 +8,7 @@ package body Q_PLAYER is
             
     procedure NOTIFY_OBSERVERS(V_PLAYER_CHANGES: T_PLAYER_CHANGES) is
     begin
-        for OBSERVER of V_PLAYER.R_OBSERVERS loop
+        for OBSERVER of V_PLAYER_CHANGES.R_PLAYER.R_OBSERVERS loop
             OBSERVER.all(V_PLAYER_CHANGES);
         end loop;
     end NOTIFY_OBSERVERS;
@@ -52,7 +52,7 @@ package body Q_PLAYER is
     begin
         V_OLD_NAME := V_PLAYER.R_NAME;
         V_PLAYER.R_NAME := V_NAME;
-        NOTIFY_OBSERVERS(( R_PLAYER => V_PLAYER, R_OLD_NAME => V_OLD_NAME));
+        NOTIFY_OBSERVERS(( R_PLAYER => V_PLAYER, R_OLD_NAME => V_OLD_NAME, R_OLD_EMAIL => V_PLAYER.R_EMAIL));
         -- Y ya el observador, decidirá si quiere cambiar el fichero o no.
         -- O el observador decidirá si apuntar este cambio en un log o no
     end P_SET_NAME;
@@ -60,9 +60,10 @@ package body Q_PLAYER is
     procedure P_SET_EMAIL(V_PLAYER: in out T_PLAYER; V_EMAIL: T_EMAIL_VALUE) is
         V_OLD_EMAIL: T_EMAIL_VALUE;
     begin
+        V_OLD_EMAIL := V_PLAYER.R_EMAIL;
         V_PLAYER.R_EMAIL := V_EMAIL;
         -- o el observador decidirá si quiere mandar un email al usuario para confirmar el cambio o no
-        NOTIFY_OBSERVERS(( R_PLAYER => V_PLAYER, R_OLD_EMAIL => V_OLD_EMAIL));
+        NOTIFY_OBSERVERS(( R_PLAYER => V_PLAYER, R_OLD_EMAIL => V_OLD_EMAIL, R_OLD_NAME => V_PLAYER.R_NAME));
     end P_SET_EMAIL;
 
 end Q_PLAYER;
