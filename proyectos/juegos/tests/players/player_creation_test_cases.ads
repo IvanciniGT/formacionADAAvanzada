@@ -1,16 +1,17 @@
-with AUnit.Test_Cases; use AUnit.Test_Cases;
+with AUnit.Test_Cases;
+with AUnit;
 
 package Player_Creation_Test_Cases is
 
-    type Player_Test_Case is new Test_Cases.Test_Case with null record;
+    type Player_Test_Case is new AUnit.Test_Cases.Test_Case with null record;
 
     -- Esta función nos la invoca AUnit automaticamente para que registremos
     -- Las rutinas de prueba, asociadas a un caso de prueba
-    procedure Register_Tests(Test: in out Player_Test_Case);
+    procedure Register_Tests(V_Test: in out Player_Test_Case);
 
     -- Esta función nos la invoca AUnit automaticamente
     -- para que demos el nombre del caso de prueba (y que salga en los informes)
-    function Name(V_Test_Case: Player_Test_Case) return Test_String;
+    function Name(V_Test_Case: Player_Test_Case) return AUnit.Test_String;
 
     -- Estas funciones nos las invoca AUnit automaticamente
     
@@ -25,7 +26,7 @@ package Player_Creation_Test_Cases is
 
     -- Y estas también nos las invoca AUnit automaticamente
     -- Por nosotros registrarlas dentro de la rutina Register_Tests
-    procedure Test_1(Test: in out Player_Test_Case'Class);
-    procedure Test_2(Test: in out Player_Test_Case'Class);
+    procedure Test_1(Test: in out AUnit.Test_Cases.Test_Case'Class);
+    procedure Test_2(Test: in out AUnit.Test_Cases.Test_Case'Class);
     
 end Player_Creation_Test_Cases;

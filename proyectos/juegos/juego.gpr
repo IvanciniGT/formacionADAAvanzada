@@ -1,4 +1,5 @@
-with "aunit"; -- Vamos a usar AUnit para las pruebas.
+--with "aunit"; -- Vamos a usar AUnit para las pruebas.
+with "/Users/ivan/opt/GNAT/2020/share/gpr/aunit.gpr";
 project Juego is
 
    type TIPO_EJECUCION_GPRBUILD is ("DESARROLLO", "PRUEBAS");
