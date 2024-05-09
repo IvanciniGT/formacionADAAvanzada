@@ -1,6 +1,8 @@
 project Juego is
-   for Main use ("src/main.adb");
-   for Object_Dir use ".objs";
+
+   type TIPO_EJECUCION_GPRBUILD is ("DESARROLLO", "PRUEBAS");
+   TIPO_EJECUCION_ELEGIDA : TIPO_EJECUCION_GPRBUILD := external ("BUILD_MODE", "DESARROLLO");
+
    for Source_Dirs use ("./src",
                         "./src/core",
                         "./src/core/ui",
@@ -12,8 +14,23 @@ project Juego is
                         "./src/games/ahorcado/ui",
                         "./src/players"
                         );
-   for Exec_Dir use "bin";
    package Compiler is
       for Default_Switches ("Ada") use ("-g");
    end Compiler;
+
+   case TIPO_EJECUCION_ELEGIDA is
+      when "DESARROLLO" =>
+         for Exec_Dir use "bin";
+         for Object_Dir use ".objs";
+         for Main use ("src/main.adb");
+         
+      when "PRUEBAS" =>
+         for Source_Dirs use ("./tests",
+                              "./tests/players"
+                              );
+         for Exec_Dir use "bin/tests";
+         for Object_Dir use ".objs/tests";
+         for Main use ("tests/main_test.adb");
+   end case;
+
 end Juego;

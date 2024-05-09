@@ -231,3 +231,25 @@ CASOS DE PRUEBA: Al menos 1 (HAPPY PATH... al menos tantos como la complejidad c
     entonces, me devuelve un player, con los datos de ivan
 
   TEAR_DOWN
+
+
+## AUnit
+
+Framework de **pruebas** en Ada
+No es un framework de **pruebas unitarias** en ADA
+Aunque puedo hacer pruebas unitarias con él.
+
+Nos ayuda con la configuración / Estructuración de los procedmientos de pruebas
+
+Al usar un framework he de adaptarme a su forma de trabajo.
+
+Un framewokr es un conjunto de 1 o mas librerías, que me imponen una forma de trabajo.
+
+Quien arranca las pruebas con AUnit, es Aunit
+Yo declaro pruebas... y las configuro en AUnit...
+Para que sea AUnit el que las ejecute.
+
+
+Suite de pruebas      player_test_suite <--- Suite_Todas_Las_Pruebas
+  Pruebas             package: player_creation_test_cases
+    Casos de Prueba   player_creation_test_cases: Test_1, Test_2
