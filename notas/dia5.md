@@ -157,6 +157,7 @@ WINS=10
 
 --->
 
+# Canales de comunicación de un proceso en un SO
 A nivel de SO, los archivos y la terminal se tratan de la misma form.
 
 TODO PROCESO QUE CORRE EN UN SO (me da igual WINDOWS, LINUX, MACOS, UNIX(POSIX))
@@ -169,3 +170,12 @@ por defecto tiene 3 canales de comunicación:
 Cuando hacemos un PUT_LINE(CANAL, TEXTO) ... si no le paso canal... se usa 1
 Cuando hacemos un GET_LINE(CANAL,VARIABLE) .. si no le paso cana... se usa el 0
 
+## Códigos de salida de un proceso en un SO
+
+En cualquier SO, todo proceso acaba con un código de salida:
+Número Natural 0....127
+
+Lo importante es que si el código de salida es 0, eso implica que el programa ha ido bien
+Cualquier valor no 0 implica que el programa no ha ido bien.
+
+En linux: echo $?

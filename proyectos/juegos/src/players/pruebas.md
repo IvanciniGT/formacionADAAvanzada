@@ -134,3 +134,100 @@ end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
 ```
 
 Una prueba automatizada no es sino un programa que prueba mi programa.
+Saldrá con un código de salida distinto a 0 si alguna prueba falla.
+
+En paralelo, está bien que se me genere un informe de las pruebas... para ver cuales han ido bien y cuales mal.
+
+
+
+---
+
+# Pruebas del manager DE SISTEMA
+
+  function F_CREATE_NEW_PLAYER(V_PLAYER_NAME: T_NAME_VALUE; V_PLAYER_EMAIL: T_EMAIL_VALUE) return T_PLAYER;
+
+CASOS DE PRUEBA: Al menos 1 (HAPPY PATH... al menos tantos como la complejidad cicliomática)
+  - HAPPY PATH
+      GIVEN
+        Tengo unos datos de un player guays:
+          Email: GUAY
+          Nombre: Guay y que NO EXISTA YA
+      WHEN (acción)
+        Llamo al F_CREATE_NEW_PLAYER con esos datos
+      THEN (comprobaciones)   -    SELF VALIDATING
+        - No hay errores
+        - Se me devuelve un TPLAYER que tiene los datos originales
+        - Y el TPLAYER tiene unas estadísticas inicializadas a 0
+        - Y el TPLAYER se ha dado de alta en la cache
+        - Y tengo un fichero con el nombre del TPLAYER que contiene los datos del TPLAYER
+        - Y el manager ha quedado subscrito al TPLAYER
+
+  PODRIA TENER UN FALLO EN PRODUCCION si se me olvida comprobar
+    que se haya dado de alta el PLAYER en la cache? NO
+  Cada vez que se pida el JUGADOR se leera de fichero...
+    FALLO no va a haber... solo que el sistema va más lento.
+    El resto si está bien hecho.
+  
+    TENGO UN DEFECTO que no se manifiesta en PRODUCCION como un fallo!
+
+  - CAJA BLANCA:
+    - Usuario que ya existe
+    - Subscripcion
+    - Save player
+      - Se da de alta en la cache
+      - Se guarda un fichero
+    - Si hay un problema al guardar el jugador
+  - CAJA NEGRA:
+    - Nombre inválido
+    - Email inválido
+    - Si hay un problema al guardar el jugador
+    - Si hay un problema porque ya exista
+
+# Pruebas del manager UNITARIA
+  - HAPPY PATH
+      GIVEN
+        Tengo unos datos de un player guays:
+          Email: GUAY
+          Nombre: Guay y que NO EXISTA YA
+      WHEN (acción)
+        Llamo al F_CREATE_NEW_PLAYER con esos datos
+      THEN (comprobaciones)   -    SELF VALIDATING
+        - No hay errores
+        - Se me devuelve un TPLAYER que tiene los datos originales
+        - Y el TPLAYER tiene unas estadísticas inicializadas a 0
+        - Se solicita el almacenamiento del jugador (P_SAVE_PLAYER) ***
+        - Y el manager ha quedado subscrito al TPLAYER
+    *** Para comprobar esto, tengo un problema:
+      - Mirar las consecuencias de haber llamado a eso: 
+        Pero entonces ya estoy haciendo una prueba de SISTEMA
+      - Sobreescribir el procedimiento P_SAVE_PLAYER para que 
+        no haga nada más que anotar en un boolean que lo he llamado.
+        Y si cuando la prueba, ese boolean está a true, es que mi
+        función ha hecho lo que debia hacer.
+        TEST-DOUBLE: P_SAVE_PLAYER : SPY
+          : stub, spy, mock, fake, dummy
+
+    VENTAJAS ENORMES:
+    - Si una prueba unitaria falla, TENGO MUY CLARO qué falla... dónde está el fallo
+      - Si una prueba de sistema falla... ponte a buscar... qué falla!
+    - Cuándo puedo hacer la prueba de sistema ? Cuando está el sistema.
+      - La prueba unitaria no necesita que el sistema esté montado.
+
+## Hemos hecho una prueba antes de crear un player: PLAYER "ivan"
+
+## F_GET_PLAYER : SISTEMA
+
+  TEAR_UP
+
+- HAPPY_PATH
+  GIVEN:
+    el nombre de jugador RANDOM
+    mi email
+    guardo el jugador
+    le cambio sus estadisticas... 
+  WHEN:
+    llamo a get player con RANDOM
+  THEN:
+    entonces, me devuelve un player, con los datos de ivan
+
+  TEAR_DOWN
