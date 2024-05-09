@@ -1,4 +1,4 @@
-with "aunit";
+with "/Users/ivan/opt/GNAT/2020/share/gpr/aunit.gpr";
 
 project Juego is
 
@@ -27,11 +27,22 @@ project Juego is
          for Main use ("./tests/main_test.adb");
          for Object_Dir use "./.objs/tests";
          for Exec_Dir use "./bin/tests";
-         for Source_Dirs use ("./tests");
+   for Source_Dirs use ("./src",
+                        "./src/core",
+                        "./src/core/ui",
+                        "./src/core/helpers",
+                        "./src/games/adivinarnumero",
+                        "./src/games/adivinarnumero/ui",
+                        "./src/games/ahorcado",
+                        "./src/games/ahorcado/helpers",
+                        "./src/games/ahorcado/ui",
+                        "./src/players",
+                        "./tests",
+                              "./tests/players");
          
       when others =>
          for Exec_Dir use "bin";
          for Object_Dir use ".objs";
-         for Main use ("src/main.adb");
+         for Main use ("./src/main.adb");
    end case;
 end Juego;
