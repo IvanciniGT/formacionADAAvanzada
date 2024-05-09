@@ -251,5 +251,5 @@ Para que sea AUnit el que las ejecute.
 
 
 Suite de pruebas      player_test_suite <--- Suite_Todas_Las_Pruebas
-  Pruebas             package: player_creation_test_cases
-    Casos de Prueba   player_creation_test_cases: Test_1, Test_2
+  Caso de prueba      package: player_creation_test_cases
+    Rutina de Prueba  player_creation_test_cases: Test_1, Test_2

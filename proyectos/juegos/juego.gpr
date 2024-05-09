@@ -1,3 +1,4 @@
+with "aunit"; -- Vamos a usar AUnit para las pruebas.
 project Juego is
 
    type TIPO_EJECUCION_GPRBUILD is ("DESARROLLO", "PRUEBAS");
