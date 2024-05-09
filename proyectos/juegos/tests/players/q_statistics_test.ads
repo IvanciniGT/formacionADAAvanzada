@@ -1,0 +1,5 @@
+package body Q_STATISTICS_TEST is
+
+  procedure TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+
+end Q_STATISTICS_TEST;
