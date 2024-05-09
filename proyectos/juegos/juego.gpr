@@ -1,6 +1,11 @@
+with "aunit";
+
 project Juego is
-   for Main use ("src/main.adb");
-   for Object_Dir use ".objs";
+
+   type Build_Mode_Type is ("development", "test");
+   Build_Mode : Build_Mode_Type := external ("BUILD_MODE", "development");
+
+
    for Source_Dirs use ("./src",
                         "./src/core",
                         "./src/core/ui",
@@ -12,8 +17,21 @@ project Juego is
                         "./src/games/ahorcado/ui",
                         "./src/players"
                         );
-   for Exec_Dir use "bin";
+
    package Compiler is
       for Default_Switches ("Ada") use ("-g");
    end Compiler;
+
+   case Build_Mode is
+      when "test" =>
+         for Main use ("./tests/main_test.adb");
+         for Object_Dir use "./.objs/tests";
+         for Exec_Dir use "./bin/tests";
+         for Source_Dirs use ("./tests");
+         
+      when others =>
+         for Exec_Dir use "bin";
+         for Object_Dir use ".objs";
+         for Main use ("src/main.adb");
+   end case;
 end Juego;
