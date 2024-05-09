@@ -73,7 +73,7 @@ Al definir UNA prueba: Sintaxis de tipo GIVEN, WHEN, THEN.
 - THEN: Donde compruebo TODO (1) lo que debe ocurrir como consecuencia de la acción que quiero probar
 
 Para una función de mi código / procedimiento... 
-Definé varios casos de prueba... al menos tantos como la complejidad ciclomática de ese código.
+Define varios casos de prueba... al menos tantos como la complejidad ciclomática de ese código.
 
 Empezamos siempre por definir el caso de prueba que denominamos el HAPPY PATH.
 

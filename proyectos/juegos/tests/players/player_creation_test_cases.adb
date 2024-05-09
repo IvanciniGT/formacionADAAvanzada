@@ -14,7 +14,7 @@ package body Player_Creation_Test_Cases is
 
     function Name(V_Test_Case: Player_Test_Case) return AUnit.Test_String is
     begin
-        return AUnit.Format("Player_Creation_Test_Cases");
+        return AUnit.Format("Mis pruebas de creación de un jugaqdor");
     end Name;
 
     procedure Set_Up_Case(Test: in out Player_Test_Case) is
