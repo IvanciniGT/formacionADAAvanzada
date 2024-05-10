@@ -1,10 +1,10 @@
 with AUnit.Run;
 with AUnit.Reporter.Text;
-with Players_Test_Suite;
+with Q_PLAYERS_TEST_SUITE;
 
-procedure Main_Test is
+procedure MAIN_TEST is
 
-   procedure Run is new AUnit.Run.Test_Runner(Players_Test_Suite.Suite_Todas_Las_Pruebas);
+   procedure Run is new AUnit.Run.Test_Runner(Q_PLAYERS_TEST_SUITE.F_PLAYERS_TEST_SUITE);
 
    V_Reporter : AUnit.Reporter.Text.Text_Reporter;
 
@@ -18,4 +18,4 @@ begin
    -- A esa función, nos pasa un dato de tipo: AUnit.Test_Case.Test_Case
    -- Y a ese Test-Case le vamos registrando las rutinas de pruebas que queremos hacer.
 
-end Main_Test;
+end MAIN_TEST;
