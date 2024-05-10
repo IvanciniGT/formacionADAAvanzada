@@ -1,7 +1,7 @@
 with AUnit.Test_Cases;
 with AUnit;
 
-package Q_PLAYER_CREATION_TEST_CASE is
+package Q_PLAYER.Q_PLAYER_MANAGER.Q_PLAYER_CREATION_TEST_CASE is
 
     type Q_PLAYER_CREATION_TEST is new AUnit.Test_Cases.Test_Case with null record;
 
@@ -29,4 +29,4 @@ package Q_PLAYER_CREATION_TEST_CASE is
     procedure TEST_PLAYER_CREATION_HAPPY_PATH(Test: in out AUnit.Test_Cases.Test_Case'Class);
     procedure TEST_PLAYER_CREATION_ALREADY_EXISTS(Test: in out AUnit.Test_Cases.Test_Case'Class);
     
-end Q_PLAYER_CREATION_TEST_CASE;
+end Q_PLAYER.Q_PLAYER_MANAGER.Q_PLAYER_CREATION_TEST_CASE;

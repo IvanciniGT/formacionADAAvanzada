@@ -253,3 +253,29 @@ Para que sea AUnit el que las ejecute.
 Suite de pruebas      player_test_suite <--- Suite_Todas_Las_Pruebas
   Caso de prueba      package: player_creation_test_cases
     Rutina de Prueba  player_creation_test_cases: Test_1, Test_2
+
+
+--- 
+
+La misión de las pruebas unitarias es garantizar que cada componente funciona adecuadamente de forma aislada.
+
+
+La misión de las pruebas de sistema es garantizar el comportamiento del sistema en su conjunto.
+De principio a fin (END2END)
+Quizás, ni siquiera han hecho en mi proyecto pruebas unitarias...
+Pero las hecho o no...
+Yo quiero ahora comprobar el funcionamiento del sistema.
+
+Y según requisitos, al dar de alta un usuario, se debe generar un fichero con el nombre del jugador y contenido:
+EMAIL: <>
+WINS: <>
+LOSSES: <>
+TIES: <>
+
+
+Tengo yo algúna otra prueba de SISTEMA en la que vaya a comprobar esto? el contenido del fichero?
+NO
+
+El API Publico del SISTEMA (librería de jugadores)...
+Alguien va a llamar a Q_PLAYER.Q_REPOSITORY.SAVE() NO....
+
