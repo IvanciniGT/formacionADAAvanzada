@@ -41,7 +41,18 @@ package body Q_PLAYER_CREATION_TEST_CASE is
     procedure TEST_PLAYER_CREATION_HAPPY_PATH(Test: in out AUnit.Test_Cases.Test_Case'Class) is
         V_CONDICION: Boolean;
     begin
-        -- TODO: Implementar el test
+        -- GIVEN : Tengo unos datos de un player guays:
+          -- Email: GUAY
+          -- Nombre: Guay y que NO EXISTA YA
+        -- WHEN (acción): Llamo al F_CREATE_NEW_PLAYER con esos datos
+        -- THEN (comprobaciones)   -    SELF VALIDATING
+          -- No hay errores
+          -- Se me devuelve un TPLAYER que tiene los datos originales
+          -- Y el TPLAYER tiene unas estadísticas inicializadas a 0
+          -- Y el TPLAYER se ha dado de alta en la cache
+          -- Y tengo un fichero con el nombre del TPLAYER que contiene los datos del TPLAYER
+          -- Y el manager ha quedado subscrito al TPLAYER
+
         AUnit.Assertions.Assert(True, "No se puede crear un jugador nuevo, cuando debería");
     end TEST_PLAYER_CREATION_HAPPY_PATH;
 
