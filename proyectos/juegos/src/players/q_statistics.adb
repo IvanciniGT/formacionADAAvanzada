@@ -37,7 +37,7 @@ package body Q_STATISTICS is
 
     procedure P_INCREMENT_IF_ALLOWED ( V_DATA: in out T_STATISTICS_COUNT; WAS_ABLE_TO_INCREMENT : out Boolean ) is
     begin
-        if T_STATISTICS_COUNT'Last < V_DATA then
+        if V_DATA < T_STATISTICS_COUNT'Last then
             V_DATA := V_DATA +1;
             WAS_ABLE_TO_INCREMENT := True;
         else

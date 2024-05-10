@@ -1,5 +1,6 @@
---with "aunit"; -- Vamos a usar AUnit para las pruebas.
-with "/Users/ivan/opt/GNAT/2020/share/gpr/aunit.gpr";
+with "/usr/share/gpr/aunit.gpr"; -- Vamos a usar AUnit para las pruebas.
+--with "/Users/ivan/opt/GNAT/2020/share/gpr/aunit.gpr";
+--with "aunit";
 project Juego is
 
    type TIPO_EJECUCION_GPRBUILD is ("DESARROLLO", "PRUEBAS");
@@ -27,7 +28,17 @@ project Juego is
          for Main use ("src/main.adb");
          
       when "PRUEBAS" =>
-         for Source_Dirs use ("./tests",
+         for Source_Dirs use ("./src",
+                        "./src/core",
+                        "./src/core/ui",
+                        "./src/core/helpers",
+                        "./src/games/adivinarnumero",
+                        "./src/games/adivinarnumero/ui",
+                        "./src/games/ahorcado",
+                        "./src/games/ahorcado/helpers",
+                        "./src/games/ahorcado/ui",
+                        "./src/players",
+                        "./tests",
                               "./tests/players"
                               );
          for Exec_Dir use "bin/tests";

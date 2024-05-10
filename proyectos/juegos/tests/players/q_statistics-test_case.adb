@@ -1,12 +1,56 @@
+with AUnit;
+with AUnit.Test_Cases;          
+with AUnit.Assertions;
 
 with Q_STATISTICS; use Q_STATISTICS;
-with Ada.Text_IO; use Ada.Text_IO;
 
 -- Esto son a la vez pruebas UNITARIAS y de SISTEMA
 -- Por un motivo... y es que este SISTEMA no depende de nadie
-package body Q_STATISTICS.TEST is
+package body Q_STATISTICS.TEST_CASE is
 
-  procedure TEST_NUEVAS_ESTADISTICAS_CON_DATOS is
+
+    procedure Register_Tests(V_Test: in out Q_STATISTICS_TEST) is
+    begin
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_NUEVAS_ESTADISTICAS_CON_DATOS'Access, "Crear nuevas estadísticas con datos");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_NUEVAS_ESTADISTICAS_PERO_NUEVAS'Access, "Crear nuevas estadísticas sin datos");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_GET_WINS'Access, "Obtener número de victorias");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_GET_LOOSES'Access, "Obtener número de derrotas");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_GET_TIES'Access, "Obtener número de empates");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_GET_PLAYED_GAMES'Access, "Obtener número de partidas jugadas");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_INCREMENT_WINS'Access, "Incrementar número de victorias");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_INCREMENT_WINS_MAXIMO'Access, "Incrementar número de victorias al máximo");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_INCREMENT_LOSSES'Access, "Incrementar número de derrotas");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_INCREMENT_LOSSES_MAXIMO'Access, "Incrementar número de derrotas al máximo");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_INCREMENT_TIES'Access, "Incrementar número de empates");
+        AUnit.Test_Cases.Registration.Register_Routine(V_Test, TEST_INCREMENT_TIES_MAXIMO'Access, "Incrementar número de empates al máximo");
+    end Register_Tests;
+
+    function Name(V_Test_Case: Q_STATISTICS_TEST) return AUnit.Test_String is
+    begin
+        return AUnit.Format("Estadísticas de jugador");
+    end Name;
+
+    procedure Set_Up_Case(Test: in out Q_STATISTICS_TEST) is
+    begin
+      null;
+    end Set_Up_Case;
+
+    procedure Tear_Down_Case(Test: in out Q_STATISTICS_TEST) is
+    begin
+      null;
+    end Tear_Down_Case;
+
+    procedure Set_Up(Test: in out Q_STATISTICS_TEST) is
+    begin
+      null;
+    end Set_Up;
+
+    procedure Tear_Down(Test: in out Q_STATISTICS_TEST)  is
+    begin
+      null;
+    end Tear_Down;
+
+  procedure TEST_NUEVAS_ESTADISTICAS_CON_DATOS(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -22,25 +66,12 @@ package body Q_STATISTICS.TEST is
     V_RESULTADO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
 
     -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-    if V_WINS = V_RESULTADO.R_WINS then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
-    --Assert(V_WINS = V_RESULTADO.R_WINS, "No se asigna bien el número de victorias");
-    if V_LOSSES = V_RESULTADO.R_LOSSES then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
-    if V_TIES = V_RESULTADO.R_TIES then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
+    AUnit.Assertions.Assert(V_WINS = V_RESULTADO.R_WINS, "No se asigna bien el número de victorias");
+    AUnit.Assertions.Assert(V_LOSSES = V_RESULTADO.R_LOSSES, "No se asigna bien el número de derrotas");
+    AUnit.Assertions.Assert(V_TIES = V_RESULTADO.R_TIES, "No se asigna bien el número de empates");
   end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
 
-  procedure TEST_NUEVAS_ESTADISTICAS_PERO_NUEVAS is
+  procedure TEST_NUEVAS_ESTADISTICAS_PERO_NUEVAS(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -56,25 +87,12 @@ package body Q_STATISTICS.TEST is
     V_RESULTADO:= F_CREATE_NEW_STATISTICS;
 
     -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-    if V_WINS = V_RESULTADO.R_WINS then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
-    --Assert(V_WINS = V_RESULTADO.R_WINS, "No se asigna bien el número de victorias");
-    if V_LOSSES = V_RESULTADO.R_LOSSES then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
-    if V_TIES = V_RESULTADO.R_TIES then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
-  end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+    AUnit.Assertions.Assert(V_WINS = V_RESULTADO.R_WINS, "No se asigna bien el número de victorias");
+    AUnit.Assertions.Assert(V_LOSSES = V_RESULTADO.R_LOSSES, "No se asigna bien el número de derrotas");
+    AUnit.Assertions.Assert(V_TIES = V_RESULTADO.R_TIES, "No se asigna bien el número de empates");
+  end TEST_NUEVAS_ESTADISTICAS_PERO_NUEVAS;
 
-  procedure TEST_GET_WINS is
+  procedure TEST_GET_WINS(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -89,18 +107,14 @@ package body Q_STATISTICS.TEST is
     V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
 
     -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-    V_RESULTADO := F_GET_WINS(V_RESULTADO);
+    V_RESULTADO := F_GET_WINS(V_OBJETO);
 
     -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-    if V_WINS = V_RESULTADO then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
+    AUnit.Assertions.Assert(V_WINS = V_RESULTADO, "No se asigna bien el número de victorias");
 
-  end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+  end TEST_GET_WINS;
 
-  procedure TEST_GET_LOOSES is
+  procedure TEST_GET_LOOSES(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -115,18 +129,14 @@ package body Q_STATISTICS.TEST is
     V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
 
     -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-    V_RESULTADO := F_GET_LOSSES(V_RESULTADO);
+    V_RESULTADO := F_GET_LOSSES(V_OBJETO);
 
     -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-    if V_LOSSES = V_RESULTADO then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
+    AUnit.Assertions.Assert(V_LOSSES = V_RESULTADO, "No se asigna bien el número de derrotas");
 
-  end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+  end TEST_GET_LOOSES;
 
-  procedure TEST_GET_TIES is
+  procedure TEST_GET_TIES(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -141,18 +151,14 @@ package body Q_STATISTICS.TEST is
     V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
 
     -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-    V_RESULTADO := F_GET_TIES(V_RESULTADO);
+    V_RESULTADO := F_GET_TIES(V_OBJETO);
 
     -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-    if V_TIES = V_RESULTADO then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
+    AUnit.Assertions.Assert(V_TIES = V_RESULTADO, "No se asigna bien el número de empates");
 
-  end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+  end TEST_GET_TIES;
 
-  procedure TEST_GET_PLAYED_GAMES is
+  procedure TEST_GET_PLAYED_GAMES(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -167,18 +173,14 @@ package body Q_STATISTICS.TEST is
     V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
 
     -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-    V_RESULTADO := F_GET_PLAYED_GAMES(V_RESULTADO);
+    V_RESULTADO := F_GET_PLAYED_GAMES(V_OBJETO);
 
     -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-    if V_TIES+V_LOSSES+V_WINS = V_RESULTADO then
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-    else
-      Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-    end if;
+    AUnit.Assertions.Assert(V_WINS + V_LOSSES + V_TIES = V_RESULTADO, "No se asigna bien el número de partidas jugadas");
 
-  end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+  end TEST_GET_PLAYED_GAMES;
 
-  procedure TEST_INCREMENT_WINS is
+  procedure TEST_INCREMENT_WINS(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -194,23 +196,14 @@ package body Q_STATISTICS.TEST is
       V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
   
       -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-      F_INCREMENT_WINS(V_OBJETO, V_SE_INCREMENTO);
+      P_INCREMENT_WINS(V_OBJETO, V_SE_INCREMENTO);
   
       -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-      if V_WINS+1 = V_OBJETO.R_WINS then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
-      if V_SE_INCREMENTO then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
-  
-    end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+      AUnit.Assertions.Assert(V_SE_INCREMENTO, "No se indica bien que se ha incrementado");  
+      AUnit.Assertions.Assert(V_WINS+1 = V_OBJETO.R_WINS, "No se incrementa bien el número de victorias");
+    end TEST_INCREMENT_WINS;
 
-  procedure TEST_INCREMENT_WINS_MAXIMO is
+  procedure TEST_INCREMENT_WINS_MAXIMO(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -226,23 +219,15 @@ package body Q_STATISTICS.TEST is
       V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
   
       -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-      F_INCREMENT_WINS(V_OBJETO, V_SE_INCREMENTO);
+      P_INCREMENT_WINS(V_OBJETO, V_SE_INCREMENTO);
   
       -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-      if V_WINS = V_OBJETO.R_WINS then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
-      if not V_SE_INCREMENTO then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
+      AUnit.Assertions.Assert(V_WINS = V_OBJETO.R_WINS, "No se incrementa bien el número de victorias");
+      AUnit.Assertions.Assert(not V_SE_INCREMENTO, "No se indica bien que se ha incrementado");
   
-    end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+    end TEST_INCREMENT_WINS_MAXIMO;
 
-  procedure TEST_INCREMENT_LOSSES is
+  procedure TEST_INCREMENT_LOSSES(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -258,23 +243,15 @@ package body Q_STATISTICS.TEST is
       V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
   
       -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-      F_INCREMENT_LOSSES(V_OBJETO, V_SE_INCREMENTO);
+      P_INCREMENT_LOSSES(V_OBJETO, V_SE_INCREMENTO);
   
       -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-      if V_LOSSES+1 = V_OBJETO.R_LOSSES then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
-      if V_SE_INCREMENTO then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
+      AUnit.Assertions.Assert(V_LOSSES+1 = V_OBJETO.R_LOSSES, "No se incrementa bien el número de derrotas");
+      AUnit.Assertions.Assert(V_SE_INCREMENTO, "No se indica bien que se ha incrementado");
   
-    end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+    end TEST_INCREMENT_LOSSES;
 
-  procedure TEST_INCREMENT_LOSSES_MAXIMO is
+  procedure TEST_INCREMENT_LOSSES_MAXIMO(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -290,23 +267,15 @@ package body Q_STATISTICS.TEST is
       V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
   
       -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-      F_INCREMENT_LOSSES(V_OBJETO, V_SE_INCREMENTO);
+      P_INCREMENT_LOSSES(V_OBJETO, V_SE_INCREMENTO);
   
       -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-      if V_LOSSES = V_OBJETO.R_LOSSES then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
-      if not V_SE_INCREMENTO then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
+      AUnit.Assertions.Assert(V_LOSSES = V_OBJETO.R_LOSSES, "No se incrementa bien el número de derrotas");
+      AUnit.Assertions.Assert(not V_SE_INCREMENTO, "No se indica bien que se ha incrementado");
   
-    end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+    end TEST_INCREMENT_LOSSES_MAXIMO;
 
-  procedure TEST_INCREMENT_TIES is
+  procedure TEST_INCREMENT_TIES(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -322,23 +291,15 @@ package body Q_STATISTICS.TEST is
       V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
   
       -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-      F_INCREMENT_TIES(V_OBJETO, V_SE_INCREMENTO);
+      P_INCREMENT_TIES(V_OBJETO, V_SE_INCREMENTO);
   
       -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-      if V_TIES+1 = V_OBJETO.R_TIES then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
-      if V_SE_INCREMENTO then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
+      AUnit.Assertions.Assert(V_TIES+1 = V_OBJETO.R_TIES, "No se incrementa bien el número de empates");
+      AUnit.Assertions.Assert(V_SE_INCREMENTO, "No se indica bien que se ha incrementado");
   
-    end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+    end TEST_INCREMENT_TIES;
   
-  procedure TEST_INCREMENT_TIES_MAXIMO is
+  procedure TEST_INCREMENT_TIES_MAXIMO(Test: in out AUnit.Test_Cases.Test_Case'Class) is
     V_WINS: T_STATISTICS_COUNT;
     V_LOSSES: T_STATISTICS_COUNT;
     V_TIES: T_STATISTICS_COUNT;
@@ -354,20 +315,12 @@ package body Q_STATISTICS.TEST is
       V_OBJETO:= F_CREATE_EXISTING_STATISTICS(V_WINS, V_LOSSES, V_TIES);
   
       -- WHEN: Invoco a la función F_CREATE_EXISTING_STATISTICS con esos datos
-      F_INCREMENT_TIES(V_OBJETO, V_SE_INCREMENTO);
+      P_INCREMENT_TIES(V_OBJETO, V_SE_INCREMENTO);
   
       -- THEN La función me un T_STATISTICS con los datos (que tenía) asignados:
-      if V_TIES = V_OBJETO.R_TIES then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
-      if not V_SE_INCREMENTO then
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - OK");
-      else
-        Put_line("TEST_NUEVAS_ESTADISTICAS_CON_DATOS - NOK");
-      end if;
+      AUnit.Assertions.Assert(V_TIES = V_OBJETO.R_TIES, "No se incrementa bien el número de empates");
+      AUnit.Assertions.Assert(not V_SE_INCREMENTO, "No se indica bien que se ha incrementado");
   
-    end TEST_NUEVAS_ESTADISTICAS_CON_DATOS;
+    end TEST_INCREMENT_TIES_MAXIMO;
 
-end Q_STATISTICS_TEST;
+end Q_STATISTICS.TEST_CASE;
