@@ -43,7 +43,8 @@ package body Q_PLAYER_CREATION_TEST_CASE is
     begin
         -- GIVEN : Tengo unos datos de un player guays:
           -- Email: GUAY
-          -- Nombre: Guay y que NO EXISTA YA
+          -- Nombre: Guay y que NO EXISTA YA. DEBE NO EXISTIR PREVIAMENTE. GENERAR UN RANDOM
+                    -- HORA Y FECHA 
         -- WHEN (acción): Llamo al F_CREATE_NEW_PLAYER con esos datos
         -- THEN (comprobaciones)   -    SELF VALIDATING
           -- No hay errores
