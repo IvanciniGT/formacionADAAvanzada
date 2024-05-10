@@ -1,0 +1,5 @@
+# Este es el fichero de: Guay 489923                                       
+EMAIL: mi@correso.es                                     
+WINS:  0
+LOSSES:  0
+TIES:  0

@@ -279,3 +279,44 @@ NO
 El API Publico del SISTEMA (librería de jugadores)...
 Alguien va a llamar a Q_PLAYER.Q_REPOSITORY.SAVE() NO....
 
+
+---
+
+
+CREAR_NUEVO_JUGADOR
+  - Llama a CREAR NUEVO JUGADOR en Q_PLAYER
+  - Llama a Guardar JUGADOR en Q_PLAYER_REPOSITORY
+  - Capturar el ID de vuelta del repo (BBDD)
+  - Llama a Poner en la cache wn Q_PLAYER_CACHE
+  - Devuelvo el ID
+
+En la prueba unitaria, compruebo:
+- Que llamamos a crear nuevo jugador, con los datos que hemos de llamar
+    - TEST_DOUBLE: MOCK+STUB
+    - LA función MOCKEADA/STUBEADA De CREAR_NUEVO_JUGADOR:
+      Assert(nombre='Ivan')(en el fichero de la carpeta stub)
+      Assert(email='Ivan@ivan.com')
+      return nuevo jugador("Ivan", email, nuevas estadísticas)
+- Que llamamos a Guardar en PLAYER_REPOSITORY, con los datos adecuados
+    - TEST_DOUBLE: MOCK+STUB (en el fichero de la carpeta stub)
+      Assert (jugador.nombre)
+      Assert (jugador.email)
+      Assert (jugador estadisticas)
+      return 32982398238923983.
+- Que llamamos al Poner Player en CACHE, con los datos adecuados
+    - TEST_DOBLE: MOCK(en el fichero de la carpeta stub)
+      Assert (jugador)
+      -- No es STUB porque no devuelve nada.
+- Que recibo un ID.. y que es el que entrega el Guardar del REPO
+  - Assert (32982398238923983)
+
+
+  TEST_CREAR_NUEVO_JUGADOR (en el fiochero de la carpeta test)
+    V_ID:= MANAGER.F_CREATE_NUEVO_JUGADOR(Ivan, ivan@ivan.com)
+    Assert (V_ID = 33)
+    -- El Poner Player en CACHE (MOCK), ya se va a encargar de dar el test por fallido
+       si le llamo con datos invalidos.
+    -- Tengo que asegurarme que se haya llamado a esas funciones.
+       -- Si se ha llamado, la propia funcion stubeada/mockeada, revisa que los argumentos recibidos sean buenos
+       -- Y si no se ha llamado?
+    -- Me aseguro que se haya llamado a la función GUARDAR DEL REPO?

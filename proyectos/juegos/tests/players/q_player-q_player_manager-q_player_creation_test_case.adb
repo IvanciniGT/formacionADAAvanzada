@@ -47,7 +47,7 @@ package body Q_PLAYER.Q_PLAYER_MANAGER.Q_PLAYER_CREATION_TEST_CASE is
         -- GIVEN : Tengo unos datos de un player guays:
         declare
             V_RANDOM: Natural := randomHelpers.PEDIR_NUMERO_A_LA_COMPUTADORA(1,1000000);
-            V_TEMP_PLAYER_NAME: String := ("Guay" & Natural'Image(V_RANDOM) & (4..50 => ' '));
+            V_TEMP_PLAYER_NAME: String := ("Guay" & Natural'Image(V_RANDOM) & (1..50 => ' '));
             V_PLAYER_NAME: T_NAME_VALUE := V_TEMP_PLAYER_NAME(1..50);
             V_PLAYER_EMAIL: T_EMAIL_VALUE := "mi@correso.es" & (14..50 => ' ');
         begin

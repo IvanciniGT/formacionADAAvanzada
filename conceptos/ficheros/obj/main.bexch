@@ -1,0 +1,22 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+/home/parallels/Desktop/ada/conceptos/ficheros/fichero.gpr
+20240510110645 d1eba641e3036c8cd8484bf7e19f1e21
+[BOUND OBJECT FILES]
+/home/parallels/Desktop/ada/conceptos/ficheros/obj/main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-L/home/parallels/Desktop/ada/conceptos/ficheros/obj/
+-L/home/parallels/Desktop/ada/conceptos/ficheros/obj/
+-L/usr/lib/gcc/x86_64-linux-gnu/10/adalib/
+-shared
+-shared-libgcc
+-lgnat-10
+-ldl
+[RUN PATH OPTION]
+/usr/lib/gcc/x86_64-linux-gnu/10/adalib/
+/usr/lib

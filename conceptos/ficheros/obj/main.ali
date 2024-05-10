@@ -1,0 +1,130 @@
+V "GNAT Lib v10"
+M P W=b
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U main%b		main.adb		448b99be NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.direct_io%s
+Z ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+Z interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W system%s		system.ads		system.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.crtl%s		s-crtl.ads		s-crtl.ali
+Z system.direct_io%s	s-direio.adb		s-direio.ali
+Z system.file_control_block%s  s-ficobl.ads	s-ficobl.ali
+Z system.file_io%s	s-fileio.adb		s-fileio.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-direio.ads		20230707070819 a93c9b31 ada.direct_io%s
+D a-direio.adb		20230707070819 dc70efaa ada.direct_io%b
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-ioexce.ads		20230707070819 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
+D main.adb		20240510113349 4343d7e2 main%b
+D system.ads		20230707070819 4635ec04 system%s
+D s-conca2.ads		20230707070819 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
+D s-direio.ads		20230707070819 7c86ede3 system.direct_io%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-ficobl.ads		20230707070819 078245e4 system.file_control_block%s
+D s-fileio.ads		20230707070819 45ce2f0f system.file_io%s
+D s-imgint.ads		20230707070819 02dbe0c2 system.img_int%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [main standard 4 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 12|1r6 2r6 6r36 9r16 15r5 21r5 25r5 29r5 35r5 37r9 39r9 43r5
+. 49r5 54r5 60r5 66r5 68r9 70r9 74r5 75r5 77r17 80r5 81r5 82r5 83r5 86r5
+. 88r17 91r5 92r5 93r5 93r26 94r5 95r5
+X 2 a-direio.ads
+43k13*Direct_IO 193e18 12|2w10 6r40
+53P9 File_Type<16|81P9> 12|7r45[6]
+55E9 File_Mode
+55n23 In_File{55E9[12|6]} 12|32r33[6] 63r33[6]
+55n32 Inout_File{55E9[12|6]} 12|46r33[6]
+55n44 Out_File{55E9[12|6]} 12|18r33[6]
+74U14 Create 12|16s21[6]
+75p7 File{53P9[12|6]} 12|17r9[6]
+76e7 Mode{55E9[12|6]} 12|18r9[6]
+77a7 Name{string} 12|19r9[6]
+80U14 Open 12|30s21[6] 44s21[6] 61s21[6]
+81p7 File{53P9[12|6]} 12|31r9[6] 45r9[6] 62r9[6]
+82e7 Mode{55E9[12|6]} 12|32r9[6] 46r9[6] 63r9[6]
+83a7 Name{string} 12|33r9[6] 47r9[6] 64r9[6]
+86U14 Close 12|26s21[6] 41s21[6] 55s21[6] 72s21[6]
+108U14 Read 12|38s25[6] 51s21[6] 69s25[6]
+117U14 Write 12|22s21[6] 23s21[6] 24s21[6] 53s21[6]
+121U14 Set_Index 12|50s21[6] 52s21[6]
+126V13 End_Of_File{boolean}<16|90p13> 12|36s31[6] 67s31[6]
+X 8 a-textio.ads
+57K13*Text_IO 727e16 12|1w10 9r20 15r9 21r9 25r9 29r9 35r9 37r13 39r13 43r9
+. 49r9 54r9 60r9 66r9 68r13 70r13 74r9 75r9 77r21 80r9 81r9 82r9 83r9 86r9
+. 88r21 91r9 92r9 93r9 93r30 94r9 95r9
+64P9*File_Type 12|9r28
+66n23*In_File{66E9} 12|88r29
+66n32*Out_File{66E9} 12|77r29
+99U14*Create 12|75s17
+100p7 File{64P9} 12|76r9
+101e7 Mode{66E9} 12|77r9
+102a7 Name{string} 12|78r9
+114U14*Open 12|86s17
+115p7 File{64P9} 12|87r9
+116e7 Mode{66E9} 12|88r9
+117a7 Name{string} 12|89r9
+129U14*Close 12|83s17 95s17
+492V13*Get_Line{string} 12|93s38
+498U14*Put_Line 12|81s17
+508U14*Put_Line 12|15s17 21s17 25s17 29s17 35s17 37s21 39s21 43s17 49s17
+. 54s17 60s17 66s17 68s21 70s21 74s17 80s17 82s17 91s17 92s17 93s17 94s17
+X 12 main.adb
+4U11*Main 4b11 100l5 100t9
+6K13 Estadisticas_IO[2|43] 7r29 16r5 18r17 22r5 23r5 24r5 26r5 30r5 32r17
+. 36r15 38r9 41r5 44r5 46r17 50r5 51r5 52r5 53r5 55r5 61r5 63r17 67r15 69r9
+. 72r5
+7p5 V_FICHERO_ESTADISTICAS{2|53P9[6]} 17m17 17r17 22r27 23r27 24r27 26m27
+. 26r27 31m17 31r17 36r43 38r30 41m27 41r27 45m17 45r17 50r31 51r26 52r31
+. 53r27 55m27 55r27 62m17 62r17 67r43 69r30 72m27 72r27
+9p5 V_FICHERO{8|64P9} 76m17 76r17 81r26 83m23 83r23 87m17 87r17 93r47 95m23
+. 95r23
+10a5 V_NOMBRE_FICHERO_TEXTO{string} 78r17 89r17
+11a5 V_NOMBRE_FICHERO_ESTADISTICAS{string} 19r17 33r17 47r17 64r17
+12i5 V_DATO{natural} 38m54 39r47 51m50 54r52 69m54 70r47
+X 16 s-direio.ads
+81P9*File_Type(53R9)
+
